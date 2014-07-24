@@ -1,0 +1,30 @@
+# Turn on URL rewriting
+RewriteEngine On 
+
+# Installation directory
+RewriteBase /
+
+# Redirect to public
+Redirect /extramile /extramile/public/
+
+# Allow any files or directories that exist to be displayed directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+<FilesMatch "\.(php)$">
+Deny from all
+</FilesMatch>
+
+<FilesMatch "index.(php)$">
+Allow from all
+</FilesMatch>
+
+<FilesMatch "\.(cache)$">
+Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(log)$">
+Deny from all
+</FilesMatch>
+
+AddDefaultCharset UTF-8
