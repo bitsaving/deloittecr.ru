@@ -1,0 +1,141 @@
+body {
+	font-family: "Open Sans", serif;
+}
+
+#main {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.navbar {
+	background: #ffffff;
+	height: 55px;
+	padding-right: 56px;
+}
+
+.navbar-right li a {
+	color: #00a1de !important;
+	font: 18px "Open Sans Semibold";
+}
+
+.navbar-left li a {
+	padding: 10px;
+}
+
+#title {
+	height: 794px;
+	background: url(../img/title/title_bg_with_logo_icons.jpg) center no-repeat;
+	font: 42px "Open Sans Light";
+	color: #ffffff;
+}
+
+#title img {
+
+}
+
+#title .funded_text {
+	display: inline-block;
+	position: relative;
+	top: 350px;
+}
+
+#title .funded_text div {
+	background: url("../img/title/text_bg_sm.png") no-repeat;
+	background-size: 100%;
+	padding: 0 20px;
+}
+
+#title .funded_text .line1 {
+	position: relative;
+	right: 5%;
+	height: 60px;
+}
+
+#title .funded_text .line2 {
+	position: relative;
+	left: 5%;
+	margin-top: 2px;
+	height: 60px;
+}
+
+#title .funded_amount {
+	font: 80px "Open Sans Light";
+	color: #002776;
+	letter-spacing: 15px;
+	line-height: 1.05;
+	background: url("../img/title/funded_amount.png") no-repeat;
+	display: inline-block;
+	padding-left: 7px;
+	padding-right: 60px;
+	padding-bottom: 10px;
+	position: relative;
+	top: 370px;
+}
+
+#title #btn_title_donate {
+	background: url("../img/title/btn_title_donate.png") no-repeat;
+	width: 252px;
+	height: 65px;
+	font: 18px "Open Sans ExtraBold";
+	padding-left: 65px;
+	position: relative;
+	top: 420px;
+}
+
+#title #btn_title_donate:hover {
+	background: url("../img/title/btn_title_donate_hover.png") no-repeat;
+	color: #ffffff;
+}
+
+#title #btn_title_donate:active {
+	background: url("../img/title/btn_title_donate_active.png") no-repeat;
+	color: #ffffff;
+	outline: none;
+}
+
+#title #btn_title_donate:focus {
+	color: #ffffff;
+	outline: none;
+}
+
+#title_links {
+	background: url("../img/title/title_links_bg.jpg");
+	height: 78px;
+}
+
+#title_links img {
+	margin-right: 5px;
+}
+
+#title_links .extra_mile_links {
+	display: inline-block;
+	color: #95d123;
+	font-size: 18px;
+	line-height: 78px;
+	padding-left: 160px;
+}
+
+#title_links .extra_mile_links span, #title_links .share_links span {
+	margin-right: 23px;
+}
+
+#title_links .share_links {
+	display: inline-block;
+	color: #002776;
+	font-size: 16px;
+	line-height: 78px;
+	padding-right: 160px;
+}
+
+#menu {
+
+}
+
+@media screen and (max-width: 992px) {
+	#title .funded_text .line1, #title .funded_text .line2 {
+		font-size: 30px;
+
+	}
+
+}
