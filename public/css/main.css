@@ -1,5 +1,12 @@
 body {
 	font-family: "Open Sans", serif;
+	background-color: #ffffff;
+}
+
+h1 {
+	font: 42px "Open Sans Light";
+	color: #002776;
+	margin: 30px 0;
 }
 
 #main {
@@ -129,13 +136,169 @@ body {
 }
 
 #menu {
+	height: 92px;
+	font-size: 18px;
+}
+
+#menu a {
+	color: #002776;
+	text-decoration: none;
+	font: 18px "Open Sans Semibold";
+	display: inline-block;
+	line-height: 50px;
+	margin-right: 37px;
+	margin-top: 10px;
+}
+
+#menu a:first-child {
+	margin-left: 37px;
+}
+
+#fund_raising {
+	height: 770px;
+	background: url("../img/fund_raising_bg.jpg");
+}
+
+#fund_raising p {
+	color: #92d400;
+	font: 20px "Open Sans";
+	margin: 0 70px;
+}
+
+.leaders_team {
+	padding: 100px 130px;
+	color: #002776;
+}
+
+.leaders_team .second_team .leader_card {
+	height: 387px;
+	width: 283px;
+}
+
+.leaders_team .first_team .leader_card {
+	height: 447px;
+	width: 283px;
+	background: url("../img/leaders_teams/first_team_bg.png");
+	font: 22px "Open Sans Bold";
+}
+
+.leaders_team .third_team .leader_card {
+	height: 387px;
+	width: 283px;
+}
+
+.leaders_team .third_team .leader_card, .leaders_team .second_team .leader_card {
+	background: url("../img/leaders_teams/second_team_bg.png");
+	margin-top: 30px;
+	font: 18px "Open Sans Bold";
+}
+
+.leader_card {
+	padding: 5px 25px 0;
+	text-align: center;
+
+}
+
+.name_logo {
+	display: table;
+	height: 70px;
+}
+
+.name_logo .name {
+	display: table-cell;
+	vertical-align: middle;
+	width: 60%;
+	line-height: 1.2;
+}
+
+.first_team .name {
+	display: table;
+	height: 60px;
+	width: 100%;
+
+}
+
+.first_team .name div {
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 1.3;
+}
+
+.first_team .logo {
+	height: 70px;
+}
+
+.leaders_team .photo {
+	margin-bottom: 16px;
+}
+
+.leaders_team .first_team .btn_support_team {
+	margin-top: 73px;
+}
+
+.leader_card .progress-bar-success {
+	background: #92d400;
+	font: 18px "Open Sans Semibold";
+	line-height: 31px;
+}
+
+.leaders_team .progress {
+	height: 31px;
+	background: #e5e5e5;
+}
+
+.leaders_team .progress-bar {
+	text-align: left;
+	padding-left: 7px;
+}
+
+.leaders_team .btn_support_team {
+	background: url("../img/leaders_teams/btn_suppott_team.png") no-repeat;
+	width: 167px;
+	height: 49px;
+	font: 15px "Open Sans Bold";
+	padding-left: 44px;
+	margin-top: 22px;
+	color: #ffffff;
+}
+
+.leaders_team .btn_support_team:focus {
+	outline: none;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 991px) {
+	#menu a {
+		font-size: 16px;
+		margin-right: 20px;
+
+	}
+
+	#menu a:first-child {
+		margin-left: 20px;
+	}
 
 }
 
 @media screen and (max-width: 992px) {
 	#title .funded_text .line1, #title .funded_text .line2 {
 		font-size: 30px;
+	}
+
+	#menu a {
+		font-size: 14px;
+		margin-right: 10px;
 
 	}
 
+	#menu a:first-child {
+		margin-left: 10px;
+	}
+
+	#title_links .share_links {
+		padding-right: 90px;
+	}
+
+	#title_links .extra_mile_links {
+		padding-left: 90px;
+	}
 }
