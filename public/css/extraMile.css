@@ -6,7 +6,7 @@ body {
 h1 {
 	font: 42px "Open Sans Light";
 	color: #002776;
-	margin: 30px 0;
+	margin: 70px 0 30px;
 }
 
 #main {
@@ -156,10 +156,10 @@ h1 {
 
 #fund_raising {
 	height: 770px;
-	background: url("../img/fund_raising_bg.jpg") center;
+	background: url("../img/fund_raising_bg.jpg") center no-repeat;
 }
 
-#fund_raising p {
+p {
 	color: #92d400;
 	font: 20px "Open Sans";
 	margin: 0 70px;
@@ -362,6 +362,74 @@ h1 {
 #race_stages {
 	height: 890px;
 	background: #f4f4f4;
+}
+
+#race_stages > .container > p {
+	margin: 0 130px;
+}
+
+#race_stages .race_stages_img {
+	padding-top: 65px;
+}
+
+#race_stages .text {
+	margin-top: 10px;
+	padding: 0 100px 0 130px;
+}
+
+#race_stages .text .description {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+#race_stages .text p {
+	color: #555555;
+	font: 13px "Open Sans Semibold";
+	margin: 0;
+}
+
+#race_stages .text h3 {
+	color: #032a74;
+	font: 18px "Open Sans";
+}
+
+.download {
+	height: 103px;
+	width: 822px;
+	display: inline-block;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	margin-top: 80px;
+}
+
+.download .download_text {
+	color: #555555;
+	font: 18px "Open Sans";
+	display: table-cell;
+	height: 100px;
+	width: 580px;
+	vertical-align: middle;
+}
+
+.download .link {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0;
+}
+
+#rules_register {
+	height: 890px;
+}
+
+#rules_register .info {
+	height: 336px;
+	width: 272px;
+	background: #f1faff;
+}
+
+#rules_register .common_info img {
+	position: relative;
+	top: 60px;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 991px) {

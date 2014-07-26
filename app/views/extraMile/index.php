@@ -32,8 +32,8 @@
 	</div>
 </div>
 <div id="menu" class="text-center">
-	<a href="#fund_raising">Сбор средств</a> <a href="#">Этапы гонки</a> <a href="#">Правила и регистрация</a>
-	<a href="#">Схема проезда</a> <a href="#">История Extra Mile</a> <a href="#">Наши партнеры</a>
+	<a href="#fund_raising">Сбор средств</a> <a href="#race_stages">Этапы гонки</a> <a href="#rules_register">Правила и
+		регистрация</a> <a href="#">Схема проезда</a> <a href="#">История Extra Mile</a> <a href="#">Наши партнеры</a>
 	<img src="/img/menu_line.jpg">
 </div>
 <div id="fund_raising" class="text-center">
@@ -156,7 +156,93 @@
 	</div>
 </div>
 <div id="race_stages">
-	<div class="container">
+	<div class="container text-center">
+		<h1>Этапы гонки</h1>
 
+		<p>Основным правилом участия в нашем мероприятии является искреннее желание помочь фонду и, конечно же, самим
+			детям!</p>
+		<img src="/img/race_stages_img.jpg" class="race_stages_img">
+
+		<div class="row text text-center">
+			<div class="col-xs-4 ">
+				<div class="description text-left">
+					<h3>Велогонка</h3>
+
+					<p>Для участия в мероприятии каждой команде необходимо подать заявку со списком участников,
+						названием компании, предствителем которой является команда.</p>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="description text-left">
+					<h3>Велогонка</h3>
+
+					<p>Для участия в мероприятии каждой команде необходимо подать заявку со списком участников,
+						названием компании, предствителем которой является команда.</p>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="description text-left">
+					<h3>Велогонка</h3>
+
+					<p>Для участия в мероприятии каждой команде необходимо подать заявку со списком участников,
+						названием компании, предствителем которой является команда.</p>
+				</div>
+			</div>
+		</div>
+		<div class="download ">
+			<div class="download_text">
+				Подробное описание этапов и правил участия (*.pdf) copy
+			</div>
+			<div class="link">
+				<a href="" class="btn"><img src="/img/race_stages_btn.png"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="rules_register">
+	<div class="container text-center">
+		<h1>Правила и регистрация</h1>
+
+		<p>Основным правилом участия в нашем мероприятии является искреннее желание помочь фонду и, конечно же, самим
+			детям!</p>
+
+		<div class="common_info row">
+			<div class="col-md-3">
+				<img src="/img/rules_register_info.png" class="reg_pic">
+
+				<div class="info">
+
+				</div>
+			</div>
+			<div class="col-md-3">
+				<img src="/img/rules_register_fee.png" class="reg_pic">
+
+				<div class="info">
+
+				</div>
+			</div>
+			<div class="col-md-3">
+				<img src="/img/rules_register_info.png" class="reg_pic">
+
+				<div class="info">
+
+				</div>
+			</div>
+			<div class="col-md-3">
+				<img src="/img/rules_register_info.png" class="reg_pic">
+
+				<div class="info">
+
+				</div>
+			</div>
+		</div>
+		<div class="download ">
+			<div class="download_text">
+				Подробное описание этапов и правил участия (*.pdf) copy
+			</div>
+			<div class="link">
+				<a href="" class="btn"><img src="/img/race_stages_btn.png"></a>
+			</div>
+		</div>
 	</div>
 </div>
