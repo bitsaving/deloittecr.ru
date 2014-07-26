@@ -156,7 +156,7 @@ h1 {
 
 #fund_raising {
 	height: 770px;
-	background: url("../img/fund_raising_bg.jpg");
+	background: url("../img/fund_raising_bg.jpg") center;
 }
 
 #fund_raising p {
@@ -166,13 +166,16 @@ h1 {
 }
 
 .leaders_team {
-	padding: 100px 130px;
+	padding: 100px 130px 0;
 	color: #002776;
 }
 
-.leaders_team .second_team .leader_card {
+.leaders_team .second_team .leader_card, .leaders_team .third_team .leader_card {
 	height: 387px;
 	width: 283px;
+	background: url("../img/leaders_teams/second_team_bg.png");
+	margin-top: 30px;
+	font: 18px "Open Sans Bold";
 }
 
 .leaders_team .first_team .leader_card {
@@ -182,21 +185,8 @@ h1 {
 	font: 22px "Open Sans Bold";
 }
 
-.leaders_team .third_team .leader_card {
-	height: 387px;
-	width: 283px;
-}
-
-.leaders_team .third_team .leader_card, .leaders_team .second_team .leader_card {
-	background: url("../img/leaders_teams/second_team_bg.png");
-	margin-top: 30px;
-	font: 18px "Open Sans Bold";
-}
-
 .leader_card {
 	padding: 5px 25px 0;
-	text-align: center;
-
 }
 
 .name_logo {
@@ -266,17 +256,131 @@ h1 {
 	outline: none;
 }
 
+#team_list {
+	font: 16px "Open Sans";
+	color: #002776;
+	min-height: 550px;
+	padding-top: 25px;
+}
+
+#team_list .subtitle_text {
+	font-size: 22px;
+}
+
+#team_list .sorting {
+	margin-left: 25px;
+	font-size: 20px;
+	color: #00a1de;
+	border-bottom: 3px dotted #00a1de;
+}
+
+#team_list .sort_active {
+	font-size: 20px;
+	color: #81bc00;
+	border: none;
+}
+
+.teams_table {
+	padding: 35px 115px 0;
+}
+
+.teams_table .team_card_small {
+	background: url("../img/teams_table/team_cell_bg.png");
+	height: 90px;
+	width: 283px;
+	padding-left: 20px;
+	display: table;
+	margin-bottom: 10px;
+}
+
+.teams_table .team_card_small .name {
+	display: table-cell;
+	height: 45px;
+	vertical-align: middle;
+}
+
+.teams_table .team_cell_btn {
+	display: table-cell;
+	height: 90px;
+	vertical-align: middle;
+}
+
+.teams_table .team_cell_btn .team_card_sm_btn {
+	background: url("../img/teams_table/team_cell_btn.png");
+	width: 46px;
+	height: 43px;
+	margin-left: 5px;
+}
+
+.teams_table .team_cell_btn .team_card_sm_btn:focus {
+	outline: none;
+}
+
+.teams_table .progress {
+	height: 26px;
+	width: 168px;
+	background: #e5e5e5;
+}
+
+.teams_table .progress-bar-success {
+	background: #95d123;
+	font: 16px "Open Sans Semibold";
+	line-height: 26px;
+}
+
+.teams_table .progress-bar-success img {
+	padding-bottom: 3px;
+}
+
+.teams_table .progress-bar {
+	text-align: left;
+	padding-left: 7px;
+}
+
+.teams_table .carousel-caption {
+	width: 100%;
+	height: 480px;
+	left: 0;
+	right: 0;
+	color: inherit;
+	text-shadow: none;
+}
+
+.teams_table .carousel-indicators li {
+	height: 19px;
+	width: 19px;
+	background: #f4f4f4;
+	margin-left: 5px;
+}
+
+.teams_table .carousel-indicators .active {
+	height: 19px;
+	width: 19px;
+	background: #95d123;
+}
+
+#race_stages {
+	height: 890px;
+	background: #f4f4f4;
+}
+
 @media screen and (max-width: 1200px) and (min-width: 991px) {
 	#menu a {
 		font-size: 16px;
 		margin-right: 20px;
-
 	}
 
 	#menu a:first-child {
 		margin-left: 20px;
 	}
 
+	.leaders_team {
+		padding: 100px 30px 0;
+	}
+
+	.teams_table {
+		padding: 35px 15px 0;
+	}
 }
 
 @media screen and (max-width: 992px) {
@@ -300,5 +404,13 @@ h1 {
 
 	#title_links .extra_mile_links {
 		padding-left: 90px;
+	}
+
+	.leaders_team {
+		padding: 100px 0 0;
+	}
+
+	.teams_table {
+		padding: 35px 0 0;
 	}
 }

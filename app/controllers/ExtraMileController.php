@@ -3,7 +3,7 @@
 class ExtraMileController extends BaseController
 {
 
-	public $layout = 'main';
+	public $layout = 'extraMile';
 
 	public function index()
 	{
