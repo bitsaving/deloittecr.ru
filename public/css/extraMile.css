@@ -1,3 +1,28 @@
+@font-face {
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans Light";
+	src: url("../fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans Bold";
+	src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans Extrabold";
+	src: url("../fonts/OpenSans-ExtraBold.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans Semibold";
+	src: url("../fonts/OpenSans-Semibold.ttf");
+}
+
 body {
 	font-family: "Open Sans", serif;
 	background-color: #ffffff;
@@ -127,11 +152,11 @@ button:focus {
 	height: 78px;
 }
 
-#title_links img {
+.title_links img {
 	margin-right: 5px;
 }
 
-#title_links .extra_mile_links {
+.title_links .extra_mile_links {
 	display: inline-block;
 	color: #95d123;
 	font-size: 18px;
@@ -139,11 +164,11 @@ button:focus {
 	padding-left: 160px;
 }
 
-#title_links .extra_mile_links span, #title_links .share_links span {
+.title_links .extra_mile_links span, .title_links .share_links span {
 	margin-right: 23px;
 }
 
-#title_links .share_links {
+.title_links .share_links {
 	display: inline-block;
 	color: #002776;
 	font-size: 16px;
@@ -171,7 +196,7 @@ button:focus {
 }
 
 #fund_raising {
-	height: 770px;
+	min-height: 770px;
 	background: url("../img/fund_raising_bg.jpg") center no-repeat;
 }
 
@@ -366,7 +391,7 @@ p {
 }
 
 #race_stages {
-	height: 890px;
+	min-height: 890px;
 	background: #f4f4f4;
 }
 
@@ -412,7 +437,7 @@ p {
 }
 
 #rules_register {
-	height: 890px;
+	min-height: 890px;
 }
 
 #rules_register .info {
@@ -449,7 +474,7 @@ p {
 }
 
 #map {
-	height: 890px;
+	min-height: 890px;
 }
 
 #google-map-canvas {
@@ -500,7 +525,7 @@ p {
 }
 
 #history {
-	height: 900px;
+	min-height: 900px;
 }
 
 #history h1 {
@@ -532,6 +557,79 @@ p {
 	color: #00a1de;
 	font: 13px "Open Sans";
 	text-decoration: underline;
+}
+
+#photo_carousel {
+	margin-top: 40px;
+	min-height: 270px;
+}
+
+#photo_carousel .item {
+	margin: 33px;
+}
+
+#photo_carousel .item img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+#photo_carousel img {
+	height: 230px;
+}
+
+#partners {
+	min-height: 470px;
+	background: #f4f4f4;
+}
+
+#partners p {
+	color: #000000;
+}
+
+#partners .partners_capabilities {
+	height: 162px;
+	width: 821px;
+	background: #ffffff;
+	display: inline-block;
+	border-radius: 5px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding: 15px;
+}
+
+#partners .partners_capabilities h4 {
+	color: #032a74;
+	font: 15px "Open Sans Bold";
+}
+
+#partners .partners_capabilities p {
+	color: #032a74;
+	font: 14px "Open Sans";
+}
+
+#partners .partners_capabilities span {
+	color: #00a1de;
+	text-decoration: underline;
+}
+
+#about_downside_up {
+	min-height: 390px;
+
+}
+
+#about_downside_up .about {
+	background: url("../img/about_downside_up/left_bg.jpg") no-repeat left bottom, url("../img/about_downside_up/right_bg.jpg") no-repeat right bottom;
+	min-height: 390px;
+}
+
+#about_downside_up .about img {
+	margin: 37px 0;
+}
+
+#about_downside_up .about p {
+	color: #002776;
+	padding: 0 200px;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 991px) {

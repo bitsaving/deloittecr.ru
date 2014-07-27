@@ -5,11 +5,16 @@ $(document).ready(function () {
 	});
 
 	// Карусель для фото
-	$(".carousel-demo2").sliderkit({
-		shownavitems: 3,
-		scroll: 1,
-		mousewheel: true,
-		circular: true,
-		start: 1
+	$("#photo_carousel").owlCarousel({
+
+		autoPlay: 5000, //Set AutoPlay to 3 seconds
+
+		items: 4,
+		itemsDesktop: [1199, 3],
+		itemsDesktopSmall: [979, 3],
+		navigation: true,
+		pagination: false,
+		rewindSpeed: 500
+
 	});
 });

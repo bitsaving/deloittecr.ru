@@ -1,4 +1,10 @@
 <?php
+/**
+ * @var $partners array
+ */
+if (!isset($partners)) {
+	$partners = array();
+}
 ?>
 <div id="title" class="text-center">
 	<div class="container text-center">
@@ -18,9 +24,9 @@
 		))?>
 	</div>
 </div>
-<div id="title_links">
+<div class="title_links">
 	<div class="extra_mile_links">
-		<span>Extra Mile 2014</span> <a href=""><img src="/img/title_links/extra_mile_link_vk.png"></a>
+	<span>Extra Mile 2014</span> <a href=""><img src="/img/title_links/extra_mile_link_vk.png"></a>
 		<a href=""><img src="/img/title_links/extra_mile_link_fb.png"></a>
 	</div>
 	<div class="share_links pull-right">
@@ -33,7 +39,7 @@
 </div>
 <div id="menu" class="text-center">
 	<a href="#fund_raising">Сбор средств</a> <a href="#race_stages">Этапы гонки</a> <a href="#rules_register">Правила и
-		регистрация</a> <a href="#map">Схема проезда</a> <a href="#">История Extra Mile</a> <a href="#">Наши
+		регистрация</a> <a href="#map">Схема проезда</a> <a href="#history">История Extra Mile</a> <a href="#partners">Наши
 		партнеры</a> <img src="/img/menu_line.jpg">
 </div>
 <div id="fund_raising" class="text-center">
@@ -174,7 +180,7 @@
 			</div>
 			<div class="col-xs-4">
 				<div class="description text-left">
-					<h3>Велогонка</h3>
+					<h3>Водный этап</h3>
 
 					<p>Для участия в мероприятии каждой команде необходимо подать заявку со списком участников,
 						названием компании, предствителем которой является команда.</p>
@@ -182,7 +188,7 @@
 			</div>
 			<div class="col-xs-4">
 				<div class="description text-left">
-					<h3>Велогонка</h3>
+					<h3>Ориентирование</h3>
 
 					<p>Для участия в мероприятии каждой команде необходимо подать заявку со списком участников,
 						названием компании, предствителем которой является команда.</p>
@@ -310,24 +316,67 @@
 			<span><a href="">Фото-отчет</a></span>
 		</div>
 	</div>
-	<div class="sliderkit carousel-demo2">
-		<div class="sliderkit-nav">
-			<div class="sliderkit-nav-clip">
-				<ul>
-					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo1.jpg"></a></li>
-					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo2.jpg"></a></li>
-					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo3.jpg"></a></li>
-					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo4.jpg"></a></li>
-					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo1.jpg"></a></li>
-					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo2.jpg"></a></li>
-					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo3.jpg"></a></li>
-					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo4.jpg"></a></li>
-				</ul>
+	<div id="photo_carousel">
+		<a href="/img/history_photo/photo1.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo1.jpg"></a>
+		<a href="/img/history_photo/photo2.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo2.jpg"></a>
+		<a href="/img/history_photo/photo3.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo3.jpg"></a>
+		<a href="/img/history_photo/photo4.jpg" data-lightbox="ExtraMile2013"><img src="/img/leaders_teams/team_without_photo.jpg"></a>
+		<a href="/img/history_photo/photo1.jpg" data-lightbox="ExtraMile2013"><img src="/img/leaders_teams/team_without_photo.jpg"></a>
+		<a href="/img/history_photo/photo2.jpg" data-lightbox="ExtraMile2013"><img src="/img/leaders_teams/team_without_photo.jpg"></a>
+		<a href="/img/history_photo/photo3.jpg" data-lightbox="ExtraMile2013"><img src="/img/leaders_teams/team_without_photo.jpg"></a>
+		<a href="/img/history_photo/photo4.jpg" data-lightbox="ExtraMile2013"><img src="/img/leaders_teams/team_without_photo.jpg"></a>
+	</div>
+</div>
+<div id="partners" class="text-center">
+	<div class="container">
+		<h1>Наши партнёры</h1>
+
+		<p>Мы благодарим партнеров нашего мероприятия в 2013 году:</p>
+
+		<div class="partners_table">
+			<div class="row">
+				<div class="col-xs-1"></div>
+				<?php for ($i = 1;
+				$i <= count($partners);
+				$i++) : ?>
+				<div class="col-xs-2"><?= $partners[$i - 1] ?></div>
+				<?php if ($i % 5 == 0) : ?>
+				<div class="col-xs-1"></div>
 			</div>
-			<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-prev">
-				<a href="#" title="Scroll to the left"><span>Previous</span></a></div>
-			<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-next">
-				<a href="#" title="Scroll to the right"><span>Next</span></a></div>
+			<div class="row">
+				<div class="col-xs-1"></div>
+				<?php endif ?>
+				<?php endfor ?>
+			</div>
 		</div>
+		<div class="partners_capabilities">
+			<h4>Возможности для партнерства</h4>
+
+			<p>Партнеры, присоединившиеся на раннем этапе, смогут принять участие в планировании мероприятия. Если у вас
+				есть предложение о партнерстве, пожалуйста, напишите нам. Дополнительную информацию о мероприятии можно
+				получить по электронной почте: <span>extramile@deloitte.ru</span></p>
+		</div>
+	</div>
+</div>
+<div id="about_downside_up" class="text-center">
+	<div class="container about">
+		<img src="/img/about_downside_up/downside_up_logo.png">
+
+		<p>У воспитанников «Даунсайд Ап» есть самое главное ― родительская любовь и забота. Но им также нужны
+			развивающие занятия со специалистами, которые фонд предоставляет бесплатно благодаря таким неравнодушным
+			людям, как вы.</p>
+	</div>
+</div>
+<div class="title_links">
+	<div class="extra_mile_links">
+		<span>Extra Mile 2014</span> <a href=""><img src="/img/title_links/extra_mile_link_vk.png"></a>
+		<a href=""><img src="/img/title_links/extra_mile_link_fb.png"></a>
+	</div>
+	<div class="share_links pull-right">
+		<span>Рассказать друзьям:</span> <a href=""><img src="/img/title_links/share_vk.png"></a>
+		<a href="" target="_blank"><img src="/img/title_links/share_fb.png"></a>
+		<a href="" target="_blank"><img src="/img/title_links/share_ok.png"></a>
+		<a href="" target="_blank"><img src="/img/title_links/share_tw.png"></a>
+		<a href="" target="_blank"><img src="/img/title_links/share_lj.png"></a>
 	</div>
 </div>
