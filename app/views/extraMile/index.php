@@ -12,9 +12,9 @@
 	</div>
 	<div>
 		<?=
-		Form::button('Поддержать!', array(
+		Form::button('<img src="/img/title/rub_btn.png"> Поддержать!', array(
 			'id'    => 'btn_title_donate',
-			'class' => 'btn text-center'
+			'class' => 'btn btn-info text-center'
 		))?>
 	</div>
 </div>
@@ -33,8 +33,8 @@
 </div>
 <div id="menu" class="text-center">
 	<a href="#fund_raising">Сбор средств</a> <a href="#race_stages">Этапы гонки</a> <a href="#rules_register">Правила и
-		регистрация</a> <a href="#">Схема проезда</a> <a href="#">История Extra Mile</a> <a href="#">Наши партнеры</a>
-	<img src="/img/menu_line.jpg">
+		регистрация</a> <a href="#map">Схема проезда</a> <a href="#">История Extra Mile</a> <a href="#">Наши
+		партнеры</a> <img src="/img/menu_line.jpg">
 </div>
 <div id="fund_raising" class="text-center">
 	<div class="container">
@@ -66,8 +66,8 @@
 					</div>
 					<div class="btn_support">
 						<?=
-						Form::button('Поддержать!', array(
-							'class' => 'btn text-center btn_support_team'
+						Form::button('<img src="/img/rub_for_btn.png"> Поддержать!', array(
+							'class' => 'btn btn-info text-center btn_support_team'
 						))?>
 					</div>
 				</div>
@@ -85,8 +85,8 @@
 					</div>
 					<div class="btn_support">
 						<?=
-						Form::button('Поддержать!', array(
-							'class' => 'btn text-center btn_support_team'
+						Form::button('<img src="/img/rub_for_btn.png"> Поддержать!', array(
+							'class' => 'btn btn-info text-center btn_support_team'
 						))?>
 					</div>
 				</div>
@@ -111,8 +111,8 @@
 					</div>
 					<div class="btn_support">
 						<?=
-						Form::button('Поддержать!', array(
-							'class' => 'btn text-center btn_support_team'
+						Form::button('<img src="/img/rub_for_btn.png"> Поддержать!', array(
+							'class' => 'btn btn-info text-center btn_support_team'
 						))?>
 					</div>
 				</div>
@@ -190,12 +190,8 @@
 			</div>
 		</div>
 		<div class="download ">
-			<div class="download_text">
-				Подробное описание этапов и правил участия (*.pdf) copy
-			</div>
-			<div class="link">
-				<a href="" class="btn"><img src="/img/race_stages_btn.png"></a>
-			</div>
+			Подробное описание этапов и правил участия (*.pdf)
+			<a href="" class="btn"><img src="/img/race_stages_btn.png"></a>
 		</div>
 	</div>
 </div>
@@ -206,43 +202,132 @@
 		<p>Основным правилом участия в нашем мероприятии является искреннее желание помочь фонду и, конечно же, самим
 			детям!</p>
 
-		<div class="common_info row">
+		<div class="common_info row text-center">
 			<div class="col-md-3">
-				<img src="/img/rules_register_info.png" class="reg_pic">
+				<img src="/img/rules_register/info.png" class="reg_pic">
 
-				<div class="info">
+				<div class="info reg_info">
+					<h3>Регистрация</h3>
 
+					<p class="text-left">Для участия в мероприятии каждой команде необходимо подать заявку со списком
+						участников, названием компании, представителем которой является команда.</p>
+
+					<div class="registration_button">
+						<?=
+						Form::button('Зарегистрироваться', array(
+							'class' => 'btn btn-info btn_reg'
+						))?>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="/img/rules_register_fee.png" class="reg_pic">
+				<img src="/img/rules_register/fee.png" class="reg_pic">
 
-				<div class="info">
+				<div class="info fee_info">
+					<h3>Взнос</h3>
 
+					<p class="text-left">Для участия в мероприятии каждой команде необходимо подать заявку со списком
+						участников, названием компании, представителем которой является команда.</p>
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="/img/rules_register_info.png" class="reg_pic">
+				<img src="/img/rules_register/info.png" class="reg_pic">
 
-				<div class="info">
+				<div class="info funds_info">
+					<h3>Сборы</h3>
 
+					<p class="text-left">Для участия в мероприятии каждой команде необходимо подать заявку со списком
+						участников, названием компании, представителем которой является команда.</p>
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="/img/rules_register_info.png" class="reg_pic">
+				<img src="/img/rules_register/info.png" class="reg_pic">
 
-				<div class="info">
+				<div class="info event_info">
+					<h3>Мероприятие</h3>
 
+					<p class="text-left">Для участия в мероприятии каждой команде необходимо подать заявку со списком
+						участников, названием компании, представителем которой является команда.</p>
 				</div>
 			</div>
 		</div>
 		<div class="download ">
-			<div class="download_text">
-				Подробное описание этапов и правил участия (*.pdf) copy
+			Подробное описание этапов и правил участия (*.pdf)
+			<a href="" class="btn"><img src="/img/race_stages_btn.png"></a>
+		</div>
+	</div>
+</div>
+<div id="map" class="text-center">
+	<div id="google-map-canvas"></div>
+	<div class="container">
+		<h1>Схема проезда</h1>
+
+		<div class="row text-center">
+			<div class="col-xs-6">
+				<div class="info_block by_car text-left">
+					<h4><img src="/img/by_car.png"> На машине</h4>
+
+					<p>ул. Академика Королёва, 13 далее по левую сторону от телебашни ФГУП «ГИПРОЦВЕТМЕТ» – здание
+						офисного типа с вывесками «Юниаструмбанк», «Hyundai», ресторан «Персона грата». Запарковать авто
+						в удобном для Вас месте (на Аргуновской ул. это сделать проблематично).</p>
+				</div>
 			</div>
-			<div class="link">
-				<a href="" class="btn"><img src="/img/race_stages_btn.png"></a>
+			<div class="col-xs-6">
+				<div class="info_block by_public_transport text-left">
+					<h4><img src="/img/by_public_transport.png"> Общественным транспортом</h4>
+
+					<p>ул. Академика Королёва, 13 далее по левую сторону от телебашни ФГУП «ГИПРОЦВЕТМЕТ» – здание
+						офисного типа с вывесками «Юниаструмбанк», «Hyundai», ресторан «Персона грата». Запарковать авто
+						в удобном для Вас месте (на Аргуновской ул. это сделать проблематично).</p>
+				</div>
 			</div>
+		</div>
+		<div class="download ">
+			Версия карты для печати (*.pdf) <a href="" class="btn"><img src="/img/race_stages_btn.png"></a>
+		</div>
+	</div>
+</div>
+<div class="clearfix"></div>
+<div id="history" class="text-center">
+	<div class="container text-center">
+		<h1>История Extra Mile</h1>
+
+		<p>The Deloitte Foundation Extra Mile ― это ежегодное мероприятие, участники которого соревнуются в разных видах
+			спорта, включая бег, ориентирование на местности, альпинизм, преодоление водных преград и многое другое. Все
+			собранные в ходе этого мероприятия деньги, будут переданы в «Даунсайд Ап», благотворительную организацию,
+			оказывающую поддержку семьям, где есть дети с синдромом Дауна.</p>
+
+		<p>7 сентября 2013 года, участники мультиспортивной приключенческой гонки Extra Mile, организованной
+			Благотворительным фондом «Делойта», собрали 850 тыс. рублей, которые были направлены на реализацию
+			благотворительных программ фонда «Даунсайд Ап». Между прочим, обычные люди, офисные работники и даже не
+			спортсмены. В результате каждый из них получил множество положительных эмоций и массу впечатлений. Полные
+			намерения достойно пройти все испытания, любители приключений покорили трассу, которая оказалась совсем не
+			из легких: здесь было и ориентирование на пересеченной местности, и преодоление полосы препятствий, и
+			велокросс. Ну и, конечно же, водный этап!</p>
+
+		<div class="link_block">
+			<span>Extra Mile 2013</span> <span><a href="">О мероприятии</a></span>
+			<span><a href="">Фото-отчет</a></span>
+		</div>
+	</div>
+	<div class="sliderkit carousel-demo2">
+		<div class="sliderkit-nav">
+			<div class="sliderkit-nav-clip">
+				<ul>
+					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo1.jpg"></a></li>
+					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo2.jpg"></a></li>
+					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo3.jpg"></a></li>
+					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo4.jpg"></a></li>
+					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo1.jpg"></a></li>
+					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo2.jpg"></a></li>
+					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo3.jpg"></a></li>
+					<li><a href="#" title="[link title]"><img src="/img/history_photo/photo4.jpg"></a></li>
+				</ul>
+			</div>
+			<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-prev">
+				<a href="#" title="Scroll to the left"><span>Previous</span></a></div>
+			<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-next">
+				<a href="#" title="Scroll to the right"><span>Next</span></a></div>
 		</div>
 	</div>
 </div>

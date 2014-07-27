@@ -24,8 +24,8 @@ if (empty($content)) {
 				<div class="col-xs-4">
 					<div class="team_cell_btn text-center">
 						<?=
-						Form::button('', array(
-							'class' => 'btn text-center team_card_sm_btn'
+						Form::button('<img src="/img/rub_for_btn.png">', array(
+							'class' => 'btn btn-info text-center team_card_sm_btn'
 						))?>
 					</div>
 				</div>

@@ -9,6 +9,39 @@ h1 {
 	margin: 70px 0 30px;
 }
 
+button {
+	background: #6fd7ff; /* Old browsers */
+	background: linear-gradient(top, #6fd7ff 0%, #31b7ec 100%);
+	background: -moz-linear-gradient(top, #6fd7ff 0%, #31b7ec 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6fd7ff), color-stop(100%, #31b7ec)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #6fd7ff 0%, #31b7ec 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #6fd7ff 0%, #31b7ec 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #6fd7ff 0%, #31b7ec 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #6fd7ff 0%, #31b7ec 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6fd7ff', endColorstr='#31b7ec', GradientType=0); /* IE6-9 */
+}
+
+button:hover {
+	background: #37bbee; /* Old browsers */
+	background: -moz-linear-gradient(top, #37bbee 0%, #1f86cb 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #37bbee), color-stop(100%, #1f86cb)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #37bbee 0%, #1f86cb 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #37bbee 0%, #1f86cb 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #37bbee 0%, #1f86cb 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #37bbee 0%, #1f86cb 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#37bbee', endColorstr='#1f86cb', GradientType=0); /* IE6-9 */
+	background-position: 0 0 !important;
+}
+
+button:active {
+	background: #00a1de;
+	outline: none;
+}
+
+button:focus {
+	outline: none !important;
+}
+
 #main {
 	width: 100%;
 	margin: 0 auto;
@@ -81,29 +114,12 @@ h1 {
 }
 
 #title #btn_title_donate {
-	background: url("../img/title/btn_title_donate.png") no-repeat;
 	width: 252px;
 	height: 65px;
 	font: 18px "Open Sans ExtraBold";
-	padding-left: 65px;
 	position: relative;
 	top: 420px;
-}
-
-#title #btn_title_donate:hover {
-	background: url("../img/title/btn_title_donate_hover.png") no-repeat;
-	color: #ffffff;
-}
-
-#title #btn_title_donate:active {
-	background: url("../img/title/btn_title_donate_active.png") no-repeat;
-	color: #ffffff;
-	outline: none;
-}
-
-#title #btn_title_donate:focus {
-	color: #ffffff;
-	outline: none;
+	border-radius: 9px;
 }
 
 #title_links {
@@ -243,17 +259,11 @@ p {
 }
 
 .leaders_team .btn_support_team {
-	background: url("../img/leaders_teams/btn_suppott_team.png") no-repeat;
 	width: 167px;
 	height: 49px;
 	font: 15px "Open Sans Bold";
-	padding-left: 44px;
-	margin-top: 22px;
-	color: #ffffff;
-}
 
-.leaders_team .btn_support_team:focus {
-	outline: none;
+	margin-top: 22px;
 }
 
 #team_list {
@@ -306,14 +316,10 @@ p {
 }
 
 .teams_table .team_cell_btn .team_card_sm_btn {
-	background: url("../img/teams_table/team_cell_btn.png");
 	width: 46px;
 	height: 43px;
 	margin-left: 5px;
-}
-
-.teams_table .team_cell_btn .team_card_sm_btn:focus {
-	outline: none;
+	padding: 0;
 }
 
 .teams_table .progress {
@@ -382,7 +388,7 @@ p {
 	padding-right: 40px;
 }
 
-#race_stages .text p {
+#race_stages .text p, #rules_register .info p {
 	color: #555555;
 	font: 13px "Open Sans Semibold";
 	margin: 0;
@@ -400,21 +406,9 @@ p {
 	border: 1px solid #cccccc;
 	border-radius: 5px;
 	margin-top: 80px;
-}
-
-.download .download_text {
+	padding: 23px 0;
 	color: #555555;
 	font: 18px "Open Sans";
-	display: table-cell;
-	height: 100px;
-	width: 580px;
-	vertical-align: middle;
-}
-
-.download .link {
-	display: table-cell;
-	vertical-align: middle;
-	padding: 0;
 }
 
 #rules_register {
@@ -430,6 +424,114 @@ p {
 #rules_register .common_info img {
 	position: relative;
 	top: 60px;
+}
+
+#rules_register .info {
+	padding: 60px 30px 0;
+}
+
+#rules_register .info h3 {
+	color: #193276;
+	font: 20px "Open Sans";
+}
+
+#rules_register .info .registration_button {
+	position: absolute;
+	margin: 0 auto;
+	bottom: 30px;
+	left: 55px;
+	font: 14px "Open Sans Extrabold";
+}
+
+#rules_register .info .registration_button button {
+	width: 192px;
+	height: 43px;
+}
+
+#map {
+	height: 890px;
+}
+
+#google-map-canvas {
+	position: absolute;
+	height: 890px;
+	z-index: 1;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#map h1 {
+	position: relative;
+	color: #f1faff;
+	z-index: 10;
+}
+
+#map .info_block {
+	position: relative;
+	height: 192px;
+	width: 507px;
+	z-index: 10;
+	background: #ffffff;
+	border-radius: 5px;
+	padding: 20px 30px;
+	margin-left: 15px;
+}
+
+.info_block h4 {
+	font: 15px "Open Sans Semibold";
+	color: #555555;
+}
+
+.info_block img {
+	margin-right: 10px;
+}
+
+.info_block p {
+	font: 13px "Open Sans Semibold";
+	color: #555555;
+	margin: 0;
+}
+
+#map .download {
+	position: relative;
+	z-index: 10;
+	top: 300px;
+}
+
+#history {
+	height: 900px;
+}
+
+#history h1 {
+	color: #95d123;
+}
+
+#history p {
+	color: #000000;
+	font: 18px "Open Sans";
+	margin: 0 65px 30px;
+}
+
+#history .link_block {
+	display: inline-block;
+	height: 65px;
+	width: 821px;
+	background: #e9f7fc;
+	border-radius: 6px;
+	padding: 20px;
+}
+
+.link_block span {
+	color: #95d123;
+	font: 18px "open sans";
+	padding: 0 10px;
+}
+
+.link_block a {
+	color: #00a1de;
+	font: 13px "Open Sans";
+	text-decoration: underline;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 991px) {
