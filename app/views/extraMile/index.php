@@ -5,6 +5,8 @@
 if (!isset($partners)) {
 	$partners = array();
 }
+
+echo View::make('extraMile.modals.registration');
 ?>
 <div id="title" class="text-center">
 	<div class="container text-center">
@@ -221,7 +223,9 @@ if (!isset($partners)) {
 					<div class="registration_button">
 						<?=
 						Form::button('Зарегистрироваться', array(
-							'class' => 'btn btn-info btn_reg'
+							'class'       => 'btn btn-info btn_reg',
+							'data-toggle' => 'modal',
+							'data-target' => '#team_registration',
 						))?>
 					</div>
 				</div>
@@ -320,11 +324,12 @@ if (!isset($partners)) {
 		<a href="/img/history_photo/photo1.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo1.jpg"></a>
 		<a href="/img/history_photo/photo2.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo2.jpg"></a>
 		<a href="/img/history_photo/photo3.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo3.jpg"></a>
-		<a href="/img/history_photo/photo4.jpg" data-lightbox="ExtraMile2013"><img src="/img/leaders_teams/team_without_photo.jpg"></a>
-		<a href="/img/history_photo/photo1.jpg" data-lightbox="ExtraMile2013"><img src="/img/leaders_teams/team_without_photo.jpg"></a>
-		<a href="/img/history_photo/photo2.jpg" data-lightbox="ExtraMile2013"><img src="/img/leaders_teams/team_without_photo.jpg"></a>
-		<a href="/img/history_photo/photo3.jpg" data-lightbox="ExtraMile2013"><img src="/img/leaders_teams/team_without_photo.jpg"></a>
-		<a href="/img/history_photo/photo4.jpg" data-lightbox="ExtraMile2013"><img src="/img/leaders_teams/team_without_photo.jpg"></a>
+		<a href="/img/history_photo/photo1.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo1.jpg"></a>
+		<a href="/img/history_photo/photo2.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo2.jpg"></a>
+		<a href="/img/history_photo/photo3.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo3.jpg"></a>
+		<a href="/img/history_photo/photo1.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo1.jpg"></a>
+		<a href="/img/history_photo/photo2.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo2.jpg"></a>
+		<a href="/img/history_photo/photo3.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo3.jpg"></a>
 	</div>
 </div>
 <div id="partners" class="text-center">
