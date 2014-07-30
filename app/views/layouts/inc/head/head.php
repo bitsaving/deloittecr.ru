@@ -23,6 +23,7 @@
 <link href="js/lightbox/css/lightbox.css" rel="stylesheet" />
 
 <link type="text/css" href="/css/extraMile.css" rel="stylesheet" />
+<link type="text/css" href="/css/extraMileModal.css" rel="stylesheet" />
 <script type="text/javascript" src="/js/extraMile.js"></script>
 
 

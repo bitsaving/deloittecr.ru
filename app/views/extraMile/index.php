@@ -39,10 +39,13 @@ echo View::make('extraMile.modals.registration');
 		<a href="" target="_blank"><img src="/img/title_links/share_lj.png"></a>
 	</div>
 </div>
-<div id="menu" class="text-center">
-	<a href="#fund_raising">Сбор средств</a> <a href="#race_stages">Этапы гонки</a> <a href="#rules_register">Правила и
-		регистрация</a> <a href="#map">Схема проезда</a> <a href="#history">История Extra Mile</a> <a href="#partners">Наши
-		партнеры</a> <img src="/img/menu_line.jpg">
+<div class="big_menu">
+	<div id="menu" class="text-center">
+		<a href="#fund_raising" class="active_menu">Сбор средств</a> <a href="#race_stages">Этапы гонки</a>
+		<a href="#rules_register">Правила и регистрация</a> <a href="#map">Схема проезда</a> <a href="#history">История
+			Extra Mile</a> <a href="#partners">Наши партнеры</a>
+	</div>
+	<img src="/img/menu_line.jpg">
 </div>
 <div id="fund_raising" class="text-center">
 	<div class="container">
@@ -372,16 +375,18 @@ echo View::make('extraMile.modals.registration');
 			людям, как вы.</p>
 	</div>
 </div>
-<div class="title_links">
-	<div class="extra_mile_links">
-		<span>Extra Mile 2014</span> <a href=""><img src="/img/title_links/extra_mile_link_vk.png"></a>
-		<a href=""><img src="/img/title_links/extra_mile_link_fb.png"></a>
-	</div>
-	<div class="share_links pull-right">
-		<span>Рассказать друзьям:</span> <a href=""><img src="/img/title_links/share_vk.png"></a>
-		<a href="" target="_blank"><img src="/img/title_links/share_fb.png"></a>
-		<a href="" target="_blank"><img src="/img/title_links/share_ok.png"></a>
-		<a href="" target="_blank"><img src="/img/title_links/share_tw.png"></a>
-		<a href="" target="_blank"><img src="/img/title_links/share_lj.png"></a>
+<div id="footer">
+	<div class="title_links">
+		<div class="extra_mile_links">
+			<span>Extra Mile 2014</span> <a href=""><img src="/img/title_links/extra_mile_link_vk.png"></a>
+			<a href=""><img src="/img/title_links/extra_mile_link_fb.png"></a>
+		</div>
+		<div class="share_links pull-right">
+			<span>Рассказать друзьям:</span> <a href=""><img src="/img/title_links/share_vk.png"></a>
+			<a href="" target="_blank"><img src="/img/title_links/share_fb.png"></a>
+			<a href="" target="_blank"><img src="/img/title_links/share_ok.png"></a>
+			<a href="" target="_blank"><img src="/img/title_links/share_tw.png"></a>
+			<a href="" target="_blank"><img src="/img/title_links/share_lj.png"></a>
+		</div>
 	</div>
 </div>

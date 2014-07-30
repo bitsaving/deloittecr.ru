@@ -147,7 +147,7 @@ button:focus {
 	border-radius: 9px;
 }
 
-#title_links {
+.title_links {
 	background: url("../img/title/title_links_bg.jpg");
 	height: 78px;
 }
@@ -176,9 +176,22 @@ button:focus {
 	padding-right: 160px;
 }
 
-#menu {
+.big_menu {
 	height: 92px;
 	font-size: 18px;
+	padding-top: 10px;
+}
+
+.menu_fixed {
+	position: fixed;
+	top: 55px;
+	width: 100%;
+	z-index: 1031;
+	background: #ffffff;
+}
+
+.menu_fixed:hover {
+	opacity: 1;
 }
 
 #menu a {
@@ -187,12 +200,20 @@ button:focus {
 	font: 18px "Open Sans Semibold";
 	display: inline-block;
 	line-height: 50px;
-	margin-right: 37px;
-	margin-top: 10px;
+	padding: 0 18px;
+}
+
+#menu .active {
+	background-image: -webkit-linear-gradient(top, #ebebeb 0, #f3f3f3 100%);
+	background-image: linear-gradient(to bottom, #ebebeb 0, #f3f3f3 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff3f3f3', GradientType=0);
+	-webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
 }
 
 #menu a:first-child {
-	margin-left: 37px;
+
 }
 
 #fund_raising {
@@ -436,6 +457,11 @@ p {
 	font: 18px "Open Sans";
 }
 
+.download .btn {
+	padding: 0;
+	margin: 6px 12px;
+}
+
 #rules_register {
 	min-height: 890px;
 }
@@ -632,35 +658,8 @@ p {
 	padding: 0 200px;
 }
 
-#team_registration .modal-content {
-	padding: 0;
-	background: #f4f4f4;
-	width: 714px;
-	min-height: 788px;
-}
-
-#team_registration .modal-content .close {
-	background: none !important;
-	opacity: 1;
-}
-
-#team_registration .window {
-	padding: 0 50px;
-}
-
-#team_registration .window hr {
-	border-color: #d2d4cd;
-}
-
-#team_registration .modal-content h1 {
-	margin-top: 30px;
-	margin-bottom: 20px;
-}
-
-#team_registration .modal-content p {
-	color: #555555;
-	font: 14px "Open Sans";
-
+#footer .title_links {
+	background: #ffffff;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 991px) {
@@ -697,11 +696,11 @@ p {
 		margin-left: 10px;
 	}
 
-	#title_links .share_links {
+	.title_links .share_links {
 		padding-right: 90px;
 	}
 
-	#title_links .extra_mile_links {
+	.title_links .extra_mile_links {
 		padding-left: 90px;
 	}
 
