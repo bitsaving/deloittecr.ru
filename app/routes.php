@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/extramile', array(
-	'as' => 'extramile',
+	'as'   => 'extramile',
 	'uses' => 'App\Controllers\ExtraMileController@index'
 ));
 Route::get('/', function () {
@@ -32,6 +32,9 @@ Route::group(array(
 	));
 	Route::get('/pages/{page}', 'BackendController@page');
 	Route::get('/pages/{page}/{section}', 'BackendController@section');
+	Route::get('/pages/{page}/{section}/newBlock', 'BackendController@newBlock');
+	Route::get('/pages/{page}/{section}/change/{blockId}', 'BackendController@changeBlock');
+	Route::post('/pages/{page}/{section}/change/{blockId}', 'BackendController@postSaveBlock');
 
 	Route::get('/logout', array(
 		'as'   => 'logout',

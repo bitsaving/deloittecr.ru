@@ -17,7 +17,7 @@ class SectionsTableSeeder extends Seeder
 				'created_at'   => DB::raw('NOW()')
 			),
 			array(
-				'section'      => 'title_links',
+				'section'      => 'links',
 				'section_name' => 'Ссылки',
 				'updated_at'   => DB::raw('NOW()'),
 				'created_at'   => DB::raw('NOW()')

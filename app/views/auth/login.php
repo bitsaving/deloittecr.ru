@@ -24,7 +24,7 @@ $errors = Session::get('errors');
 					'placeholder' => 'Имя',
 					'class'       => 'form-control',
 					'id'          => 'inputName',
-					'required'    => 'required',
+					'required'    => true,
 				));
 				?>
 			</div>
@@ -38,7 +38,7 @@ $errors = Session::get('errors');
 					'placeholder' => 'Пароль',
 					'class'       => 'form-control',
 					'id'          => 'inputPassword',
-					'required'    => 'required',
+					'required'    => true,
 				));
 				?>
 			</div>

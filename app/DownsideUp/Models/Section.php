@@ -11,6 +11,7 @@ use Eloquent;
  * @property Block   $blocks
  *
  * @method static Section whereSection()
+ * @method static Section first()
  */
 class Section extends Eloquent
 {

@@ -47,3 +47,8 @@ body {
 	padding: 5px 5px;
 	color: #555555;
 }
+
+#block_zone {
+	opacity: 0;
+	padding-right: 120px;
+}

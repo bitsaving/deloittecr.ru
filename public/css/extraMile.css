@@ -147,16 +147,16 @@ button:focus {
 	border-radius: 9px;
 }
 
-.title_links {
-	background: url("../img/title/title_links_bg.jpg");
+.social_links {
+	background: url("../img/social_links/social_links_bg.jpg");
 	height: 78px;
 }
 
-.title_links img {
+.social_links img {
 	margin-right: 5px;
 }
 
-.title_links .extra_mile_links {
+.social_links .extra_mile_links {
 	display: inline-block;
 	color: #95d123;
 	font-size: 18px;
@@ -164,11 +164,11 @@ button:focus {
 	padding-left: 160px;
 }
 
-.title_links .extra_mile_links span, .title_links .share_links span {
+.social_links .extra_mile_links span, .social_links .share_links span {
 	margin-right: 23px;
 }
 
-.title_links .share_links {
+.social_links .share_links {
 	display: inline-block;
 	color: #002776;
 	font-size: 16px;
@@ -176,7 +176,7 @@ button:focus {
 	padding-right: 160px;
 }
 
-.big_menu {
+#big_menu {
 	height: 92px;
 	font-size: 18px;
 	padding-top: 10px;
@@ -658,7 +658,7 @@ p {
 	padding: 0 200px;
 }
 
-#footer .title_links {
+#footer .social_links {
 	background: #ffffff;
 }
 
@@ -696,11 +696,11 @@ p {
 		margin-left: 10px;
 	}
 
-	.title_links .share_links {
+	.social_links .share_links {
 		padding-right: 90px;
 	}
 
-	.title_links .extra_mile_links {
+	.social_links .extra_mile_links {
 		padding-left: 90px;
 	}
 
