@@ -12,17 +12,20 @@
 		"phpunit/phpunit-mock-objects": "2.3.*@dev",
 		"phpunit/phpunit": "4.3.*@dev",
 		"zizaco/factory-muff": "dev-master",
-		"mockery/mockery": "0.9.*"
+		"mockery/mockery": "0.9.*",
+		"way/generators": "2.*"
 	},
 	"autoload": {
 		"classmap": [
 			"app/commands",
 			"app/controllers",
-			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
-		]
+		],
+		"psr-0": {
+			"DownsideUp": "app/"
+		}
 	},
 	"scripts": {
 		"post-install-cmd": [

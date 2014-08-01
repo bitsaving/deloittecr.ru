@@ -31,33 +31,10 @@ $(document).ready(function () {
 
 	$('#menu a').click(function () {
 		event.preventDefault();
-		var blocks = getElements();
-
-		var team_list = $('#team_list');
-		var i = 2;
-		var height = blocks[0].outerHeight(true) + blocks[1].outerHeight(true) + 40;
-		while ($(this).attr("href") != '#' + blocks[i].attr('id')) {
-			height += blocks[i].outerHeight(true);
-			if (i == 2) {
-				height += team_list.outerHeight(true);
-			}
-			i++;
-		}
-		$('html, body').animate({scrollTop: height}, 'slow');
+		var link = $(this).attr("href").replace('#', '');
+		var height = $('div[id=' + link + ']').offset().top - 70;
+		$('body').animate({scrollTop: height}, 'slow');
 	});
-
-	function getElements() {
-		return {
-			0: $('#title'),
-			1: $('.title_links'),
-			2: $('#fund_raising'),
-			3: $('#race_stages'),
-			4: $('#rules_register'),
-			5: $('#map'),
-			6: $('#history'),
-			7: $('#partners')
-		};
-	}
 
 	function scroll_active() {
 
@@ -67,12 +44,12 @@ $(document).ready(function () {
 
 		/* вычисляем положение якорей на странице от начала страницы  по вертикали*/
 
-		var fund_raising = $('div[id="fund_raising"]').offset().top - 70;
-		var race_stages = $('div[id="race_stages"]').offset().top - 70;
-		var rules_register = $('div[id="rules_register"]').offset().top - 70;
-		var map = $('div[id="map"]').offset().top - 70;
-		var history = $('div[id="history"]').offset().top - 70;
-		var partners = $('div[id="partners"]').offset().top - 70;
+		var fund_raising = $('div[id="fund_raising"]').offset().top - 100;
+		var race_stages = $('div[id="race_stages"]').offset().top - 100;
+		var rules_register = $('div[id="rules_register"]').offset().top - 100;
+		var map = $('div[id="map"]').offset().top - 100;
+		var history = $('div[id="history"]').offset().top - 100;
+		var partners = $('div[id="partners"]').offset().top - 100;
 
 
 		/* Переключатель активного пункта меню в зависимости от положения на странице,
