@@ -1,4 +1,7 @@
 <?php
+if (!isset($partners)) {
+	$partners = array();
+}
 
 ?>
 <div id="partners" class="text-center">

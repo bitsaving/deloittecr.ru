@@ -3,7 +3,6 @@
 namespace DownsideUp\Components;
 
 
-use Config;
 use Validator;
 
 class Validate
@@ -22,9 +21,9 @@ class Validate
 		return $messages;
 	}
 
-	public static function getBlockError($data, $sectionId)
+	public static function getBlockError($data, $sectionId, $blockId)
 	{
-		$validator = Validator::make($data, self::rulesBlock($sectionId), self::getMessages());
+		$validator = Validator::make($data, self::rulesBlock($sectionId, $blockId), self::getMessages());
 		$userMessages = $validator->messages();
 		if ($validator->fails()) {
 			$result['errors'] = array(
@@ -39,12 +38,10 @@ class Validate
 		return null;
 	}
 
-	private static function rulesBlock($sectionId)
+	private static function rulesBlock($sectionId, $blockId)
 	{
 		$rules = [
-			'block'        => 'required|alpha_dash|unique:'
-				. Config::get('database.connections.mysql.database')
-				. ',block,NULL,id,section_id,' . $sectionId,
+			'block' => 'required|alpha_dash|unique:blocks,block,' . $blockId . ',id,section_id,' . $sectionId,
 			'blockName'    => 'required',
 			'blockContent' => 'required',
 		];

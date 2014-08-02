@@ -19,6 +19,9 @@ class Page extends Eloquent
 	protected $table = 'pages';
 	protected $fillable = ['page', 'page_name'];
 
+	/**
+	 * @return Section
+	 */
 	public function sections()
 	{
 		return $this->belongsToMany(Section::class);

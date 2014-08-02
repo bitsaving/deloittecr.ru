@@ -1,15 +1,19 @@
 <?php
-
+/**
+ * @var string $line1
+ * @var string $line2
+ * @var string $funded_amount
+ */
 ?>
 <div id="title" class="text-center">
 	<div class="container text-center">
 		<div class="funded_text ">
-			<div class="line1">Для детей благотворительного фонда</div>
-			<div class="line2">«Даунсайд Ап» вместе мы уже собрали</div>
+			<div class="line1"><?= $line1 ?></div>
+			<div class="line2"><?= $line2 ?></div>
 		</div>
 	</div>
 	<div class="funded_amount">
-		0752300
+		<?= $funded_amount ?>
 	</div>
 	<div>
 		<?=

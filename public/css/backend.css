@@ -39,11 +39,11 @@ body {
 	margin-top: 60px;
 }
 
-.blocks_menu li {
+.vertical_menu li {
 	width: 100%;
 }
 
-.blocks_menu .navbar-nav > li > a {
+.vertical_menu .navbar-nav > li > a {
 	padding: 5px 5px;
 	color: #555555;
 }

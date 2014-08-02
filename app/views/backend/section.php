@@ -21,8 +21,8 @@ $blocks = $oSection->blocks;
 		<div id="block_zone" class="col-sm-8">
 
 		</div>
-		<div class="col-sm-2">
-			<div class="blocks_menu text-center" role="navigation">
+		<div class="col-sm-2" role="navigation">
+			<div class=" navbar-default blocks_menu vertical_menu text-left">
 				<ul class="nav navbar-nav">
 					<li>
 						<?=
@@ -32,9 +32,8 @@ $blocks = $oSection->blocks;
 						))?>
 					</li>
 					<?php foreach ($blocks as $oBlock) : ?>
-						<?php $url = URL::route('pages') . '/' . $page . '/' . $oSection->section . '/' . $oBlock->block ?>
-						<li class="<?= URL::current() == $url ? 'active' : '' ?>">
-							<a href="" data-action="<?= $oBlock->block ?>"><?= $oBlock->block_name ?> </a>
+						<li class="">
+							<a href="" class="get_block" data-id="<?= $oBlock->id ?>"><?= $oBlock->block_name ?> </a>
 						</li>
 					<?php endforeach ?>
 				</ul>

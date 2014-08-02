@@ -15,6 +15,7 @@ class BackendController extends BaseController
 
 	/**
 	 * Отдаёт страницу с навбаром со всеми меню (todo с созданием новой страницы)
+	 *
 	 * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
 	 */
 	public function pages()
@@ -29,6 +30,7 @@ class BackendController extends BaseController
 
 	/**
 	 * Отдаёт страницу со всеми секциями (todo добавлять новую секцию)
+	 *
 	 * @param $page
 	 *
 	 * @return \Illuminate\View\View
@@ -66,13 +68,27 @@ class BackendController extends BaseController
 		return $this->make('block');
 	}
 
+	public function changeBlock($page, $section, $blockId)
+	{
+		$oBlock = Block::find($blockId);
+		if (!$oBlock) {
+			return 'Нет такого блока';
+		}
+
+		return $this->make('block', [
+			'block'        => $oBlock->block,
+			'blockName'    => $oBlock->block_name,
+			'blockContent' => $oBlock->content,
+			'blockId'      => $oBlock->id,
+		]);
+	}
 
 	public function postSaveBlock($page, $section, $blockId)
 	{
 		$data = Input::only('block', 'blockName', 'blockContent');
 		$oSection = $this->getSection($section);
 		$sectionId = $oSection->id;
-		$validator = Validate::getBlockError($data, $sectionId);
+		$validator = Validate::getBlockError($data, $sectionId, (int)$blockId);
 		if ($validator) {
 			return $validator;
 		}

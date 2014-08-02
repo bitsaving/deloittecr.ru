@@ -1,5 +1,7 @@
 <?php namespace App\Controllers;
 
+use DownsideUp\Models\Page;
+
 class ExtraMileController extends BaseController
 {
 
@@ -7,7 +9,9 @@ class ExtraMileController extends BaseController
 
 	public function index()
 	{
-		return $this->make('index');
+		$sections = Page::wherePage('extramile')->first()->sections()->orderBy('id')->get();
+
+		return $this->make('index', ['sections' => $sections]);
 	}
 
-} 
+}

@@ -11,7 +11,7 @@ $page = $oPage->page;
 
 ?>
 
-<div class="blocks_menu text-right navbar-default" role="navigation">
+<div class="sections_menu vertical_menu text-right navbar-default" role="navigation">
 	<ul class="nav navbar-nav">
 		<?php foreach ($sections as $oSection) : ?>
 			<?php $url = URL::route('pages') . '/' . $page . '/' . $oSection->section ?>
