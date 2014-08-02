@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateBlocksTable extends Migration
+class CreatePaymentsTable extends Migration
 {
 
 	/**
@@ -13,12 +13,11 @@ class CreateBlocksTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('blocks', function (Blueprint $table) {
+		Schema::create('payments', function (Blueprint $table) {
 			$table->increments('id');
-			$table->integer('section_id')->unsigned();
-			$table->string('block');
-			$table->string('block_name');
-			$table->text('content');
+			$table->integer('team_id');
+			$table->string('payment');
+			$table->string('amount');
 			$table->timestamps();
 		});
 	}
@@ -31,7 +30,7 @@ class CreateBlocksTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('blocks');
+		Schema::drop('payments');
 	}
 
 }

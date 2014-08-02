@@ -92,4 +92,72 @@ $(document).ready(function () {
 
 	});
 
+	//Загрузка фото
+	$(':file').change(function () {
+		var file = this.files[0];
+		var name = file.name;
+		var size = file.size;
+		var type = file.type;
+
+		if (size > 1024 * 1000 * 2) {
+			$('#inputFile').get(0).files[0] = null;
+			alert('Слишком большой файл');
+		}
+
+		$(this).prev().prev('.file_name').html(name);
+	});
+
+	$('#send_reg_data').click(function () {
+		$('.has-error').removeClass('has-error');
+		var formData = new FormData($('form')[0]);
+		$.ajax({
+			url: '',  //Server script to process data
+			type: 'POST',
+			data: formData,
+			/*xhr: function() {  // Custom XMLHttpRequest
+			 var myXhr = $.ajaxSettings.xhr();
+			 if(myXhr.upload){ // Check if upload property exists
+			 myXhr.upload.addEventListener('progress',progressHandlingFunction, false); // For handling the progress of the upload
+			 }
+			 return myXhr;
+			 },*/
+			//Ajax events
+			/*beforeSend: beforeSendHandler,*/
+			success: function (response) {
+				if (response['errors']) {
+					var obj = response['errors'];
+					for (var prop in obj) {
+						if (obj[prop]) {
+							$('.modal-content input[name=' + prop + ']').parent().addClass('has-error')
+						}
+					}
+					if (response['errors']['file']) {
+						$('.modal-content input[name=file]').parent().css('border-color', '#a94442')
+					} else {
+						$('.modal-content input[name=file]').parent().css('border-color', '#cccccc')
+					}
+					if (response['errors']['textError']) {
+						alert(response['errors']['textError']);
+					}
+					return
+				}
+				$('.modal-content form').html('Регистрация прошла успешно. После модерации Ваша команда появится в списке на сайте.')
+			},
+			error: function () {
+				alert('Ошибка регистрации, попробуйте ещё раз.');
+			},
+			// Form data
+
+			//Options to tell jQuery not to process data or worry about content-type.
+			cache: false,
+			contentType: false,
+			processData: false
+		});
+	});
+	function progressHandlingFunction(e) {
+		if (e.lengthComputable) {
+			$('progress').attr({value: e.loaded, max: e.total});
+		}
+	}
+
 });

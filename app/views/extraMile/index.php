@@ -5,8 +5,6 @@
 
 use DownsideUp\Models\Block;
 
-echo View::make('extraMile.modals.registration');
-
 foreach ($sections as $oSection) {
 	$blocks = $oSection->blocks;
 	$aBlock = [];
@@ -16,7 +14,7 @@ foreach ($sections as $oSection) {
 	foreach ($blocks as $oBlock) {
 		$aBlock[$oBlock->block] = $oBlock->content;
 	}
-	/*	dd($aBlock);*/
+
 	echo View::make('extraMile.' . $oSection->section, $aBlock);
 }
 

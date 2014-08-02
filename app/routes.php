@@ -4,6 +4,8 @@ Route::get('/extramile', array(
 	'as'   => 'extramile',
 	'uses' => 'App\Controllers\ExtraMileController@index'
 ));
+Route::post('/extramile', 'App\Controllers\ExtraMileController@postNewTeam');
+
 Route::get('/', function () {
 	return 'Сайт в разработке';
 });

@@ -1,37 +1,41 @@
 <?php
-
+/**
+ * @var string $first_subtitle
+ * @var string $second_subtitle
+ * @var string $third_subtitle
+ * @var string $first_text
+ * @var string $second_text
+ * @var string $third_text
+ * @var string $text_title
+ */
 ?>
 <div id="race_stages">
 	<div class="container text-center">
 		<h1>Этапы гонки</h1>
 
-		<p>Основным правилом участия в нашем мероприятии является искреннее желание помочь фонду и, конечно же, самим
-			детям!</p>
+		<p><?= $text_title ?></p>
 		<img src="/img/race_stages_img.jpg" class="race_stages_img">
 
 		<div class="row text text-center">
 			<div class="col-xs-4 ">
 				<div class="description text-left">
-					<h3>Велогонка</h3>
+					<h3><?= $first_subtitle ?></h3>
 
-					<p>Для участия в мероприятии каждой команде необходимо подать заявку со списком участников,
-						названием компании, предствителем которой является команда.</p>
+					<p><?= $first_text ?></p>
 				</div>
 			</div>
 			<div class="col-xs-4">
 				<div class="description text-left">
-					<h3>Водный этап</h3>
+					<h3><?= $second_subtitle ?></h3>
 
-					<p>Для участия в мероприятии каждой команде необходимо подать заявку со списком участников,
-						названием компании, предствителем которой является команда.</p>
+					<p><?= $second_text ?></p>
 				</div>
 			</div>
 			<div class="col-xs-4">
 				<div class="description text-left">
-					<h3>Ориентирование</h3>
+					<h3><?= $third_subtitle ?></h3>
 
-					<p>Для участия в мероприятии каждой команде необходимо подать заявку со списком участников,
-						названием компании, предствителем которой является команда.</p>
+					<p><?= $third_text ?></p>
 				</div>
 			</div>
 		</div>

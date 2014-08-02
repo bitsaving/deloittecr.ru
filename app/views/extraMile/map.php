@@ -1,4 +1,10 @@
 <?php
+/**
+ * @var string $first_subtitle
+ * @var string $second_subtitle
+ * @var string $first_text
+ * @var string $second_text
+ */
 
 ?>
 <div id="map" class="text-center">
@@ -9,20 +15,16 @@
 		<div class="row text-center">
 			<div class="col-xs-6">
 				<div class="info_block by_car text-left">
-					<h4><img src="/img/by_car.png"> На машине</h4>
+					<h4><img src="/img/by_car.png"> <?= $first_subtitle ?></h4>
 
-					<p>ул. Академика Королёва, 13 далее по левую сторону от телебашни ФГУП «ГИПРОЦВЕТМЕТ» – здание
-						офисного типа с вывесками «Юниаструмбанк», «Hyundai», ресторан «Персона грата». Запарковать авто
-						в удобном для Вас месте (на Аргуновской ул. это сделать проблематично).</p>
+					<p><?= $first_text ?></p>
 				</div>
 			</div>
 			<div class="col-xs-6">
 				<div class="info_block by_public_transport text-left">
-					<h4><img src="/img/by_public_transport.png"> Общественным транспортом</h4>
+					<h4><img src="/img/by_public_transport.png"> <?= $second_subtitle ?></h4>
 
-					<p>ул. Академика Королёва, 13 далее по левую сторону от телебашни ФГУП «ГИПРОЦВЕТМЕТ» – здание
-						офисного типа с вывесками «Юниаструмбанк», «Hyundai», ресторан «Персона грата». Запарковать авто
-						в удобном для Вас месте (на Аргуновской ул. это сделать проблематично).</p>
+					<p><?= $second_text ?></p>
 				</div>
 			</div>
 		</div>

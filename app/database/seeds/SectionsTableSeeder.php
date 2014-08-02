@@ -82,7 +82,12 @@ class SectionsTableSeeder extends Seeder
 				'updated_at'   => DB::raw('NOW()'),
 				'created_at'   => DB::raw('NOW()')
 			),
-
+			array(
+				'section'      => 'registration',
+				'section_name' => 'Форма регистрации',
+				'updated_at'   => DB::raw('NOW()'),
+				'created_at'   => DB::raw('NOW()')
+			),
 		);
 
 		DB::table('sections')->insert($roles);

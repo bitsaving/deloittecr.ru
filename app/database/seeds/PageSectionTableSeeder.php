@@ -22,6 +22,7 @@ class PageSectionTableSeeder extends Seeder
 			array('page_id' => 1, 'section_id' => 10),
 			array('page_id' => 1, 'section_id' => 11),
 			array('page_id' => 1, 'section_id' => 12),
+			array('page_id' => 1, 'section_id' => 13),
 		);
 
 		DB::table('page_section')->insert($role_user);

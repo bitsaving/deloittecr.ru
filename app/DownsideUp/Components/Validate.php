@@ -41,9 +41,62 @@ class Validate
 	private static function rulesBlock($sectionId, $blockId)
 	{
 		$rules = [
-			'block' => 'required|alpha_dash|unique:blocks,block,' . $blockId . ',id,section_id,' . $sectionId,
+			'block'        => 'required|alpha_dash|unique:blocks,block,' . $blockId . ',id,section_id,' . $sectionId,
 			'blockName'    => 'required',
-			'blockContent' => 'required',
+			'blockContent' => '',
+		];
+
+		return $rules;
+	}
+
+	public static function getTeamRegError($data)
+	{
+		$validator = Validator::make($data, self::rulesReg(), self::getMessages());
+		$userMessages = $validator->messages();
+		if ($validator->fails()) {
+			$result['errors'] = array(
+				'company'       => $userMessages->first('company'),
+				'phone'         => $userMessages->first('phone'),
+				'contactPerson' => $userMessages->first('contactPerson'),
+				'email'         => $userMessages->first('email'),
+				'captainName'   => $userMessages->first('captainName'),
+				'teamName'      => $userMessages->first('teamName'),
+				'crewman1'      => $userMessages->first('crewman1'),
+				'crewman2'      => $userMessages->first('crewman2'),
+				'crewman3'      => $userMessages->first('crewman3'),
+				'crewman4'      => $userMessages->first('crewman4'),
+				'crewman5'      => $userMessages->first('crewman5'),
+				'crewman6'      => $userMessages->first('crewman6'),
+				'aboutTeam'     => $userMessages->first('aboutTeam'),
+				'file'          => $userMessages->first('file'),
+			);
+			if ($userMessages->first('email') == 'В этой секции такой блок уже есть') {
+				$result['errors']['textError'] = 'Такой email уже зарегистрирован';
+			}
+
+			return $result;
+		}
+
+		return null;
+	}
+
+	private static function rulesReg()
+	{
+		$rules = [
+			'company'       => 'required',
+			'phone'         => 'required',
+			'contactPerson' => 'required',
+			'email'         => 'required|email|unique:teams,email',
+			'captainName'   => 'required',
+			'teamName'      => 'required',
+			'crewman1'      => 'required',
+			'crewman2'      => 'required',
+			'crewman3'      => 'required',
+			'crewman4'      => 'required',
+			'crewman5'      => '',
+			'crewman6'      => '',
+			'aboutTeam'     => '',
+			'file'          => 'required|image|mimes:jpeg,bmp,png',
 		];
 
 		return $rules;

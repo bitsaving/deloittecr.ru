@@ -1,14 +1,14 @@
 <?php
+/**
+ * @var string $text_title
+ */
 
 ?>
 <div id="fund_raising" class="text-center">
 	<div class="container">
 		<h1>Сбор средств</h1>
 
-		<p>
-			Денежные средства для благотворительного фонда собираются не только участниками мероприятия и организациями,
-			но и просто небезразличными людьми ― вы также можете присоединиться к ним и помочь детям! Только команды уже
-			собрали 560 тысяч рублей! </p>
+		<p><?= $text_title ?> </p>
 
 		<div class="leaders_team row">
 			<div class="second_team col-xs-4 text-center">

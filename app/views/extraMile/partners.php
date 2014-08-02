@@ -2,7 +2,11 @@
 if (!isset($partners)) {
 	$partners = array();
 }
-
+/**
+ * @var string $subtitle
+ * @var string $text_opportunity
+ * @var string $email_address
+ */
 ?>
 <div id="partners" class="text-center">
 	<div class="container">
@@ -27,11 +31,12 @@ if (!isset($partners)) {
 			</div>
 		</div>
 		<div class="partners_capabilities">
-			<h4>Возможности для партнерства</h4>
+			<h4><?= $subtitle ?></h4>
 
-			<p>Партнеры, присоединившиеся на раннем этапе, смогут принять участие в планировании мероприятия. Если у вас
-				есть предложение о партнерстве, пожалуйста, напишите нам. Дополнительную информацию о мероприятии можно
-				получить по электронной почте: <span>extramile@deloitte.ru</span></p>
+			<p>
+				<?= $text_opportunity ?>
+				<a href="mailto:extramile@deloitte.ru?subject=Вопрос о партнёрстве"><?= $email_address ?></a>
+			</p>
 		</div>
 	</div>
 </div>
