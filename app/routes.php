@@ -4,10 +4,21 @@ Route::get('/extramile', array(
 	'as'   => 'extramile',
 	'uses' => 'App\Controllers\ExtraMileController@index'
 ));
-Route::post('/extramile', 'App\Controllers\ExtraMileController@postNewTeam');
+Route::post('/extramile', [
+	'as'   => 'extramilePost',
+	'uses' => 'App\Controllers\ExtraMileController@postNewTeam'
+]);
+Route::post('/backend/pages/extramile/components/editTeam', [
+	'as'   => 'postEditTeam',
+	'uses' => 'App\Controllers\BackendController@postEditTeam'
+]);
+Route::post('/backend/pages/extramile/components/changeActive', [
+	'as'   => 'postChangeActive',
+	'uses' => 'App\Controllers\BackendController@postChangeActive'
+]);
 
 Route::get('/', function () {
-	return 'Сайт в разработке';
+	return Redirect::action('extramile');
 });
 
 Route::get('/login', array(
@@ -32,18 +43,26 @@ Route::group(array(
 		'as'   => 'pages',
 		'uses' => 'BackendController@pages'
 	));
-	Route::get('/pages/{page}', 'BackendController@page');
-	Route::get('/pages/{page}/{section}', 'BackendController@section');
-	Route::get('/pages/{page}/{section}/newBlock', 'BackendController@newBlock');
-	Route::get('/pages/{page}/{section}/change/{blockId}', 'BackendController@changeBlock');
-	Route::post('/pages/{page}/{section}/change/{blockId}', 'BackendController@postSaveBlock');
-
-	Route::get('/logout', array(
-		'as'   => 'logout',
-		'uses' => 'AuthController@logout'
-	));
 	Route::get('/newPage', array(
 		'as'   => 'newPage',
 		'uses' => 'BackendController@newPage'
 	));
+	Route::get('/pages/{page}', 'BackendController@page');
+	Route::get('/pages/{page}/sections', 'BackendController@sections');
+	Route::get('/pages/{page}/sections/{section}', 'BackendController@section');
+	Route::get('/pages/{page}/sections/{section}/newBlock', 'BackendController@newBlock');
+	Route::get('/pages/{page}/sections/{section}/change/{blockId}', 'BackendController@changeBlock');
+	Route::post('/pages/{page}/sections/{section}/change/{blockId}', 'BackendController@postSaveBlock');
+	Route::get('/pages/{page}/components/{component}', 'BackendController@component');
+
+
+	Route::get('/newPage', array(
+		'as'   => 'newPage',
+		'uses' => 'BackendController@newPage'
+	));
+	Route::get('/logout', array(
+		'as'   => 'logout',
+		'uses' => 'AuthController@logout'
+	));
+
 });

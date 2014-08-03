@@ -51,7 +51,7 @@ class Validate
 
 	public static function getTeamRegError($data)
 	{
-		$validator = Validator::make($data, self::rulesReg(), self::getMessages());
+		$validator = Validator::make($data, self::rulesRegTeam(), self::getMessages());
 		$userMessages = $validator->messages();
 		if ($validator->fails()) {
 			$result['errors'] = array(
@@ -73,6 +73,9 @@ class Validate
 			if ($userMessages->first('email') == 'В этой секции такой блок уже есть') {
 				$result['errors']['textError'] = 'Такой email уже зарегистрирован';
 			}
+			if ($userMessages->first('email') == 'В этой секции такой блок уже есть') {
+				$result['errors']['textError'] = 'Такое название команды уже есть';
+			}
 
 			return $result;
 		}
@@ -80,7 +83,7 @@ class Validate
 		return null;
 	}
 
-	private static function rulesReg()
+	private static function rulesRegTeam()
 	{
 		$rules = [
 			'company'       => 'required',
@@ -88,7 +91,7 @@ class Validate
 			'contactPerson' => 'required',
 			'email'         => 'required|email|unique:teams,email',
 			'captainName'   => 'required',
-			'teamName'      => 'required',
+			'teamName'      => 'required|unique:teams,teamName',
 			'crewman1'      => 'required',
 			'crewman2'      => 'required',
 			'crewman3'      => 'required',
@@ -97,6 +100,40 @@ class Validate
 			'crewman6'      => '',
 			'aboutTeam'     => '',
 			'file'          => 'required|image|mimes:jpeg,bmp,png',
+		];
+
+		return $rules;
+	}
+
+	public static function getTeamEditError($data, $teamId)
+	{
+		$validator = Validator::make($data, self::rulesEditTeam($teamId), self::getMessages());
+		$userMessages = $validator->messages();
+		if ($validator->fails()) {
+			$result['errors'] = array(
+				'email'    => $userMessages->first('email'),
+				'teamName' => $userMessages->first('teamName'),
+				'file'     => $userMessages->first('file'),
+			);
+			if ($userMessages->first('email') == 'В этой секции такой блок уже есть') {
+				$result['errors']['textError'] = 'Такой email уже зарегистрирован';
+			}
+			if ($userMessages->first('email') == 'В этой секции такой блок уже есть') {
+				$result['errors']['textError'] = 'Такое название команды уже есть';
+			}
+
+			return $result;
+		}
+
+		return null;
+	}
+
+	private static function rulesEditTeam($teamId)
+	{
+		$rules = [
+			'email'    => 'email|unique:teams,email,' . $teamId,
+			'teamName' => 'required|unique:teams,teamName,' . $teamId,
+			'file'     => 'image|mimes:jpeg,bmp,png',
 		];
 
 		return $rules;

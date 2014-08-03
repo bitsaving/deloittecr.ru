@@ -4,7 +4,9 @@ use DownsideUp\Components\Validate;
 use DownsideUp\Models\Block;
 use DownsideUp\Models\Page;
 use DownsideUp\Models\Section;
+use DownsideUp\Models\Team;
 use Input;
+use Log;
 use Redirect;
 use URL;
 
@@ -43,6 +45,20 @@ class BackendController extends BaseController
 	}
 
 	/**
+	 * Отдаёт страницу со всеми секциями (todo добавлять новую секцию)
+	 *
+	 * @param $page
+	 *
+	 * @return \Illuminate\View\View
+	 */
+	public function sections($page)
+	{
+		$oPage = $this->getPage($page);
+
+		return $this->make('sections', ['oPage' => $oPage]);
+	}
+
+	/**
 	 * Отдаёт страничку для создания нового блока
 	 *
 	 * @param $page
@@ -68,7 +84,8 @@ class BackendController extends BaseController
 		return $this->make('block');
 	}
 
-	public function changeBlock($page, $section, $blockId)
+	public function changeBlock(
+		$page, $section, $blockId)
 	{
 		$oBlock = Block::find($blockId);
 		if (!$oBlock) {
@@ -112,11 +129,85 @@ class BackendController extends BaseController
 	 */
 	private function getPage($page)
 	{
-		return Page::wherePage($page)->first();
+		return Page::wherePage($page)->with('sections')->first();
 	}
 
 	private function getSection($section)
 	{
 		return Section::whereSection($section)->first();
+	}
+
+	/**
+	 * Вызов функции по компоненту
+	 *
+	 * @param $page
+	 * @param $component
+	 *
+	 * @return mixed
+	 */
+	public function component($page, $component)
+	{
+		return $this->$component($page, $component);
+	}
+
+	public function teams($page, $component)
+	{
+		$teams = Page::wherePage($page)
+			->first()
+			->components()
+			->whereComponent($component)
+			->first()
+			->teams()
+			->paginate(12);
+
+		return $this->make('teams', ['teams' => $teams]);
+	}
+
+	public function postEditTeam()
+	{
+		$data = Input::all();
+		Log::info('Получены дынные для правки команды:', $data);
+
+		$validator = Validate::getTeamEditError($data, $data['id']);
+		if ($validator) {
+			Log::info('Ошибки в данных:', $validator);
+
+			return $validator;
+		}
+		$data['photo'] = null;
+		if (Input::hasFile('file')) {
+			$file = Input::file('file');
+			$destinationPath = 'photo/teams/';
+			$fileName = $file->getFilename() . '.' . $file->getClientOriginalExtension();
+			$data['photo'] = '/' . $destinationPath . $fileName;
+			$file->move($destinationPath, $fileName);
+			Log::info("Файл $fileName перемещён в ", ['path' => $destinationPath]);
+		}
+		$data['component_id'] = Page::wherePage('extramile')
+			->first()
+			->components()
+			->whereComponent('teams')
+			->first()
+			->id;
+		$team = Team::find($data['id']);
+		$team->editTeam($data);
+
+		return ['success' => 'Данные изменены'];
+	}
+
+	public function postChangeActive()
+	{
+		$data = Input::all();
+		Log::info('Данные для модерации команды:', $data);
+		$team = Team::find($data['id']);
+		Log::info('Найдена команда:', array('team' => $team->id));
+		if (!$team) {
+			return ['error' => 'Какая-то ошибка, попробуйте ещё раз'];
+		}
+		$val = $data['val'] === 'true' ? true : false;
+		$team->active = $val;
+		$team->save();
+
+		return ['success' => 'Изменено'];
 	}
 } 

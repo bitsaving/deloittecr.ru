@@ -1,5 +1,6 @@
 $(document).ready(function () {
 	$('#btn_new_block').click(function () {
+		$('.blocks_menu li').removeClass('active');
 		var url = location.href + '/newBlock';
 		getBlock(url);
 	});

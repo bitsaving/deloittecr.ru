@@ -97,7 +97,6 @@ $(document).ready(function () {
 		var file = this.files[0];
 		var name = file.name;
 		var size = file.size;
-		var type = file.type;
 
 		if (size > 1024 * 1000 * 2) {
 			$('#inputFile').get(0).files[0] = null;
@@ -110,20 +109,15 @@ $(document).ready(function () {
 	$('#send_reg_data').click(function () {
 		$('.has-error').removeClass('has-error');
 		var formData = new FormData($('form')[0]);
+		$('button').attr('disabled', true);
 		$.ajax({
 			url: '',  //Server script to process data
 			type: 'POST',
 			data: formData,
-			/*xhr: function() {  // Custom XMLHttpRequest
-			 var myXhr = $.ajaxSettings.xhr();
-			 if(myXhr.upload){ // Check if upload property exists
-			 myXhr.upload.addEventListener('progress',progressHandlingFunction, false); // For handling the progress of the upload
-			 }
-			 return myXhr;
-			 },*/
 			//Ajax events
 			/*beforeSend: beforeSendHandler,*/
 			success: function (response) {
+				$('button').attr('disabled', false);
 				if (response['errors']) {
 					var obj = response['errors'];
 					for (var prop in obj) {
@@ -139,12 +133,14 @@ $(document).ready(function () {
 					if (response['errors']['textError']) {
 						alert(response['errors']['textError']);
 					}
+
 					return
 				}
-				$('.modal-content form').html('Регистрация прошла успешно. После модерации Ваша команда появится в списке на сайте.')
+				$('.modal-content form').html(response['success'])
 			},
 			error: function () {
 				alert('Ошибка регистрации, попробуйте ещё раз.');
+				$('button').attr('disabled', false);
 			},
 			// Form data
 
@@ -154,10 +150,5 @@ $(document).ready(function () {
 			processData: false
 		});
 	});
-	function progressHandlingFunction(e) {
-		if (e.lengthComputable) {
-			$('progress').attr({value: e.loaded, max: e.total});
-		}
-	}
 
 });

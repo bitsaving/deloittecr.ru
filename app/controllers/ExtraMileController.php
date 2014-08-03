@@ -14,31 +14,53 @@ class ExtraMileController extends BaseController
 	public function index()
 	{
 		$sections = Page::wherePage('extramile')->first()->sections()->orderBy('id')->get();
+		$teams = $this->sortTeam('amount');
 
-		return $this->make('index', ['sections' => $sections]);
+		return $this->make('index', ['sections' => $sections, 'teams' => $teams]);
 	}
 
 	public function postNewTeam()
 	{
 		$data = Input::all();
-		Log::info('Получены дынные:', $data);
+		Log::info('Получены дынные на новую команду:', $data);
 
 		$validator = Validate::getTeamRegError($data);
 		if ($validator) {
+			Log::info('Ошибки в данных:', $validator);
+
 			return $validator;
 		}
 		$file = Input::file('file');
-		$isFile = Input::hasFile('file');
-		Log::info('Есть файл? - ', ['isFile' => $isFile]);
 		$destinationPath = 'photo/teams/';
 		$fileName = $file->getFilename() . '.' . $file->getClientOriginalExtension();
-		$data['photo'] = $destinationPath . $fileName;
+		$data['photo'] = '/' . $destinationPath . $fileName;
 		$file->move($destinationPath, $fileName);
-		Log::info('Файл перемещён в ', ['path' => $destinationPath]);
+		Log::info("Файл $fileName перемещён в ", ['path' => $destinationPath]);
+		$data['component_id'] = Page::wherePage('extramile')
+			->first()
+			->components()
+			->whereComponent('teams')
+			->first()
+			->id;
 		$team = new Team();
-		$team->saveData($data);
+		$team->saveNewTeam($data);
 
-		return 'ok';
+		return ['success' => 'Регистрация прошла успешно. После модерации Ваша команда появится в списке на сайте.'];
+	}
+
+	public function sortTeam($arg)
+	{
+		$teams = Page::wherePage('extramile')
+			->first()
+			->components()
+			->whereComponent('teams')
+			->first()
+			->teams()
+			->orderBy($arg)
+			->get()
+			->all();
+
+		return $teams;
 	}
 
 }

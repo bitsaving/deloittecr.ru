@@ -1,6 +1,7 @@
 <?php
 /**
- * @var $partners array
+ * @var array $sections
+ * @var array $teams
  */
 
 use DownsideUp\Models\Block;
@@ -15,7 +16,7 @@ foreach ($sections as $oSection) {
 		$aBlock[$oBlock->block] = $oBlock->content;
 	}
 
-	echo View::make('extraMile.' . $oSection->section, $aBlock);
+	echo View::make('extraMile.' . $oSection->section, $aBlock)->with(['teams' => $teams]);
 }
 
 

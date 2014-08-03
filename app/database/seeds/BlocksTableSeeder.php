@@ -7,9 +7,6 @@ class BlocksTableSeeder extends Seeder
 	{
 
 
-		$roles = array();
-
-
 	}
 
 }
