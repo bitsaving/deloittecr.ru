@@ -15,4 +15,5 @@ class Helper
 	{
 		return Page::get()->all();
 	}
+
 } 

@@ -8,6 +8,10 @@ Route::post('/extramile', [
 	'as'   => 'extramilePost',
 	'uses' => 'App\Controllers\ExtraMileController@postNewTeam'
 ]);
+Route::get('/extramile/sortTeam', [
+	'as'   => 'extramileSortTeam',
+	'uses' => 'App\Controllers\ExtraMileController@sortTeam'
+]);
 Route::post('/backend/pages/extramile/components/editTeam', [
 	'as'   => 'postEditTeam',
 	'uses' => 'App\Controllers\BackendController@postEditTeam'

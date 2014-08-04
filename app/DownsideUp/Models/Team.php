@@ -28,6 +28,7 @@ use Eloquent;
  *
  * @method Team find() static
  * @method Team links() static
+ * @method Team whereActive() static
  */
 class Team extends Eloquent
 {

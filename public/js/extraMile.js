@@ -151,4 +151,23 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.sorting').click(function () {
+		if ($(this).hasClass('sort_active')) {
+			return
+		}
+
+		var sort = $(this).data('action');
+
+		$('.sort_active').removeClass('sort_active');
+		$(this).addClass('sort_active');
+		$.get('/extramile/sortTeam', {sort: sort}, function (data) {
+			var carousel = $('.carousel-inner');
+			carousel.animate({opacity: 0}, 'slow', function () {
+				carousel.html(data)
+			});
+			carousel.animate({opacity: 1}, 'slow');
+		});
+
+
+	});
 });

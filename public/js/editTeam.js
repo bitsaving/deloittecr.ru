@@ -36,7 +36,6 @@ $(document).ready(function () {
 					alert(data['error']);
 					location.reload()
 				}
-				alert(data['success']);
 			}).error(function () {
 				$('body').css('cursor', 'default');
 				$('button').attr('disabled', false);

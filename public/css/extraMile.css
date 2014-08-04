@@ -247,6 +247,17 @@ p {
 	font: 22px "Open Sans Bold";
 }
 
+.leader_card .photo {
+	width: 232px;
+	height: 145px;
+	overflow: hidden;
+}
+
+.leader_card .photo img {
+	height: 100%;
+
+}
+
 .leader_card {
 	padding: 5px 25px 0;
 }
@@ -284,6 +295,14 @@ p {
 	margin-bottom: 16px;
 }
 
+.leaders_team .team_amount {
+	position: absolute;
+	bottom: 123px;
+	left: 67px;
+	color: #ffffff;
+	font: 18px "Open Sans Semibold";
+}
+
 .leaders_team .first_team .btn_support_team {
 	margin-top: 73px;
 }
@@ -292,6 +311,15 @@ p {
 	background: #92d400;
 	font: 18px "Open Sans Semibold";
 	line-height: 31px;
+}
+
+.team_card_small .team_amount {
+	position: absolute;
+	font: 18px "Open Sans Semibold";
+	line-height: 31px;
+	color: #ffffff;
+	bottom: 17px;
+	left: 40px;
 }
 
 .leaders_team .progress {
@@ -328,6 +356,7 @@ p {
 	font-size: 20px;
 	color: #00a1de;
 	border-bottom: 3px dotted #00a1de;
+	cursor: pointer;
 }
 
 #team_list .sort_active {

@@ -3,6 +3,7 @@
 use DownsideUp\Components\Validate;
 use DownsideUp\Models\Page;
 use DownsideUp\Models\Team;
+use DownsideUp\Widget\ExtraMileWidget;
 use Input;
 use Log;
 
@@ -14,7 +15,7 @@ class ExtraMileController extends BaseController
 	public function index()
 	{
 		$sections = Page::wherePage('extramile')->first()->sections()->orderBy('id')->get();
-		$teams = $this->sortTeam('amount');
+		$teams = ExtraMileWidget::sortTeam('amount');
 
 		return $this->make('index', ['sections' => $sections, 'teams' => $teams]);
 	}
@@ -48,19 +49,10 @@ class ExtraMileController extends BaseController
 		return ['success' => 'Регистрация прошла успешно. После модерации Ваша команда появится в списке на сайте.'];
 	}
 
-	public function sortTeam($arg)
+	public function sortTeam()
 	{
-		$teams = Page::wherePage('extramile')
-			->first()
-			->components()
-			->whereComponent('teams')
-			->first()
-			->teams()
-			->orderBy($arg)
-			->get()
-			->all();
+		$sort = Input::get('sort');
 
-		return $teams;
+		return ExtraMileWidget::getTeamsForCarousel($sort);
 	}
-
 }

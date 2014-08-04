@@ -1,25 +1,26 @@
 <?php
 /**
- * @var Team $team
+ * @var Team    $team
+ * @var integer $maxAmount
  */
 use DownsideUp\Models\Team;
 
-if (empty($content)) {
-	$content = '';
-}
 ?>
 <div class="col-md-4 col-xs-6">
 	<div class="team_card_small">
 		<div class="row">
 			<div class="col-xs-8">
 				<div class="name text-left">
-					<?= $team ?>
+					<?= $team->teamName ?>
 				</div>
 				<div class="progress">
-					<div class="progress-bar progress-bar-success" role="progressbar" style="width: 80%">
+					<span class="team_amount"><?= number_format($team->amount, 0, '.', ' ') ?></span>
+
+					<div class="progress-bar progress-bar-success" role="progressbar" style="width: <?= $team->amount / $maxAmount * 100 ?>%">
 						<span><img src="/img/teams_table/team_cell_rub.png" alt="" /></span>
-						<span class="">50 000</span>
+
 					</div>
+
 				</div>
 			</div>
 			<div class="col-xs-4">
