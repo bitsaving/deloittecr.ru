@@ -10,6 +10,7 @@ use Eloquent;
  * @property string  $content
  * @property string  $updated_at
  * @property string  $created_at
+ * @property Image   $images
  *
  * @method static Block find()
  */
@@ -22,6 +23,11 @@ class Block extends Eloquent
 	public function section()
 	{
 		return $this->belongsTo(Section::class);
+	}
+
+	public function images()
+	{
+		return $this->hasMany(Image::class);
 	}
 
 	public function saveBlock($data, $sectionId)

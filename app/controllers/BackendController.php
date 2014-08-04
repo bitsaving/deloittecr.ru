@@ -2,6 +2,7 @@
 
 use DownsideUp\Components\Validate;
 use DownsideUp\Models\Block;
+use DownsideUp\Models\Image;
 use DownsideUp\Models\Page;
 use DownsideUp\Models\Section;
 use DownsideUp\Models\Team;
@@ -77,15 +78,22 @@ class BackendController extends BaseController
 	/**
 	 * Отдаёт аяксу страничку для создания нового блока
 	 *
+	 * @param $page
+	 * @param $section
+	 *
 	 * @return \Illuminate\View\View
 	 */
-	public function newBlock()
+	public function newBlock($page, $section)
 	{
-		return $this->make('block');
+		return $this->make('block', [
+			'page'    => $page,
+			'section' => $section,
+			'blockId' => 'newBlock',
+			'images'  => [],
+		]);
 	}
 
-	public function changeBlock(
-		$page, $section, $blockId)
+	public function changeBlock($page, $section, $blockId)
 	{
 		$oBlock = Block::find($blockId);
 		if (!$oBlock) {
@@ -97,15 +105,21 @@ class BackendController extends BaseController
 			'blockName'    => $oBlock->block_name,
 			'blockContent' => $oBlock->content,
 			'blockId'      => $oBlock->id,
+			'images'  => $oBlock->images,
+			'page'    => $page,
+			'section' => $section,
 		]);
 	}
 
 	public function postSaveBlock($page, $section, $blockId)
 	{
-		$data = Input::only('block', 'blockName', 'blockContent');
+
+		$data = Input::all();
+		Log::info('Данные для блока:', $data);
 		$oSection = $this->getSection($section);
 		$sectionId = $oSection->id;
 		$validator = Validate::getBlockError($data, $sectionId, (int)$blockId);
+
 		if ($validator) {
 			return $validator;
 		}
@@ -116,6 +130,19 @@ class BackendController extends BaseController
 		}
 
 		$oBlock->saveBlock($data, $sectionId);
+		if (Input::hasFile('image')) {
+			$file = Input::file('image');
+			$fileName = $file->getFilename() . '.' . $file->getClientOriginalExtension();
+			$destinationPath = 'images/' . $section . '/';
+			$data['image'] = '/' . $destinationPath . $fileName;
+			$file->move($destinationPath, $fileName);
+			$data['blockId'] = $oBlock->id;
+			Log::info('Данные для сохранения файла', $data);
+
+			$image = new Image();
+			$image->saveImage($data);
+
+		}
 		$message = 'Сохранено';
 
 		return $message;
@@ -210,5 +237,30 @@ class BackendController extends BaseController
 		$team->save();
 
 		return ['success' => 'Изменено'];
+	}
+
+	public function postImageData()
+	{
+		$data = Input::all();
+		$image = Image::find($data['image_id']);
+		if (!$image) {
+			return ['error' => 'Неизвестная ошибка, перезагрузите страницу.'];
+		}
+		$image->content = $data['val'];
+		$image->save();
+
+		return 'Сохранено';
+	}
+
+	public function deleteImage()
+	{
+		$data = Input::all();
+		$image = Image::find($data['image_id']);
+		if (!$image) {
+			return 'Неизвестная ошибка, изображение не удалено, перезагрузите страницу.';
+		}
+		$image->delete();
+
+		return 'Удалено';
 	}
 } 

@@ -58,6 +58,8 @@ Route::group(array(
 	Route::get('/pages/{page}/sections/{section}/change/{blockId}', 'BackendController@changeBlock');
 	Route::post('/pages/{page}/sections/{section}/change/{blockId}', 'BackendController@postSaveBlock');
 	Route::get('/pages/{page}/components/{component}', 'BackendController@component');
+	Route::post('/pages/{page}/sections/{section}/change/{blockId}/image', 'BackendController@postImageData');
+	Route::delete('/pages/{page}/sections/{section}/change/{blockId}/image', 'BackendController@deleteImage');
 
 
 	Route::get('/newPage', array(
