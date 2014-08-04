@@ -14,6 +14,9 @@ foreach ($sections as $oSection) {
 	 */
 	foreach ($blocks as $oBlock) {
 		$aBlock[$oBlock->block] = $oBlock->content;
+		if ($images = $oBlock->images()->get()->all()) {
+			$aBlock[$oBlock->block] = $images;
+		}
 	}
 
 	echo View::make('extraMile.' . $oSection->section, $aBlock)->with(['teams' => $teams]);

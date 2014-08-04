@@ -232,7 +232,7 @@ Form::open(array(
 	</div>
 	<div class="form-group col-sm-6">
 		<div class="field text-center download_photo">
-			<img class="img_photo" src="">
+			<img class="img_photo img-rounded" src="">
 
 			<?=
 			Form::button('Изменить фото', array(
@@ -247,7 +247,7 @@ Form::open(array(
 <div class="send_reg">
 	<?=
 	Form::button('Сохранить', array(
-		'id' => 'send_edit_data',
+		'id'    => 'send_edit_data',
 		'class' => 'btn btn-info btn_registration',
 	)); ?>
 </div>

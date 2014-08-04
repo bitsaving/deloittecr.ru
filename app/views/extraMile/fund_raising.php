@@ -11,6 +11,9 @@ if ($teams == null) {
 	return;
 }
 $maxAmount = ExtraMileWidget::getMaxAmount();
+if ($maxAmount <= 0) {
+	$maxAmount = 100;
+}
 
 
 ?>
@@ -18,8 +21,10 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 	<div class="container">
 		<h1>Сбор средств</h1>
 		<?php if (count($teams) < 3) {
+			echo '</div></div>';
+
 			return;
-		} ?>
+		}?>
 		<p><?= $text_title ?> </p>
 
 		<div class="leaders_team row">

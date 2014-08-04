@@ -3,6 +3,10 @@
  * @var string $first_paragraph
  * @var string $second_paragraph
  */
+if (!isset($carousel)) {
+	$carousel = [];
+}
+
 ?>
 <div id="history" class="text-center">
 	<div class="container text-center">
@@ -18,14 +22,9 @@
 		</div>
 	</div>
 	<div id="photo_carousel">
-		<a href="/img/history_photo/photo1.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo1.jpg"></a>
-		<a href="/img/history_photo/photo2.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo2.jpg"></a>
-		<a href="/img/history_photo/photo3.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo3.jpg"></a>
-		<a href="/img/history_photo/photo1.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo1.jpg"></a>
-		<a href="/img/history_photo/photo2.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo2.jpg"></a>
-		<a href="/img/history_photo/photo3.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo3.jpg"></a>
-		<a href="/img/history_photo/photo1.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo1.jpg"></a>
-		<a href="/img/history_photo/photo2.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo2.jpg"></a>
-		<a href="/img/history_photo/photo3.jpg" data-lightbox="ExtraMile2013"><img src="/img/history_photo/photo3.jpg"></a>
+		<?php foreach ($carousel as $photo) : ?>
+			<a href="<?= $photo->image ?>" data-lightbox="ExtraMile2013"><img src="<?= $photo->image ?>"></a>
+		<?php endforeach ?>
+
 	</div>
 </div>

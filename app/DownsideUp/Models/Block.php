@@ -25,6 +25,9 @@ class Block extends Eloquent
 		return $this->belongsTo(Section::class);
 	}
 
+	/**
+	 * @return Image
+	 */
 	public function images()
 	{
 		return $this->hasMany(Image::class);
