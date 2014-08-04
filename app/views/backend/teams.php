@@ -6,7 +6,14 @@
 use DownsideUp\Models\Team;
 
 echo View::make('backend.inc.editTeamModal');
+echo View::make('backend.inc.newTeamModal');
 ?>
+<?=
+Form::button('Новая команда', array(
+	'class'       => 'btn btn-sm btn-info btnNewTeam',
+	'data-toggle' => 'modal',
+	'data-target' => '#team_new',
+)) ?>
 	<table class="table table-striped table-hover" id="teamsTable">
 		<tr>
 			<td><b>ID</b></td>

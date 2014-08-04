@@ -1,17 +1,17 @@
 <?php
 /**
- *
+ * @var string $text_registration
  */
 ?>
-<script type="text/javascript" src="/js/editTeam.js"></script>
-<div class="modal fade team_data" id="team_edit" role="dialog" aria-labelledby="team_edit" aria-hidden="true">
+<div class="modal fade team_data" id="team_new" role="dialog" aria-labelledby="registration" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content text-center">
 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 	<img src="/img/modal_reg/close_icon.png">
 </button>
 <div class="window">
-<h1>Изменить данные команды</h1>
+<h1>Регистрация</h1>
+
 <hr>
 <?=
 Form::open(array(
@@ -20,7 +20,6 @@ Form::open(array(
 	'files'  => true,
 	'role'   => 'form'
 )) ?>
-
 <div class="row">
 	<div class="form-group col-sm-6">
 
@@ -34,14 +33,6 @@ Form::open(array(
 					'class'       => 'form-control',
 					'id'          => 'inputCompany',
 					'required'    => 'required',
-				));
-				?>
-			</div>
-			<div class="hidden">
-				<?=
-				Form::input('hidden', 'id', '', array(
-					'class' => 'form-control',
-					'id'    => 'inputId',
 				));
 				?>
 			</div>
@@ -231,27 +222,30 @@ Form::open(array(
 		</div>
 	</div>
 	<div class="form-group col-sm-6">
-		<div class="field text-center download_photo">
-			<img class="img_photo" src="">
+		<div class="field text-left">
+			<?= Form::label('inputPhoto', 'Фото команды/Team photo:', array('class' => 'control-label')) ?>
 
-			<?=
-			Form::button('Изменить фото', array(
-				'id'    => 'downloadPhoto',
-				'class' => 'btn btn_download_photo',
-			)); ?>
-			<div class="file_name"></div>
-			<?= Form::file('file') ?>
+			<div class="download_photo">
+				<div class="file_name">Выбрать изображение</div>
+				<?=
+				Form::button('Загрузить', array(
+					'id'    => 'downloadPhoto',
+					'class' => 'btn btn_download_photo',
+				)); ?>
+				<?= Form::file('file') ?>
+
+			</div>
+			<h6>Принимаются файлы в формате jpg, gif, png размером не больше 1 мб</h6>
 		</div>
 	</div>
 </div>
 <div class="send_reg">
 	<?=
-	Form::button('Сохранить', array(
-		'id' => 'send_edit_data',
+	Form::button('Отправить', array(
+		'id'    => 'send_reg_data',
 		'class' => 'btn btn-info btn_registration',
 	)); ?>
 </div>
-
 <?= Form::close() ?>
 </div>
 

@@ -54,55 +54,55 @@ body {
 }
 
 /* даннные модального окна */
-#team_edit .modal-content {
+.team_data .modal-content {
   padding: 0;
   background: #f4f4f4;
   width: 714px;
   min-height: 788px;
 }
 
-#team_edit .modal-content .close {
+.team_data .modal-content .close {
   background: none !important;
   opacity: 1;
 }
 
-#team_edit .window {
+.team_data .window {
   padding: 0 50px 30px;
 }
 
-#team_edit .window hr {
+.team_data .window hr {
   border-color: #d2d4cd;
   margin-bottom: 5px;
 }
 
-#team_edit .modal-content h1 {
+.team_data .modal-content h1 {
   margin-top: 30px;
   margin-bottom: 20px;
 }
 
-#team_edit .modal-content p {
+.team_data .modal-content p {
   color: #555555;
   font: 14px "Open Sans";
 }
 
-#team_edit .modal-content label {
+.team_data .modal-content label {
   color: #555555;
   margin: 20px 0 10px;
 }
 
-#team_edit .modal-content .only_label {
+.team_data .modal-content .only_label {
   margin-bottom: 0;
 }
 
-#team_edit .modal-content .group_fields input {
+.team_data .modal-content .group_fields input {
   margin-bottom: 5px;
 }
 
-#team_edit .modal-content textarea {
+.team_data .modal-content textarea {
   resize: none;
 }
 
-#team_edit .modal-content .download_photo {
+.team_data .modal-content .download_photo {
   height: 105px;
   border: 1px solid #cccccc;
   border-radius: 5px;
@@ -111,32 +111,36 @@ body {
   margin-top: 20px;
 }
 
-#team_edit .modal-content .download_photo div {
+.team_data .modal-content .download_photo div {
   display: inline-block;
   margin: 8px 23px;
 }
 
-#team_edit .modal-content .download_photo button {
+.team_data .modal-content .download_photo button {
   background: #6e6e6e !important;
   color: #ffffff !important;
   position: relative;
-  bottom: 12px;
-  margin-left: 17px;
 }
 
-#team_edit .modal-content h6 {
+#team_edit .modal-content .download_photo button {
+  bottom: 12px;
+  margin-left: 17px;
+
+}
+
+.team_data .modal-content h6 {
   font: 11px "Open Sans";
   color: #6e6e6e;
 }
 
-#team_edit .modal-content .send_reg button {
+.team_data .modal-content .send_reg button {
   font: 14px "Open Sans Extrabold";
   width: 192px;
   height: 42px;
   padding-bottom: 10px;
 }
 
-.download_photo > input[type=file] {
+#team_edit .download_photo > input[type=file] {
   position: relative;
   bottom: 103px;
   display: block;
@@ -147,11 +151,11 @@ body {
   cursor: pointer;
 }
 
-.download_photo img {
+#team_edit .download_photo img {
   height: 100%;
 }
 
-.download_photo .file_name {
+#team_edit .download_photo .file_name {
   position: relative;
   bottom: 40px;
   left: 60px;
@@ -159,4 +163,62 @@ body {
   white-space: nowrap;
   overflow: hidden;
 
+}
+
+#team_new .download_photo > input[type=file] {
+  position: relative;
+  bottom: 48px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 9999;
+}
+
+#team_new .file_name {
+  position: relative;
+  height: 18px;
+  width: 143px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#team_new .download_photo + .has-error {
+  background: #ff0000;
+}
+
+#team_new .modal-content .download_photo {
+  height: 40px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  color: #6e6e6e;
+  font: 13px "Open Sans";
+}
+
+#team_new .modal-content .download_photo div {
+  display: inline-block;
+  margin: 8px 23px;
+}
+
+#team_new .modal-content .download_photo button {
+  background: #6e6e6e !important;
+  color: #ffffff !important;
+  position: relative;
+  bottom: 12px;
+}
+
+#team_new .modal-content h6 {
+  font: 11px "Open Sans";
+  color: #6e6e6e;
+}
+
+#team_new .modal-content .send_reg button {
+  font: 14px "Open Sans Extrabold";
+  width: 192px;
+  height: 42px;
+  padding-bottom: 10px;
+}
+
+.btnNewTeam {
+  margin: 7px 15px;
 }

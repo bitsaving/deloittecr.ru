@@ -158,6 +158,7 @@ class BackendController extends BaseController
 			->whereComponent($component)
 			->first()
 			->teams()
+			->orderBy('id', 'desc')
 			->paginate(12);
 
 		return $this->make('teams', ['teams' => $teams]);

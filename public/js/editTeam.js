@@ -43,9 +43,9 @@ $(document).ready(function () {
 			});
 	});
 
-	$('#send_reg_data').click(function () {
+	$('#send_edit_data').click(function () {
 		$('.has-error').removeClass('has-error');
-		var formData = new FormData($('form')[0]);
+		var formData = new FormData($('#team_edit form')[0]);
 		$('button').attr('disabled', true);
 		$.ajax({
 			url: 'editTeam',
@@ -78,6 +78,52 @@ $(document).ready(function () {
 			},
 			error: function () {
 				alert('Ошибка, попробуйте ещё раз.');
+				$('button').attr('disabled', false);
+			},
+			// Form data
+
+			//Options to tell jQuery not to process data or worry about content-type.
+			cache: false,
+			contentType: false,
+			processData: false
+		});
+	});
+
+	$('#send_reg_data').click(function () {
+		$('.has-error').removeClass('has-error');
+		var formData = new FormData($('#team_new form')[0]);
+		$('button').attr('disabled', true);
+		$.ajax({
+			url: '/extramile',  //Server script to process data
+			type: 'POST',
+			data: formData,
+			//Ajax events
+			/*beforeSend: beforeSendHandler,*/
+			success: function (response) {
+				$('button').attr('disabled', false);
+				if (response['errors']) {
+					var obj = response['errors'];
+					for (var prop in obj) {
+						if (obj[prop]) {
+							$('.modal-content input[name=' + prop + ']').parent().addClass('has-error')
+						}
+					}
+					if (response['errors']['file']) {
+						$('.modal-content input[name=file]').parent().css('border-color', '#a94442')
+					} else {
+						$('.modal-content input[name=file]').parent().css('border-color', '#cccccc')
+					}
+					if (response['errors']['textError']) {
+						alert(response['errors']['textError']);
+					}
+
+					return
+				}
+				alert("Команда создана");
+				location.reload();
+			},
+			error: function () {
+				alert('Ошибка регистрации, попробуйте ещё раз.');
 				$('button').attr('disabled', false);
 			},
 			// Form data
