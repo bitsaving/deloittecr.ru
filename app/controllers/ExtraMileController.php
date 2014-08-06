@@ -72,6 +72,6 @@ class ExtraMileController extends BaseController
 		$teamId = Input::get('teamId');
 		$team = Team::find($teamId);
 
-		return View::make('extramile.teamsCard.team_info', ['team' => $team]);
+		return View::make('extraMile.teamsCard.team_info', ['team' => $team]);
 	}
 }
