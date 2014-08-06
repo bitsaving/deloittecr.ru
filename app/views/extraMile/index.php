@@ -6,7 +6,7 @@
 
 use DownsideUp\Models\Block;
 
-echo View::make('extramile.teams_card');
+echo View::make('extramile.teamsCard');
 foreach ($sections as $oSection) {
 	$blocks = $oSection->blocks;
 	$aBlock = [];

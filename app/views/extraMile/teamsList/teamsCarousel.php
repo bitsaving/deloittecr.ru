@@ -15,7 +15,7 @@ $i = 1;
 	<div class="carousel-caption">
 		<?php foreach ($teams as $team) : ?>
 		<?php if ((($i) % 12 == 0)) : ?>
-		<?= View::make('extraMile.teams_list.teamCardsSmall', ['team' => $team, 'maxAmount' => $maxAmount]) ?>
+		<?= View::make('extraMile.teamsList.teamCardsSmall', ['team' => $team, 'maxAmount' => $maxAmount]) ?>
 	</div>
 </div>
 <div class="item">

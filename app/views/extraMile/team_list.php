@@ -29,7 +29,7 @@ if (count($teams) < 1) {
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner">
 					<?=
-					View::make('extraMile.teams_list.teamsCarousel', [
+					View::make('extraMile.teamsList.teamsCarousel', [
 						'teams' => $teams,
 					])
 					?>
