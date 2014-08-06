@@ -33,11 +33,19 @@ class ExtraMileController extends BaseController
 			return $validator;
 		}
 		$file = Input::file('file');
-		$destinationPath = 'photo/teams/';
+		$destinationPath = 'teams/photo/';
 		$fileName = $file->getFilename() . '.' . $file->getClientOriginalExtension();
 		$data['photo'] = '/' . $destinationPath . $fileName;
 		$file->move($destinationPath, $fileName);
 		Log::info("Файл $fileName перемещён в ", ['path' => $destinationPath]);
+		if (Input::hasFile('logo')) {
+			$logo = Input::file('logo');
+			$destinationPath = 'teams/logo/';
+			$fileName = $logo->getFilename() . '.' . $logo->getClientOriginalExtension();
+			$data['logo'] = '/' . $destinationPath . $fileName;
+			$logo->move($destinationPath, $fileName);
+			Log::info("Файл $fileName перемещён в ", ['path' => $destinationPath]);
+		}
 		$data['component_id'] = Page::wherePage('extramile')
 			->first()
 			->components()

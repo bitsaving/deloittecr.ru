@@ -69,11 +69,12 @@ class Validate
 				'crewman6'      => $userMessages->first('crewman6'),
 				'aboutTeam'     => $userMessages->first('aboutTeam'),
 				'file'          => $userMessages->first('file'),
+				'logo' => $userMessages->first('logo'),
 			);
 			if ($userMessages->first('email') == 'В этой секции такой блок уже есть') {
 				$result['errors']['textError'] = 'Такой email уже зарегистрирован';
 			}
-			if ($userMessages->first('email') == 'В этой секции такой блок уже есть') {
+			if ($userMessages->first('teamName') == 'В этой секции такой блок уже есть') {
 				$result['errors']['textError'] = 'Такое название команды уже есть';
 			}
 
@@ -100,6 +101,7 @@ class Validate
 			'crewman6'      => '',
 			'aboutTeam'     => '',
 			'file'          => 'required|image|mimes:jpeg,bmp,png',
+			'logo' => 'image|mimes:jpeg,bmp,png',
 		];
 
 		return $rules;
@@ -114,11 +116,12 @@ class Validate
 				'email'    => $userMessages->first('email'),
 				'teamName' => $userMessages->first('teamName'),
 				'file'     => $userMessages->first('file'),
+				'logo' => $userMessages->first('file'),
 			);
 			if ($userMessages->first('email') == 'В этой секции такой блок уже есть') {
 				$result['errors']['textError'] = 'Такой email уже зарегистрирован';
 			}
-			if ($userMessages->first('email') == 'В этой секции такой блок уже есть') {
+			if ($userMessages->first('teamName') == 'В этой секции такой блок уже есть') {
 				$result['errors']['textError'] = 'Такое название команды уже есть';
 			}
 
@@ -134,6 +137,7 @@ class Validate
 			'email'    => 'email|unique:teams,email,' . $teamId,
 			'teamName' => 'required|unique:teams,teamName,' . $teamId,
 			'file'     => 'image|mimes:jpeg,bmp,png',
+			'logo' => 'image|mimes:jpeg,bmp,png',
 		];
 
 		return $rules;

@@ -130,6 +130,11 @@ $(document).ready(function () {
 					} else {
 						$('.modal-content input[name=file]').parent().css('border-color', '#cccccc')
 					}
+					if (response['errors']['logo']) {
+						$('.modal-content input[name=logo]').parent().css('border-color', '#a94442')
+					} else {
+						$('.modal-content input[name=logo]').parent().css('border-color', '#cccccc')
+					}
 					if (response['errors']['textError']) {
 						alert(response['errors']['textError']);
 					}
