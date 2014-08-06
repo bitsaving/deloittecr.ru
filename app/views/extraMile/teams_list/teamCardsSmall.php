@@ -11,7 +11,7 @@ use DownsideUp\Models\Team;
 		<div class="row">
 			<div class="col-xs-8">
 				<div class="name text-left">
-					<?= $team->teamName ?>
+					<span class="team_name open_team_card" data-team-id="<?= $team->id ?>" data-toggle="modal" data-target="#team_card"><?= $team->teamName ?></span>
 				</div>
 				<div class="progress">
 					<span class="team_amount"><?= number_format($team->amount, 0, '.', ' ') ?></span>

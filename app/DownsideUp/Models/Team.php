@@ -20,6 +20,8 @@ use Eloquent;
  * @property string  $crewman6
  * @property string  $aboutTeam
  * @property string  $photo
+ * @property string  $logo_img
+ * @property string  $logo_url
  * @property string  $active
  * @property string  $updated_at
  * @property string  $created_at
@@ -49,6 +51,8 @@ class Team extends Eloquent
 		'crewman6',
 		'aboutTeam',
 		'photo',
+		'logo_img',
+		'logo_url',
 		'active',
 		'amount',
 	];

@@ -11,10 +11,6 @@ if ($teams == null) {
 	return;
 }
 $maxAmount = ExtraMileWidget::getMaxAmount();
-if ($maxAmount <= 0) {
-	$maxAmount = 100;
-}
-
 
 ?>
 <div id="fund_raising" class="text-center">
@@ -32,14 +28,14 @@ if ($maxAmount <= 0) {
 				<div class="leader_card">
 					<div class="name_logo">
 						<div class="name text-left">
-							<?= $teams[1]->teamName ?>
+							<span class="team_name open_team_card" data-team-id="<?= $teams[1]->id ?>" data-toggle="modal" data-target="#team_card"><?= $teams[1]->teamName ?></span>
 						</div>
 						<div class="logo ">
 
 						</div>
 					</div>
 					<div class="photo">
-						<img src="<?= $teams[1]->photo ?>" class="img-rounded">
+						<img src="<?= $teams[1]->photo ?>" class="img-rounded open_team_card" data-team-id="<?= $teams[1]->id ?>" data-toggle="modal" data-target="#team_card">
 					</div>
 					<div class="progress">
 						<span class="team_amount"><?= number_format($teams[1]->amount, 0, '.', ' ') ?></span>
@@ -60,13 +56,13 @@ if ($maxAmount <= 0) {
 			<div class="first_team col-xs-4 text-center">
 				<div class="leader_card text-center">
 					<div class="name">
-						<div><?= $teams[0]->teamName ?></div>
+						<div class="team_name open_team_card" data-team-id="<?= $teams[0]->id ?>" data-toggle="modal" data-target="#team_card"><?= $teams[0]->teamName ?></div>
 					</div>
 					<div class="logo">
 
 					</div>
 					<div class="photo">
-						<img src="<?= $teams[0]->photo ?>" class="img-rounded">
+						<img src="<?= $teams[0]->photo ?>" class="img-rounded open_team_card" data-team-id="<?= $teams[0]->id ?>" data-toggle="modal" data-target="#team_card">
 					</div>
 					<div class="btn_support">
 						<?=
@@ -80,14 +76,14 @@ if ($maxAmount <= 0) {
 				<div class="leader_card">
 					<div class="name_logo">
 						<div class="name text-left">
-							<?= $teams[2]->teamName ?>
+							<span class="team_name open_team_card" data-team-id="<?= $teams[2]->id ?>" data-toggle="modal" data-target="#team_card"><?= $teams[2]->teamName ?></span>
 						</div>
 						<div class="logo ">
 
 						</div>
 					</div>
 					<div class="photo">
-						<img src="<?= $teams[2]->photo ?>" class="img-rounded">
+						<img src="<?= $teams[2]->photo ?>" class="img-rounded open_team_card" data-team-id="<?= $teams[2]->id ?>" data-toggle="modal" data-target="#team_card">
 					</div>
 					<div class="progress">
 						<span class="team_amount"><?= number_format($teams[2]->amount, 0, '.', ' ') ?></span>

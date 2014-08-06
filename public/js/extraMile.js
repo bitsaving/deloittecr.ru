@@ -167,7 +167,24 @@ $(document).ready(function () {
 			});
 			carousel.animate({opacity: 1}, 'slow');
 		});
+	});
 
+	$(document).on('click', '.team_name', function () {
+		var team = $(this).data('team-id');
 
+		/*$('#team_card').modal('show');*/
+	});
+
+	$(document).on('click', '.open_team_card', function () {
+		var teamModal = $('#team_card').find('.card_info');
+		teamModal.html('<div  class="load_content" style="padding-top: 250px"><img src="/img/AjaxLoader.gif" /></div>');
+		var teamId = $(this).data('team-id');
+		$.get('/extramile/getTeam', {teamId: teamId}, function (data) {
+			teamModal.animate({opacity: 0}, 0, function () {
+				teamModal.html(data)
+			});
+			teamModal.animate({opacity: 1}, 'slow');
+		});
 	});
 });
+

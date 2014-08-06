@@ -5,10 +5,8 @@
  */
 use DownsideUp\Widget\ExtraMileWidget;
 
-$maxAmount = count($teams) > 1 ? ExtraMileWidget::getMaxAmount() : $teams[0]->amount;
-if ($maxAmount <= 0) {
-	$maxAmount = 100;
-}
+$maxAmount = ExtraMileWidget::getMaxAmount();
+
 $i = 1;
 ?>
 <div class="item active">

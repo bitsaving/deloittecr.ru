@@ -12,13 +12,9 @@ Route::get('/extramile/sortTeam', [
 	'as'   => 'extramileSortTeam',
 	'uses' => 'App\Controllers\ExtraMileController@sortTeam'
 ]);
-Route::post('/backend/pages/extramile/components/editTeam', [
-	'as'   => 'postEditTeam',
-	'uses' => 'App\Controllers\BackendController@postEditTeam'
-]);
-Route::post('/backend/pages/extramile/components/changeActive', [
-	'as'   => 'postChangeActive',
-	'uses' => 'App\Controllers\BackendController@postChangeActive'
+Route::get('/extramile/getTeam', [
+	'as'   => 'extramileGetTeam',
+	'uses' => 'App\Controllers\ExtraMileController@getTeam'
 ]);
 
 Route::get('/', function () {
@@ -61,7 +57,14 @@ Route::group(array(
 	Route::post('/pages/{page}/sections/{section}/change/{blockId}/image', 'BackendController@postImageData');
 	Route::delete('/pages/{page}/sections/{section}/change/{blockId}/image', 'BackendController@deleteImage');
 
-
+	Route::post('/pages/extramile/components/editTeam', [
+		'as'   => 'postEditTeam',
+		'uses' => 'BackendController@postEditTeam'
+	]);
+	Route::post('/pages/extramile/components/changeActive', [
+		'as'   => 'postChangeActive',
+		'uses' => 'BackendController@postChangeActive'
+	]);
 	Route::get('/newPage', array(
 		'as'   => 'newPage',
 		'uses' => 'BackendController@newPage'

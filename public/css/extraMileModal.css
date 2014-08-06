@@ -99,3 +99,134 @@
 .download_photo + .has-error {
 	background: #ff0000;
 }
+
+/*Стили для карточки команы*/
+
+#team_card .modal-content {
+	width: 593px;
+	min-height: 690px;
+	background: #f4f4f4;
+	border: none;
+}
+
+#team_card .modal-content .close {
+	background: none !important;
+	opacity: 1;
+	position: absolute;
+	top: -15px;
+	right: -15px;
+}
+
+#team_card .modal-content .card_header {
+	height: 100px;
+	width: 100%;
+	display: table;
+}
+
+#team_card .modal-content .card_header .team_name, #team_card .modal-content .card_header .team_logo {
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 2;
+	font: 26px "Open Sans Bold";
+	color: #002776;
+	width: 50%;
+}
+
+#team_card .modal-content .card_main {
+	height: 355px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+#team_card .modal-content .card_main .team_photo {
+	width: 100%;
+}
+
+.donation_bar {
+	position: absolute;
+	bottom: 3px;
+	left: 23px;
+	color: #ffffff;
+	font: 14px "Open Sans Bold";
+}
+
+.donation_bar .progress {
+	height: 30px;
+	width: 230px;
+	background: #e5e5e5;
+	margin-top: 15px;
+}
+
+.donation_bar .progress-bar-success {
+	background: #95d123;
+	font: 16px "Open Sans Semibold";
+	line-height: 26px;
+}
+
+.donation_bar .team_amount {
+	position: absolute;
+	font: 20px "Open Sans Bold";
+	line-height: 31px;
+	color: #ffffff;
+	bottom: 20px;
+	left: 30px;
+}
+
+.donation_bar .progress-bar-success img {
+	margin-top: 3px;
+}
+
+.donation_bar .progress-bar {
+	text-align: left;
+	padding-left: 7px;
+}
+
+.card_main .btn_support {
+	position: absolute;
+	bottom: 20px;
+	right: 23px;
+}
+
+.card_text {
+	padding: 10px 30px 70px;
+}
+
+.card_text h5 {
+	font: 14px "Open Sans Bold";
+	color: #555555;
+}
+
+.card_text p {
+	font: 14px "Open Sans";
+	color: #555555;
+	margin: 0;
+}
+
+.card_text ul {
+	padding: 0;
+}
+
+.card_text li {
+	font: 14px "Open Sans";
+	list-style: none;
+}
+
+#team_card .share_links span {
+	margin-right: 23px;
+}
+
+#team_card .share_links {
+	width: 100%;
+	color: #002776;
+	font-size: 14px;
+	line-height: 63px;
+	border-radius: 0 0 6px 6px;
+	position: absolute;
+	bottom: 0;
+	background: #ffffff;
+}
+
+.share_links img {
+	margin-right: 5px;
+}

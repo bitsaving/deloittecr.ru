@@ -40,7 +40,15 @@ class ExtraMileWidget
 	public static function getMaxAmount()
 	{
 		$teams = self::sortTeam('amount');
-		$maxAmount = $teams[0]->amount;
+		if (!$teams) {
+			$maxAmount = 100;
+		} else {
+
+			$maxAmount = $teams[0]->amount;
+			if ($maxAmount <= 0) {
+				$maxAmount = 100;
+			}
+		}
 
 		return $maxAmount;
 	}

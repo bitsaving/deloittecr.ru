@@ -6,6 +6,7 @@ use DownsideUp\Models\Team;
 use DownsideUp\Widget\ExtraMileWidget;
 use Input;
 use Log;
+use View;
 
 class ExtraMileController extends BaseController
 {
@@ -54,5 +55,13 @@ class ExtraMileController extends BaseController
 		$sort = Input::get('sort');
 
 		return ExtraMileWidget::getTeamsForCarousel($sort);
+	}
+
+	public function getTeam()
+	{
+		$teamId = Input::get('teamId');
+		$team = Team::find($teamId);
+
+		return View::make('extramile.team_card.team_info', ['team' => $team]);
 	}
 }

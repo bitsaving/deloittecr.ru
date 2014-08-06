@@ -90,13 +90,9 @@ button:focus {
 
 #title {
 	height: 794px;
-	background: url(../img/title/title_bg_with_logo_icons.jpg) center no-repeat;
+	background: url("../img/title/title_bg_with_logo_icons.jpg") center no-repeat;
 	font: 42px "Open Sans Light";
 	color: #ffffff;
-}
-
-#title img {
-
 }
 
 #title .funded_text {
@@ -251,10 +247,11 @@ p {
 	width: 232px;
 	height: 145px;
 	overflow: hidden;
+	border-radius: 6px;
 }
 
 .leader_card .photo img {
-	height: 100%;
+	width: 100%;
 
 }
 
@@ -311,15 +308,6 @@ p {
 	background: #92d400;
 	font: 18px "Open Sans Semibold";
 	line-height: 31px;
-}
-
-.team_card_small .team_amount {
-	position: absolute;
-	font: 18px "Open Sans Semibold";
-	line-height: 31px;
-	color: #ffffff;
-	bottom: 17px;
-	left: 40px;
 }
 
 .leaders_team .progress {
@@ -384,6 +372,10 @@ p {
 	vertical-align: middle;
 }
 
+.teams_table .team_name, #fund_raising .team_name, #fund_raising .photo {
+	cursor: pointer;
+}
+
 .teams_table .team_cell_btn {
 	display: table-cell;
 	height: 90px;
@@ -407,6 +399,15 @@ p {
 	background: #95d123;
 	font: 16px "Open Sans Semibold";
 	line-height: 26px;
+}
+
+.team_card_small .team_amount {
+	position: absolute;
+	font: 18px "Open Sans Semibold";
+	line-height: 31px;
+	color: #ffffff;
+	bottom: 17px;
+	left: 40px;
 }
 
 .teams_table .progress-bar-success img {

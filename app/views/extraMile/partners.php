@@ -22,7 +22,8 @@ if (!isset($partners)) {
 				$i <= count($partners) - 1;
 				$i++) : ?>
 				<div class="col-xs-2 logo">
-					<img src="<?= $partners[$i]->image ?>" style="width: 100%" />
+					<a href="<?= $partners[$i]->content ?>" target="_blank">
+						<img src="<?= $partners[$i]->image ?>" style="width: 100%" /> </a>
 				</div>
 				<?php if (($i + 1) % 5 == 0) : ?>
 				<div class="col-xs-1"></div>
