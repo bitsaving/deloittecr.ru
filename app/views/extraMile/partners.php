@@ -1,5 +1,5 @@
 <?php
-if (!isset($partners)) {
+if (!isset($partners) || $partners == '') {
 	$partners = array();
 }
 /**
