@@ -62,7 +62,9 @@ class ExtraMileController extends BaseController
 	{
 		$sort = Input::get('sort');
 
-		return ExtraMileWidget::getTeamsForCarousel($sort);
+		$teams = ExtraMileWidget::getTeamsForCarousel($sort);
+
+		return View::make('extraMile.teamsList.teamsCarousel', ['teams' => $teams]);
 	}
 
 	public function getTeam()
@@ -70,6 +72,6 @@ class ExtraMileController extends BaseController
 		$teamId = Input::get('teamId');
 		$team = Team::find($teamId);
 
-		return View::make('extramile.team_card.team_info', ['team' => $team]);
+		return View::make('extramile.teamsCard.team_info', ['team' => $team]);
 	}
 }

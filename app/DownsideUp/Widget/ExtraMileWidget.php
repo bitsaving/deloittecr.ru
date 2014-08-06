@@ -2,7 +2,6 @@
 
 
 use DownsideUp\Models\Component;
-use View;
 
 class ExtraMileWidget
 {
@@ -11,7 +10,7 @@ class ExtraMileWidget
 	{
 		$teams = self::sortTeam($arg);
 
-		return View::make('extraMile.teams_list.teamsCarousel', ['teams' => $teams]);
+		return $teams;
 	}
 
 	public static function sortTeam($arg)

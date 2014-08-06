@@ -23,7 +23,7 @@ $i = 1;
 
 	<div class="carousel-caption">
 		<?php else : ?>
-			<?= View::make('extraMile.teams_list.teamCardsSmall', ['team' => $team, 'maxAmount' => $maxAmount]) ?>
+			<?= View::make('extraMile.teamsList.teamCardsSmall', ['team' => $team, 'maxAmount' => $maxAmount]) ?>
 		<?php
 		endif ?>
 		<?php $i++; ?>

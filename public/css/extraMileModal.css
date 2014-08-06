@@ -123,13 +123,21 @@
 	display: table;
 }
 
-#team_card .modal-content .card_header .team_name, #team_card .modal-content .card_header .team_logo {
+#team_card .modal-content .card_header .team_name {
 	display: table-cell;
 	vertical-align: middle;
-	line-height: 2;
+
 	font: 26px "Open Sans Bold";
 	color: #002776;
 	width: 50%;
+}
+
+#team_card .modal-content .card_header .team_logo {
+	padding: 20px 60px;
+}
+
+#team_card .modal-content .card_header .team_logo img {
+	max-height: 60px;
 }
 
 #team_card .modal-content .card_main {

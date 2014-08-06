@@ -17,8 +17,8 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 		<div class="team_name">
 			<?= $team->teamName ?>
 		</div>
-		<div class="team_logo">
-			<img src="<?= $team->logo_img ?>">
+		<div class="team_logo pull-right">
+		<img src="<?= $team->logo_img ?>">
 		</div>
 	</div>
 	<div class="card_main">
