@@ -100,8 +100,8 @@ class Validate
 			'crewman5'      => '',
 			'crewman6'      => '',
 			'aboutTeam'     => '',
-			'file'          => 'required|image|mimes:jpeg,bmp,png',
-			'logo' => 'image|mimes:jpeg,bmp,png',
+			'file' => 'required|image|mimes:jpeg,bmp,png,gif',
+			'logo' => 'image|mimes:jpeg,bmp,png,gif',
 		];
 
 		return $rules;
@@ -136,8 +136,8 @@ class Validate
 		$rules = [
 			'email'    => 'email|unique:teams,email,' . $teamId,
 			'teamName' => 'required|unique:teams,teamName,' . $teamId,
-			'file'     => 'image|mimes:jpeg,bmp,png',
-			'logo' => 'image|mimes:jpeg,bmp,png',
+			'file' => 'image|mimes:jpeg,bmp,png,gif',
+			'logo' => 'image|mimes:jpeg,bmp,png,gif',
 		];
 
 		return $rules;
