@@ -35,7 +35,7 @@ Form::button('Новая команда', array(
 				<td><?= $team->contactPerson ?></td>
 				<td><?= $team->phone ?></td>
 				<td><?= $team->email ?></td>
-				<td><?= $team->amount ?></td data-team-id = "<?= $team->id ?>">
+				<td class="get_payments_table" data-team-id="<?= $team->id ?>"><?= $team->amount ?></td>
 				<td>
 					<div class="crewman">
 						<div class="btn-group">
