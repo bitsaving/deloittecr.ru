@@ -696,6 +696,16 @@ p {
 	padding: 30px;
 }
 
+.share42init {
+	display: inline-block;
+}
+
+.share42-item {
+	position: relative;
+	top: 10px;
+	padding: 0 3px 0 0;
+}
+
 @media screen and (max-width: 1200px) and (min-width: 991px) {
 	#menu a {
 		font-size: 16px;
