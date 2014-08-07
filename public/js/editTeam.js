@@ -11,6 +11,8 @@ $(document).ready(function () {
 		/** @namespace data.logo_img */
 		$('.img_logo').attr('src', data.logo_img);
 		$('.file_name').html('')
+		/** @namespace data.aboutTeam */
+		$('#team_edit').find('textarea[name=aboutTeam]').val(data.aboutTeam)
 	});
 
 	$(':file').change(function () {

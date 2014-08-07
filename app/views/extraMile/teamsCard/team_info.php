@@ -68,10 +68,15 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 		</div>
 	</div>
 	<div class="share_links text-center">
-		<span>Поделиться:</span> <a href=""><img src="/img/social_links/share_vk.png"></a>
+		<span>Поделиться:</span>
+
+		<div class="share42init"></div>
+		<script type="text/javascript" src="packages/share24/share42.js"></script>
+
+		<!--<a href=""><img src="/img/social_links/share_vk.png"></a>
 		<a href="" target="_blank"><img src="/img/social_links/share_fb.png"></a>
 		<a href="" target="_blank"><img src="/img/social_links/share_ok.png"></a>
 		<a href="" target="_blank"><img src="/img/social_links/share_tw.png"></a>
-		<a href="" target="_blank"><img src="/img/social_links/share_lj.png"></a>
+		<a href="" target="_blank"><img src="/img/social_links/share_lj.png"></a>-->
 	</div>
 </div>

@@ -205,7 +205,7 @@ class BackendController extends BaseController
 		$data['photo'] = null;
 		if (Input::hasFile('file')) {
 			$file = Input::file('file');
-			$destinationPath = 'photo/teams/';
+			$destinationPath = 'teams/photo/';
 			$fileName = $file->getFilename() . '.' . $file->getClientOriginalExtension();
 			$data['photo'] = '/' . $destinationPath . $fileName;
 			$file->move($destinationPath, $fileName);
