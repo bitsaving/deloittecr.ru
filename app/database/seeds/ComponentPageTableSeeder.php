@@ -10,6 +10,7 @@ class ComponentPageTableSeeder extends Seeder
 
 		$component_page = array(
 			array('component_id' => 1, 'page_id' => 1),
+			array('component_id' => 2, 'page_id' => 1),
 		);
 
 		DB::table('component_page')->insert($component_page);

@@ -30,8 +30,8 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 						<div class="name text-left">
 							<span class="team_name open_team_card" data-team-id="<?= $teams[1]->id ?>" data-toggle="modal" data-target="#team_card"><?= $teams[1]->teamName ?></span>
 						</div>
-						<div class="logo ">
-
+						<div class="logo pull-right">
+							<img src="<?= $teams[1]->logo_img ?>" />
 						</div>
 					</div>
 					<div class="photo">
@@ -59,7 +59,7 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 						<div class="team_name open_team_card" data-team-id="<?= $teams[0]->id ?>" data-toggle="modal" data-target="#team_card"><?= $teams[0]->teamName ?></div>
 					</div>
 					<div class="logo">
-
+						<img src="<?= $teams[0]->logo_img ?>" />
 					</div>
 					<div class="photo">
 						<img src="<?= $teams[0]->photo ?>" class="img-rounded open_team_card" data-team-id="<?= $teams[0]->id ?>" data-toggle="modal" data-target="#team_card">
@@ -78,8 +78,8 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 						<div class="name text-left">
 							<span class="team_name open_team_card" data-team-id="<?= $teams[2]->id ?>" data-toggle="modal" data-target="#team_card"><?= $teams[2]->teamName ?></span>
 						</div>
-						<div class="logo ">
-
+						<div class="logo pull-right">
+							<img src="<?= $teams[2]->logo_img ?>" />
 						</div>
 					</div>
 					<div class="photo">

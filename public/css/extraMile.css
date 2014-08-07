@@ -259,9 +259,22 @@ p {
 	padding: 5px 25px 0;
 }
 
+.leaders_team .logo {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	padding: 10px 0;
+}
+
+.leaders_team .logo img {
+	max-height: 50px;
+	max-width: 100%;
+}
+
 .name_logo {
 	display: table;
 	height: 70px;
+	width: 100%;
 }
 
 .name_logo .name {
@@ -285,7 +298,7 @@ p {
 }
 
 .first_team .logo {
-	height: 70px;
+	display: block;
 }
 
 .leaders_team .photo {

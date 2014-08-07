@@ -271,4 +271,18 @@ class BackendController extends BaseController
 
 		return 'Удалено';
 	}
+
+	public function payments($page, $component)
+	{
+		$payments = Page::wherePage($page)
+			->first()
+			->components()
+			->whereComponent($component)
+			->first()
+			->payments()
+			->orderBy('id')
+			->paginate(20);
+
+		return $this->make('payments', ['payments' => $payments]);
+	}
 } 

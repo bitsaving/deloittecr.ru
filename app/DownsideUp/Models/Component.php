@@ -35,4 +35,12 @@ class Component extends Eloquent
 		return $this->hasMany(Team::class);
 	}
 
+	/**
+	 * @return Payment
+	 */
+	public function payments()
+	{
+		return $this->hasMany(Payment::class);
+	}
+
 }

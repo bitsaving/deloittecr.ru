@@ -16,7 +16,14 @@ class ComponentsTableSeeder extends Seeder
 				'content'        => '',
 				'updated_at'     => DB::raw('NOW()'),
 				'created_at'     => DB::raw('NOW()'),
-			)
+			),
+			array(
+				'component'      => 'payments',
+				'component_name' => 'Платежи',
+				'content'        => '',
+				'updated_at'     => DB::raw('NOW()'),
+				'created_at'     => DB::raw('NOW()'),
+			),
 		);
 
 		DB::table('components')->insert($components);
