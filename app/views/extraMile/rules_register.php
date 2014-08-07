@@ -66,7 +66,7 @@
 		</div>
 		<div class="download ">
 			Подробное описание этапов и правил участия (*.pdf)
-			<a href="" class="btn"><img src="/img/race_stages_btn.png"></a>
+			<a href="/docs/Extra Mile rules PRINT.PDF" target="_blank" class="btn"><img src="/img/race_stages_btn.png"></a>
 		</div>
 	</div>
 </div>

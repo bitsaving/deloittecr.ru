@@ -29,7 +29,8 @@
 			</div>
 		</div>
 		<div class="download ">
-			Версия карты для печати (*.pdf) <a href="" class="btn"><img src="/img/race_stages_btn.png"></a>
+			Версия карты для печати (*.pdf)
+			<a href="/docs/EM_map_russian.pdf" target="_blank" class="btn"><img src="/img/race_stages_btn.png"></a>
 		</div>
 	</div>
 </div>
