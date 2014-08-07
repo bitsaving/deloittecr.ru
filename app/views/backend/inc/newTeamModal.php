@@ -10,7 +10,7 @@
 	<img src="/img/modal_reg/close_icon.png">
 </button>
 <div class="window">
-<h1>Регистрация</h1>
+<h1>Новая команда</h1>
 
 <hr>
 <?=
@@ -215,7 +215,7 @@ Form::open(array(
 					'placeholder' => '',
 					'class'       => 'form-control',
 					'id'          => 'inputAboutTeam',
-					'rows'        => '3',
+					'rows'        => '11',
 				));
 				?>
 			</div>
@@ -238,6 +238,23 @@ Form::open(array(
 			<h6>Принимаются файлы в формате jpg, gif, png размером не больше 1 мб</h6>
 		</div>
 	</div>
+	<div class="form-group col-sm-6">
+		<div class="field text-left">
+			<?= Form::label('downloadLogo', 'Лого команды/Team logo:', array('class' => 'control-label')) ?>
+
+			<div class="download_photo">
+				<div class="file_name">Выбрать изображение</div>
+				<?=
+				Form::button('Загрузить', array(
+					'id'    => 'downloadLogo',
+					'class' => 'btn btn_download_photo',
+				)); ?>
+				<?= Form::file('logo') ?>
+
+			</div>
+			<h6>Принимаются файлы в формате jpg, gif, png размером не больше 1 мб</h6>
+		</div>
+	</div>
 </div>
 <div class="send_reg">
 	<?=
@@ -246,9 +263,10 @@ Form::open(array(
 		'class' => 'btn btn-info btn_registration',
 	)); ?>
 </div>
+</div>
+
 <?= Form::close() ?>
 </div>
 
 </div>
-</div>
-</div>
+</div></div>

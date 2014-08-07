@@ -108,6 +108,9 @@ class Team extends Eloquent
 		if ($data['photo'] != null) {
 			$this->photo = $data['photo'];
 		}
+		if ($data['logo'] != null) {
+			$this->logo_img = $data['logo'];
+		}
 		$this->save();
 	}
 }

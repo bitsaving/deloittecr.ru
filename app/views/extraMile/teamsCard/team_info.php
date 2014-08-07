@@ -56,14 +56,12 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 					<ul>
 						<li>1. <?= $team->crewman1 ?></li>
 						<li>2. <?= $team->crewman2 ?></li>
-						<li>3. <?= $team->crewman3 ?></li>
 					</ul>
 				</div>
 				<div class="col-sm-6">
 					<ul>
+						<li>3. <?= $team->crewman3 ?></li>
 						<li>4. <?= $team->crewman4 ?></li>
-						<li>5. <?= $team->crewman5 ?></li>
-						<li>6. <?= $team->crewman6 ?></li>
 					</ul>
 				</div>
 			</div>

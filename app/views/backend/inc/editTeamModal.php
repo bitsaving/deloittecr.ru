@@ -224,7 +224,7 @@ Form::open(array(
 					'placeholder' => '',
 					'class'       => 'form-control',
 					'id'          => 'inputAboutTeam',
-					'rows'        => '3',
+					'rows'        => '10',
 				));
 				?>
 			</div>
@@ -241,6 +241,19 @@ Form::open(array(
 			)); ?>
 			<div class="file_name"></div>
 			<?= Form::file('file') ?>
+		</div>
+	</div>
+	<div class="form-group col-sm-6">
+		<div class="field text-center download_photo">
+			<img class="img_logo  img-rounded" src="">
+
+			<?=
+			Form::button('Изменить лого', array(
+				'id'    => 'downloadLogo',
+				'class' => 'btn btn_download_photo',
+			)); ?>
+			<div class="file_name"></div>
+			<?= Form::file('logo') ?>
 		</div>
 	</div>
 </div>

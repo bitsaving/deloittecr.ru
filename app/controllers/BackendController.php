@@ -105,9 +105,9 @@ class BackendController extends BaseController
 			'blockName'    => $oBlock->block_name,
 			'blockContent' => $oBlock->content,
 			'blockId'      => $oBlock->id,
-			'images'  => $oBlock->images,
-			'page'    => $page,
-			'section' => $section,
+			'images'       => $oBlock->images,
+			'page'         => $page,
+			'section'      => $section,
 		]);
 	}
 
@@ -209,6 +209,14 @@ class BackendController extends BaseController
 			$fileName = $file->getFilename() . '.' . $file->getClientOriginalExtension();
 			$data['photo'] = '/' . $destinationPath . $fileName;
 			$file->move($destinationPath, $fileName);
+			Log::info("Файл $fileName перемещён в ", ['path' => $destinationPath]);
+		}
+		if (Input::hasFile('logo')) {
+			$logo = Input::file('logo');
+			$destinationPath = 'teams/logo/';
+			$fileName = $logo->getFilename() . '.' . $logo->getClientOriginalExtension();
+			$data['logo'] = '/' . $destinationPath . $fileName;
+			$logo->move($destinationPath, $fileName);
 			Log::info("Файл $fileName перемещён в ", ['path' => $destinationPath]);
 		}
 		$data['component_id'] = Page::wherePage('extramile')

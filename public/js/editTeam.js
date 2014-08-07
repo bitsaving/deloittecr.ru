@@ -3,11 +3,14 @@ $(document).ready(function () {
 		var data = $(this).data('team');
 		for (var prop in data) {
 			//noinspection JSUnfilteredForInLoop
-			$('.modal-content input[name=' + prop + ']').val(data[prop]);
+			$('#team_edit input[name=' + prop + ']').val(data[prop]);
 		}
 		/** @namespace data.photo */
 		$('.img_photo').attr('src', data.photo);
 		$('#inputId').val(data.id);
+		/** @namespace data.logo_img */
+		$('.img_logo').attr('src', data.logo_img);
+		$('.file_name').html('')
 	});
 
 	$(':file').change(function () {
@@ -20,7 +23,7 @@ $(document).ready(function () {
 			alert('Слишком большой файл');
 		}
 
-		$('.file_name').html(name);
+		$(this).parent().find('.file_name').html(name);
 	});
 
 	$("input[type=checkbox]").click(function () {
@@ -68,6 +71,11 @@ $(document).ready(function () {
 					} else {
 						$('.modal-content input[name=file]').parent().css('border-color', '#cccccc')
 					}
+					if (response['errors']['logo']) {
+						$('.modal-content input[name=logo]').parent().css('border-color', '#a94442')
+					} else {
+						$('.modal-content input[name=logo]').parent().css('border-color', '#cccccc')
+					}
 					if (response['errors']['textError']) {
 						alert(response['errors']['textError']);
 					}
@@ -112,6 +120,11 @@ $(document).ready(function () {
 						$('.modal-content input[name=file]').parent().css('border-color', '#a94442')
 					} else {
 						$('.modal-content input[name=file]').parent().css('border-color', '#cccccc')
+					}
+					if (response['errors']['logo']) {
+						$('.modal-content input[name=logo]').parent().css('border-color', '#a94442')
+					} else {
+						$('.modal-content input[name=logo]').parent().css('border-color', '#cccccc')
 					}
 					if (response['errors']['textError']) {
 						alert(response['errors']['textError']);
