@@ -12,7 +12,7 @@ if (!isset($partners) || $partners == '') {
 	<div class="container">
 		<h1>Наши партнёры</h1>
 
-		<p>Мы благодарим партнеров нашего мероприятия в 2013 году:</p>
+		<p></p>
 
 		<div class="partners_table">
 			<div class="row">
