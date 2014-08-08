@@ -294,6 +294,10 @@ class BackendController extends BaseController
 		$team = Input::get('teamId');
 		$payments = Payment::whereTeamId($team)->get()->all();
 
+		if (count($payments) == 0) {
+			return ['error' => 'Для этой команды нет платежей'];
+		}
+
 		return View::make('backend.paymentsForTeam', ['payments' => $payments]);
 	}
 

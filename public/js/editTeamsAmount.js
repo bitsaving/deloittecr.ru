@@ -20,9 +20,9 @@ $(document).ready(function () {
 				'teams/paymentsForTeam',
 				{ teamId: $btn.data('team-id') },
 				function (data) {
-					if (data['errors']) {
+					if (data['error']) {
 						$('button').attr('disabled', false);
-						$act.after('<tr class="active inside"><td colspan="4"></td><td colspan="7" style="border-top: 1px solid black;"><div class="paymentsForTeam"><b>' + data['errors']['event_id'] + '</b></div></td></tr>')
+						$act.after('<tr class="active inside"><td colspan="4"></td><td colspan="7" style="border-top: 1px solid black;"><div class="paymentsForTeam"><b>' + data['error'] + '</b></div></td></tr>')
 							.next()
 							.find('.paymentsForTeam')
 							.slideDown(500);
