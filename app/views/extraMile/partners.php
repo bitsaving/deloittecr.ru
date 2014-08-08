@@ -9,7 +9,7 @@ if (!isset($partners) || $partners == '') {
  */
 $partners = array();
 ?>
-<div id="partners" class="text-center">
+<!--<div id="partners" class="text-center">
 	<div class="container">
 		<h1>Наши партнёры</h1>
 
@@ -18,29 +18,31 @@ $partners = array();
 		<div class="partners_table">
 			<div class="row">
 				<div class="col-xs-1"></div>
-				<?php for ($i = 0;
+				<?php /*for ($i = 0;
 				$i <= count($partners) - 1;
-				$i++) : ?>
+				$i++) : */
+?>
 				<div class="col-xs-2 logo">
-					<a href="<?= $partners[$i]->content ?>" target="_blank">
-						<img src="<?= $partners[$i]->image ?>" style="width: 100%" /> </a>
+					<a href="<? /*= $partners[$i]->content */ ?>" target="_blank">
+						<img src="<? /*= $partners[$i]->image */ ?>" style="width: 100%" /> </a>
 				</div>
-				<?php if (($i + 1) % 5 == 0) : ?>
+				<?php /*if (($i + 1) % 5 == 0) : */ ?>
 				<div class="col-xs-1"></div>
 			</div>
 			<div class="row">
 				<div class="col-xs-1"></div>
-				<?php endif ?>
-				<?php endfor ?>
+				<?php /*endif */ ?>
+				<?php /*endfor */ ?>
 			</div>
 		</div>
 		<div class="partners_capabilities">
-			<h4><?= $subtitle ?></h4>
+			<h4><? /*= $subtitle */ ?></h4>
 
 			<p>
-				<?= $text_opportunity ?>
-				<a href="mailto:extramile@deloitte.ru?subject=Вопрос о партнёрстве"><?= $email_address ?></a>
+				<? /*= $text_opportunity */ ?>
+				<a href="mailto:extramile@deloitte.ru?subject=Вопрос о партнёрстве"><? /*= $email_address */ ?></a>
 			</p>
 		</div>
 	</div>
 </div>
+-->
