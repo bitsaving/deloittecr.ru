@@ -7,7 +7,7 @@ if (!isset($partners) || $partners == '') {
  * @var string $text_opportunity
  * @var string $email_address
  */
-
+$partners = array();
 ?>
 <div id="partners" class="text-center">
 	<div class="container">
