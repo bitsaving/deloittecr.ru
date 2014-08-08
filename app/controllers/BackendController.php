@@ -4,12 +4,14 @@ use DownsideUp\Components\Validate;
 use DownsideUp\Models\Block;
 use DownsideUp\Models\Image;
 use DownsideUp\Models\Page;
+use DownsideUp\Models\Payment;
 use DownsideUp\Models\Section;
 use DownsideUp\Models\Team;
 use Input;
 use Log;
 use Redirect;
 use URL;
+use View;
 
 class BackendController extends BaseController
 {
@@ -284,5 +286,45 @@ class BackendController extends BaseController
 			->paginate(20);
 
 		return $this->make('payments', ['payments' => $payments]);
+	}
+
+
+	public function getPaymentsForTeam()
+	{
+		$team = Input::get('teamId');
+		$payments = Payment::whereTeamId($team)->get()->all();
+
+		return View::make('backend.paymentsForTeam', ['payments' => $payments]);
+	}
+
+	public function postSavePayment()
+	{
+		$data = Input::all();
+		Log::info('Получены данные для нового платежа', $data);
+		$validator = Validate::getPaymentError($data);
+		if ($validator) {
+			Log::info('Ошибки в данных для платежа:', $validator);
+
+			return $validator;
+		}
+		$payment = new Payment();
+		$payment->savePayment($data);
+		if ($data['teamId'] != 0) {
+			$this->saveAmountToTeam($data['teamId']);
+		}
+
+		return 'Сохранено';
+	}
+
+	private function saveAmountToTeam($teamId)
+	{
+		$team = Team::find($teamId);
+		$teamPayments = $team->payments;
+		$amount = 0;
+		foreach ($teamPayments as $onePayment) {
+			$amount += $onePayment->amount;
+		}
+		$team->amount = $amount;
+		$team->save();
 	}
 } 

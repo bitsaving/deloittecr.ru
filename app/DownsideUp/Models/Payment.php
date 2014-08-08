@@ -14,8 +14,9 @@ use Eloquent;
  *
  * @property Team    $team
  *
- * @method static User find()
- * @method static User links()
+ * @method static Payment find()
+ * @method static Payment links()
+ * @method static Payment whereTeamId()
  */
 class Payment extends Eloquent
 {
@@ -30,5 +31,15 @@ class Payment extends Eloquent
 	public function component()
 	{
 		return $this->belongsTo(Component::class);
+	}
+
+	public function savePayment($data)
+	{
+		$this->component_id = 2;
+		$this->team_id = $data['teamId'];
+		$this->payer = $data['payer'];
+		$this->payment = $data['payment'];
+		$this->amount = $data['amount'];
+		$this->save();
 	}
 }

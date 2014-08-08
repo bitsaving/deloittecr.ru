@@ -61,6 +61,14 @@ Route::group(array(
 		'as'   => 'postEditTeam',
 		'uses' => 'BackendController@postEditTeam'
 	]);
+	Route::post('/pages/extramile/components/teams/paymentsForTeam', [
+		'as'   => 'getPaymentsForTeam',
+		'uses' => 'BackendController@getPaymentsForTeam'
+	]);
+	Route::post('/pages/extramile/components/newPayment', [
+		'as'   => 'postSavePayment',
+		'uses' => 'BackendController@postSavePayment'
+	]);
 	Route::post('/pages/extramile/components/changeActive', [
 		'as'   => 'postChangeActive',
 		'uses' => 'BackendController@postChangeActive'

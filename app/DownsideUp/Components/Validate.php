@@ -69,7 +69,7 @@ class Validate
 				'crewman6'      => $userMessages->first('crewman6'),
 				'aboutTeam'     => $userMessages->first('aboutTeam'),
 				'file'          => $userMessages->first('file'),
-				'logo' => $userMessages->first('logo'),
+				'logo'          => $userMessages->first('logo'),
 			);
 			if ($userMessages->first('email') == 'В этой секции такой блок уже есть') {
 				$result['errors']['textError'] = 'Такой email уже зарегистрирован';
@@ -100,8 +100,8 @@ class Validate
 			'crewman5'      => '',
 			'crewman6'      => '',
 			'aboutTeam'     => '',
-			'file' => 'required|image|mimes:jpeg,bmp,png,gif',
-			'logo' => 'image|mimes:jpeg,bmp,png,gif',
+			'file'          => 'required|image|mimes:jpeg,bmp,png,gif',
+			'logo'          => 'image|mimes:jpeg,bmp,png,gif',
 		];
 
 		return $rules;
@@ -116,7 +116,7 @@ class Validate
 				'email'    => $userMessages->first('email'),
 				'teamName' => $userMessages->first('teamName'),
 				'file'     => $userMessages->first('file'),
-				'logo' => $userMessages->first('file'),
+				'logo'     => $userMessages->first('file'),
 			);
 			if ($userMessages->first('email') == 'В этой секции такой блок уже есть') {
 				$result['errors']['textError'] = 'Такой email уже зарегистрирован';
@@ -136,8 +136,36 @@ class Validate
 		$rules = [
 			'email'    => 'email|unique:teams,email,' . $teamId,
 			'teamName' => 'required|unique:teams,teamName,' . $teamId,
-			'file' => 'image|mimes:jpeg,bmp,png,gif',
-			'logo' => 'image|mimes:jpeg,bmp,png,gif',
+			'file'     => 'image|mimes:jpeg,bmp,png,gif',
+			'logo'     => 'image|mimes:jpeg,bmp,png,gif',
+		];
+
+		return $rules;
+	}
+
+	public static function getPaymentError($data)
+	{
+		$validator = Validator::make($data, self::rulesPayment(), self::getMessages());
+		$userMessages = $validator->messages();
+		if ($validator->fails()) {
+			$result['errors'] = array(
+				'teamId' => $userMessages->first('teamId'),
+				'payer'  => $userMessages->first('payer'),
+				'amount' => $userMessages->first('amount'),
+			);
+
+			return $result;
+		}
+
+		return null;
+	}
+
+	private static function rulesPayment()
+	{
+		$rules = [
+			'teamId' => 'required|integer',
+			'payer'  => 'required',
+			'amount' => 'required|integer',
 		];
 
 		return $rules;

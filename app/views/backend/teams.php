@@ -5,16 +5,21 @@
  */
 use DownsideUp\Models\Team;
 
+echo View::make('backend.inc.paymentModal');
 echo View::make('backend.inc.editTeamModal');
 echo View::make('backend.inc.newTeamModal');
 ?>
+
+	<script type="text/javascript" src="/js/editTeamsAmount.js"></script>
+	<script type="text/javascript" src="/js/payments.js"></script>
+
+	<h1 class="text-center">Команды</h1>
 <?=
 Form::button('Новая команда', array(
-	'class'       => 'btn btn-sm btn-info btnNewTeam',
+	'class'       => 'btn btn-info btnNewTeam',
 	'data-toggle' => 'modal',
 	'data-target' => '#team_new',
 )) ?>
-	<script type="text/javascript" src="/js/editTeamsAmount.js"></script>
 	<table class="table table-striped table-hover" id="teamsTable">
 		<tr>
 			<td><b>ID</b></td>
@@ -79,10 +84,15 @@ Form::button('Новая команда', array(
 						'data-toggle' => 'modal',
 						'data-target' => '#team_edit',
 					)) ?>
+					<?=
+					Form::button('Новый платёж', array(
+						'class'        => 'btn btn-sm btn-info btnNewPayment',
+						'data-toggle'  => 'modal',
+						'data-target'  => '#paymentModal',
+						'data-team-id' => $team->id,
+					))?>
 				</td>
 			</tr>
-
-
 		<?php endforeach ?>
 
 	</table>

@@ -11,6 +11,7 @@ use Eloquent;
  * @property string  $created_at
  * @property Section $sections
  * @property Team    $teams
+ * @property Payment $payments
  *
  * @method static Component first()
  * @method static Component whereComponent()

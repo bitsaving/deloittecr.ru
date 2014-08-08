@@ -53,7 +53,6 @@ body {
 	padding-right: 120px;
 }
 
-/* даннные модального окна */
 .team_data .modal-content {
 	padding: 0;
 	background: #f4f4f4;
@@ -253,4 +252,24 @@ body {
 
 #list_image .btn_del_image {
 	margin: 10px 0;
+}
+
+#teamsTable .active > td {
+	background: #C9EEEC !important;
+}
+
+#paymentModal label {
+	margin: 7px 0;
+}
+
+#paymentModal .field {
+	margin: 15px 0;
+}
+
+#paymentModal .modal-content {
+	min-height: 300px;
+}
+
+.payments .btnNewPayment {
+	margin: 7px 15px;
 }
