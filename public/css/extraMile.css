@@ -95,6 +95,12 @@ button:focus {
 	color: #ffffff;
 }
 
+#title .ext_logo {
+	position: absolute;
+	width: 100%;
+	top: 90px;
+}
+
 #title .funded_text {
 	display: inline-block;
 	position: relative;

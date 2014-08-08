@@ -6,6 +6,7 @@
  */
 ?>
 <div id="title" class="text-center">
+	<div class="ext_logo"><img src="img/title/ext_logo.png"></div>
 	<div class="container text-center">
 		<div class="funded_text ">
 			<div class="line1"><?= $line1 ?></div>
