@@ -14,6 +14,7 @@ Form::button('Новая команда', array(
 	'data-toggle' => 'modal',
 	'data-target' => '#team_new',
 )) ?>
+	<script type="text/javascript" src="/js/editTeamsAmount.js"></script>
 	<table class="table table-striped table-hover" id="teamsTable">
 		<tr>
 			<td><b>ID</b></td>
@@ -35,7 +36,14 @@ Form::button('Новая команда', array(
 				<td><?= $team->contactPerson ?></td>
 				<td><?= $team->phone ?></td>
 				<td><?= $team->email ?></td>
-				<td class="get_payments_table" data-team-id="<?= $team->id ?>"><?= $team->amount ?></td>
+				<td class="amount">
+					<?=
+					Form::button($team->amount, array(
+						'class'        => 'btn btn-sm btn-default get_payments_table',
+						'data-team-id' => $team->id,
+					)) ?>
+
+				</td>
 				<td>
 					<div class="crewman">
 						<div class="btn-group">
