@@ -19,8 +19,7 @@ if (!isset($carousel)) {
 		<div class="link_block">
 			<span>Extra Mile 2013</span>
 			<span><a href="https://www.deloitte.com/view/ru_RU/ru/about-deloitte/corporate-social-responsibility/extra-mile-2013/index.htm">О
-					мероприятии</a></span>
-			<span><a href="https://www.deloitte.com/view/en_RU/ru/about-deloitte/corporate-social-responsibility/extra-mile-2013/Photo-report/index.htm">Фото-отчет</a></span>
+					мероприятии</a></span> <span><a href="https://www.deloitte.com/view/en_RU/ru/about-deloitte/corporate-social-responsibility/extra-mile-2013/Photo-report/index.htm">Фото-отчет</a></span>
 		</div>
 	</div>
 	<div id="photo_carousel">
