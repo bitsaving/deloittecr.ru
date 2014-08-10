@@ -70,13 +70,8 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 	<div class="share_links text-center">
 		<span>Поделиться:</span>
 
-		<div class="share42init"></div>
+		<div class="share42init" data-image="http://deloittecr.ru/img/title/ext_logo.png" data-description="Я поддерживаю команду <?= $team->teamName ?>"></div>
 		<script type="text/javascript" src="packages/share24/share42.js"></script>
 
-		<!--<a href=""><img src="/img/social_links/share_vk.png"></a>
-		<a href="" target="_blank"><img src="/img/social_links/share_fb.png"></a>
-		<a href="" target="_blank"><img src="/img/social_links/share_ok.png"></a>
-		<a href="" target="_blank"><img src="/img/social_links/share_tw.png"></a>
-		<a href="" target="_blank"><img src="/img/social_links/share_lj.png"></a>-->
 	</div>
 </div>
