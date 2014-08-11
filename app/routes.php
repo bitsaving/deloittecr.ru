@@ -83,3 +83,5 @@ Route::group(array(
 	));
 
 });
+
+Route::get('/extramile/money', 'App\Controllers\YandexMoneyController@example');

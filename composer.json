@@ -4,12 +4,10 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*",
-		"yandex-money/yandex-money-sdk-php": "dev-master"
+		"laravel/framework": "4.2.*"
 	},
 	"require-dev": {
 		"barryvdh/laravel-ide-helper": "dev-master",
-		"phpunit/php-code-coverage": "3.0.*@dev",
 		"phpunit/phpunit-mock-objects": "2.3.*@dev",
 		"phpunit/phpunit": "4.3.*@dev",
 		"zizaco/factory-muff": "dev-master",
@@ -20,6 +18,7 @@
 		"classmap": [
 			"app/commands",
 			"app/controllers",
+			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
