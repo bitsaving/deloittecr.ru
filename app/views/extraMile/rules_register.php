@@ -37,7 +37,7 @@
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="/img/rules_register/fee.png" class="reg_pic">
+				<img src="/img/rules_register/prns.png" class="reg_pic">
 
 				<div class="info fee_info">
 					<h3><?= $fee ?></h3>
@@ -46,7 +46,7 @@
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="/img/rules_register/info.png" class="reg_pic">
+				<img src="/img/rules_register/prize.png" class="reg_pic">
 
 				<div class="info funds_info">
 					<h3><?= $funds ?></h3>
@@ -55,7 +55,7 @@
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="/img/rules_register/info.png" class="reg_pic">
+				<img src="/img/rules_register/event.png" class="reg_pic">
 
 				<div class="info event_info">
 					<h3><?= $event ?></h3>
