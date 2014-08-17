@@ -67,6 +67,19 @@ button:focus {
 	outline: none !important;
 }
 
+button[disabled=disabled].btn, button.disabled {
+	opacity: 1 !important;
+	background: #e2e2e2 !important; /* Old browsers */
+	background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 100%) !important; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e2e2e2), color-stop(100%, #dbdbdb)) !important; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e2e2e2 0%, #dbdbdb 100%) !important; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e2e2e2 0%, #dbdbdb 100%) !important; /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #e2e2e2 0%, #dbdbdb 100%) !important; /* IE10+ */
+	background: linear-gradient(to bottom, #e2e2e2 0%, #dbdbdb 100%) !important; /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#dbdbdb', GradientType=0) !important; /* IE6-9 */
+	border-color: #e2e2e2 !important;
+}
+
 #main {
 	width: 100%;
 	margin: 0 auto;

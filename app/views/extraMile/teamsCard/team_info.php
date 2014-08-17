@@ -38,7 +38,7 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 		<div class="btn_support">
 			<?=
 			Form::button('<img src="/img/rub_for_btn.png"> Поддержать!', array(
-				'class' => 'btn btn-info text-center btn_support_team'
+				'class' => 'btn btn-info text-center btn_support_team disabled'
 			))?>
 		</div>
 	</div>

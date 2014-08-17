@@ -27,7 +27,7 @@ use DownsideUp\Models\Team;
 				<div class="team_cell_btn text-center">
 					<?=
 					Form::button('<img src="/img/rub_for_btn.png">', array(
-						'class' => 'btn btn-info text-center team_card_sm_btn'
+						'class' => 'btn btn-info text-center team_card_sm_btn btn_support_team disabled'
 					))?>
 				</div>
 			</div>

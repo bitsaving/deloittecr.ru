@@ -18,5 +18,4 @@ class YandexMoneyController extends BaseController
 		}
 	}
 
-
 }

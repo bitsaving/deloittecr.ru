@@ -67,7 +67,7 @@ class CommonHTTP3Example extends CommonProtocolUtils
 	// текст с причиной отказа принять платеж
 	private $message;
 
-	public function CommonHTTP3Example()
+	public function __construct()
 	{
 		/**
 		 * Инициализация параметров случайнвми значениями
@@ -78,20 +78,20 @@ class CommonHTTP3Example extends CommonProtocolUtils
 		$this->shopId = $this->requestDatetime & 0xFFFF;
 		$this->shopArticleId = $this->requestDatetime & 0xFFFF0000;
 		$this->invoiceId = time();
-		$this->orderCreatedDatetime = time() - rand(1);
+		$this->orderCreatedDatetime = time() - rand(1, 99);
 		// случайная сумма до 1000р
-		$this->orderSumAmount = rand(100000) / 100;
+		$this->orderSumAmount = 100000;
 		// слчайная комиссия до 10%
-		$this->shopSumAmount = $this->orderSumAmount - $this->orderSumAmount * rand(100) / 1000;
-		$this->paymentDateTime = time() + rand(1);
+		$this->shopSumAmount = $this->orderSumAmount - $this->orderSumAmount * rand(100, 200) / 1000;
+		$this->paymentDateTime = time() + rand(1, 99);
 		$this->customerNumber = $this->getRandomString(20);
 		$this->customParamName = $this->getRandomString(8);
 		$this->customParamValue = $this->getRandomString(16);
 
 		// инициализация параметров ответа сервера
-		$this->performedDatetime = time() + rand(2);
+		$this->performedDatetime = time() + rand(2, 100);
 		$codes = array(0, 1, 100, 200, 1000);
-		$this->code = $codes[rand(4)];
+		$this->code = $codes[rand(0, 4)];
 		if ($codes == 100) {
 			// сообщение об отказе принять платеж
 			$this->message = $this->getRandomString(64);
@@ -229,7 +229,7 @@ class CommonHTTP3Example extends CommonProtocolUtils
 	private function createPaymentAvisoNVP()
 	{
 		$nvp = $this->writeCommonRequestAttributesNVP();
-		$nvp["paymentDateTime"] = $this->formatDatetime($this->paymentDatetime);
+		$nvp["paymentDateTime"] = $this->formatDatetime($this->paymentDateTime);
 		$nvp["md5"] = $this->calculateMD5Hash('paymentAviso');
 
 		return $nvp;
@@ -667,13 +667,14 @@ class CommonHTTP3Example extends CommonProtocolUtils
 
 		// формирование XML запроса
 		$req = $this->createCheckOrderRequestXMLDocument();
-		echo $req;
-		$req = $this->sign($req, 'client.crt', 'client.key');
-		echo $req;
+		/*echo $req;*/
+
+		$req = $this->sign($req, '/etc/apache2/ssl/apache.pem', '/etc/apache2/ssl/apache.key');
+		/*echo $req;*/
 
 		// проверка XML запроса сервером
-		$req = $this->verify($req, 'client.crt');
-		echo $req;
+		$req = $this->verify($req, '/etc/apache2/ssl/apache.pem');
+		/*echo $req;*/
 		$this->verifyCheckOrderRequestXMLDocument($req);
 
 		// формирование NVP запроса
@@ -697,18 +698,19 @@ class CommonHTTP3Example extends CommonProtocolUtils
 
 		// формирование XML запроса
 		$req = $this->createPaymentAvisoRequestXMLDocument();
-		echo $req;
-		$req = $this->sign($req, 'client.crt', 'client.key');
-		echo $req;
+		/*echo $req;*/
+		$req = $this->sign($req, '/etc/apache2/ssl/apache.pem', '/etc/apache2/ssl/apache.key');
+		/*echo $req;*/
 
 		// проверка запроса XML сервером
-		$req = $this->verify($req, 'client.crt');
-		echo $req;
+		$req = $this->verify($req, '/etc/apache2/ssl/apache.pem');
+		/*echo $req;*/
 		$this->verifyPaymentAvisoRequestXMLDocument($req);
 
 		// формирование NVP запроса
 		$nvp = $this->createPaymentAvisoNVP();
-		echo $nvp;
+
+		print_r($nvp);
 		// проверка NVP запроса
 		$this->createPaymentAvisoNVP($nvp);
 

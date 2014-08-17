@@ -4,6 +4,9 @@ $(document).ready(function () {
 		interval: 0
 	});
 
+	$('button.btn_support_team').attr('disabled', true);
+	$('#btn_title_donate').attr('disabled', true);
+
 	// Карусель для фото
 	$("#photo_carousel").owlCarousel({
 
