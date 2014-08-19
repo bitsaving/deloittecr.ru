@@ -38,6 +38,19 @@ class YandexMoneyController extends BaseController
 		return $answer;
 	}
 
+	public function checkPaymentTest()
+	{
+		$data = Input::all();
+		Log::info('Пришёл запрос в тестовом режиме на разрешение платежа от YandexMoney:', $data);
+		$datetime = date('c');
+		$answer = '<?xml version="1.0" encoding="UTF-8"?>
+			<checkOrderResponse performedDatetime ="' . $datetime . '"
+			code="0" invoiceId="' . $data['invoiceId'] . '"
+			shopId="18673"/>';
+
+		return $answer;
+	}
+
 	public function payments()
 	{
 		$data = Input::all();
@@ -51,4 +64,20 @@ class YandexMoneyController extends BaseController
 
 		return $answer;
 	}
+
+	public function paymentsTest()
+	{
+		$data = Input::all();
+		Log::info('Уведомление в тестовом режиме о платеже от YandexMoney:', $data);
+
+		$datetime = date('c');
+		$answer = '<?xml version="1.0" encoding="UTF-8"?>
+			<paymentAvisoResponse performedDatetime ="' . $datetime . '"
+			code="0" invoiceId="' . $data['invoiceId'] . '"
+			shopId="18673"/>';
+
+		return $answer;
+	}
+
+
 }
