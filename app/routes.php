@@ -1,5 +1,8 @@
 <?php
-
+Route::get('/green', array(
+	'as'   => 'green',
+	'uses' => 'App\Controllers\GreenController@index'
+));
 Route::get('/extramile', array(
 	'as'   => 'extramile',
 	'uses' => 'App\Controllers\ExtraMileController@index'
@@ -85,3 +88,4 @@ Route::group(array(
 });
 
 Route::get('/extramile/money', 'App\Controllers\YandexMoneyController@example');
+Route::get('/extramile/donations', 'App\Controllers\YandexMoneyController@donations');

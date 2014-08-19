@@ -86,21 +86,6 @@ button[disabled=disabled].btn, button.disabled {
 	position: relative;
 }
 
-.navbar {
-	background: #ffffff;
-	height: 55px;
-	padding-right: 56px;
-}
-
-.navbar-right li a {
-	color: #00a1de !important;
-	font: 18px "Open Sans Semibold";
-}
-
-.navbar-left li a {
-	padding: 10px;
-}
-
 #title {
 	height: 794px;
 	background: url("../img/title/title_bg_with_logo_icons.jpg") center no-repeat;

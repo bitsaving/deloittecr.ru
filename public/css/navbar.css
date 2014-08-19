@@ -1,0 +1,18 @@
+.navbar {
+	background: #ffffff;
+	height: 55px;
+	padding-right: 56px;
+}
+
+.navbar-right li a {
+	color: #00a1de !important;
+	font: 18px "Open Sans Semibold";
+}
+
+.navbar-left li a {
+	padding: 10px;
+}
+
+.navbar a {
+	text-decoration: none;
+}

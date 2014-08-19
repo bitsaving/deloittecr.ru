@@ -17,10 +17,11 @@ if (empty($content)) {
 	<script src="/js/owl-carousel/owl.carousel.js"></script>
 
 	<!-- Плагин light-box -->
-	<script src="js/lightbox/js/lightbox.min.js"></script>
-	<link href="js/lightbox/css/lightbox.css" rel="stylesheet" />
+	<script src="/js/lightbox/js/lightbox.min.js"></script>
+	<link href="/js/lightbox/css/lightbox.css" rel="stylesheet" />
 
 	<link type="text/css" href="/css/extraMile.css" rel="stylesheet" />
+	<link type="text/css" href="/css/navbar.css" rel="stylesheet" />
 	<link type="text/css" href="/css/extraMileModal.css" rel="stylesheet" />
 	<script type="text/javascript" src="/js/extraMile.js"></script>
 </head>

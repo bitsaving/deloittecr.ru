@@ -18,7 +18,7 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 			<?= $team->teamName ?>
 		</div>
 		<div class="team_logo pull-right">
-		<img src="<?= $team->logo_img ?>">
+			<img src="<?= $team->logo_img ?>">
 		</div>
 	</div>
 	<div class="card_main">
@@ -71,7 +71,7 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 		<span>Поделиться:</span>
 
 		<div class="share42init" data-image="http://deloittecr.ru/img/title/ext_logo.png" data-description="Я поддерживаю команду <?= $team->teamName ?>"></div>
-		<script type="text/javascript" src="packages/share24/share42.js"></script>
+		<script type="text/javascript" src="/packages/share24/share42.js"></script>
 
 	</div>
 </div>

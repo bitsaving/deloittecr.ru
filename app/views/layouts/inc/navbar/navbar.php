@@ -7,11 +7,11 @@
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
-			<li class="active ">
-				<a href="">Extra Mile 2014</a>
+			<li class="<?= URL::current() == URL::route('extramile') ? 'active' : '' ?>">
+				<a href="<?= URL::route('extramile') ?>">Extra Mile 2014</a>
 			</li>
-			<li class=" ">
-				<a href="">Озеленяя будущее</a>
+			<li class="<?= URL::current() == URL::route('green') ? 'active' : '' ?>">
+				<a href="<?= URL::route('green') ?>">Озеленяя будущее</a>
 			</li>
 
 		</ul>

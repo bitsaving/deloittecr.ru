@@ -7,7 +7,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content text-center">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-				<img src="img/team_card/close_icon.png">
+				<img src="/img/team_card/close_icon.png">
 			</button>
 
 			<div class="card_info text-center">

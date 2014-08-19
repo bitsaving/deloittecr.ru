@@ -6,7 +6,7 @@ use Exception;
 
 class YandexMoneyController extends BaseController
 {
-	public $layout = 'auth';
+	public $layout = 'donations';
 
 	public function example()
 	{
@@ -18,4 +18,8 @@ class YandexMoneyController extends BaseController
 		}
 	}
 
+	public function donations()
+	{
+		return $this->make('payment');
+	}
 }
