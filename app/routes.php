@@ -97,3 +97,5 @@ Route::post('/extramile/%20check-payment%20/test', 'App\Controllers\YandexMoneyC
 Route::post('/extramile/check-payment/test', 'App\Controllers\YandexMoneyController@checkPayment');
 Route::post('/extramile/ check-payment /test', 'App\Controllers\YandexMoneyController@checkPayment');
 
+Route::get('/extramile/check-payment', 'App\Controllers\YandexMoneyController@checkPayment');
+Route::post('/extramile/check-payment', 'App\Controllers\YandexMoneyController@checkPayment');
