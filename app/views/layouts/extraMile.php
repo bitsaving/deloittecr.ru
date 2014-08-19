@@ -20,6 +20,7 @@ if (empty($content)) {
 	<script src="/js/lightbox/js/lightbox.min.js"></script>
 	<link href="/js/lightbox/css/lightbox.css" rel="stylesheet" />
 
+	<link rel="shortcut icon" href="/greenPage/fav.png" />
 	<link type="text/css" href="/css/extraMile.css" rel="stylesheet" />
 	<link type="text/css" href="/css/navbar.css" rel="stylesheet" />
 	<link type="text/css" href="/css/extraMileModal.css" rel="stylesheet" />
