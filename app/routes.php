@@ -89,3 +89,6 @@ Route::group(array(
 
 Route::get('/extramile/money', 'App\Controllers\YandexMoneyController@example');
 Route::get('/extramile/donations', 'App\Controllers\YandexMoneyController@donations');
+
+Route::get('/extramile/check-payment/test', 'App\Controllers\YandexMoneyController@checkPayment');
+

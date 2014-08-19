@@ -3,6 +3,8 @@
 
 use DownsideUp\YandexMoney\CommonHTTP3Example;
 use Exception;
+use Input;
+use Log;
 
 class YandexMoneyController extends BaseController
 {
@@ -21,5 +23,11 @@ class YandexMoneyController extends BaseController
 	public function donations()
 	{
 		return $this->make('payment');
+	}
+
+	public function checkPayment()
+	{
+		$data = Input::all();
+		Log::info('пришёл запрос от YandexMoney:', $data);
 	}
 }
