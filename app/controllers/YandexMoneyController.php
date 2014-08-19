@@ -28,6 +28,27 @@ class YandexMoneyController extends BaseController
 	public function checkPayment()
 	{
 		$data = Input::all();
-		Log::info('пришёл запрос от YandexMoney:', $data);
+		Log::info('Пришёл запрос на разрешение платежа от YandexMoney:', $data);
+		$datetime = date('c');
+		$answer = '<?xml version="1.0" encoding="UTF-8"?>
+			<checkOrderResponse performedDatetime ="' . $datetime . '"
+			code="0" invoiceId="' . $data['invoiceId'] . '"
+			shopId="18673"/>';
+
+		return $answer;
+	}
+
+	public function payments()
+	{
+		$data = Input::all();
+		Log::info('Уведомление о платеже от YandexMoney:', $data);
+
+		$datetime = date('c');
+		$answer = '<?xml version="1.0" encoding="UTF-8"?>
+			<paymentAvisoResponse performedDatetime ="' . $datetime . '"
+			code="0" invoiceId="' . $data['invoiceId'] . '"
+			shopId="18673"/>';
+
+		return $answer;
 	}
 }
