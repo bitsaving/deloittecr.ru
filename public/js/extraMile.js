@@ -204,6 +204,8 @@ $(document).ready(function () {
 		modal.find('.team_donate').show();
 		modal.find('.teamName').html(teamName);
 		modal.find('input[name=teamId]').val(teamId);
+		modal.find('input[name=CustomerNumber]').val('');
+		modal.find('input[name=Sum]').val('');
 		modal.modal('show');
 	});
 
@@ -211,6 +213,8 @@ $(document).ready(function () {
 		var modal = $('#donate_form');
 		var teamId = $(this).data('team-id');
 		modal.find('input[name=teamId]').val(teamId);
+		modal.find('input[name=CustomerNumber]').val('');
+		modal.find('input[name=Sum]').val('');
 		modal.find('.common_donate').show();
 		modal.find('.team_donate').hide();
 		modal.modal('show');
