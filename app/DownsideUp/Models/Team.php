@@ -1,6 +1,7 @@
 <?php namespace DownsideUp\Models;
 
 use Eloquent;
+use Log;
 
 /**
  * @property integer $id
@@ -112,5 +113,22 @@ class Team extends Eloquent
 			$this->logo_img = $data['logo'];
 		}
 		$this->save();
+	}
+
+	public static function saveAmountToTeam($teamId)
+	{
+		$team = self::find($teamId);
+		if ($team == null) {
+			Log::info('При записи собраной суммы команда не найдена');
+
+			return;
+		}
+		$teamPayments = $team->payments;
+		$amount = 0;
+		foreach ($teamPayments as $onePayment) {
+			$amount += $onePayment->amount;
+		}
+		$team->amount = $amount;
+		$team->save();
 	}
 }

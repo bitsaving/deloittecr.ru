@@ -2,6 +2,7 @@
 
 
 use DownsideUp\Models\Payment;
+use DownsideUp\Models\Team;
 use DownsideUp\YandexMoney\CommonHTTP3Example;
 use Exception;
 use Input;
@@ -56,15 +57,7 @@ class YandexMoneyController extends BaseController
 	{
 		$data = Input::all();
 		Log::info('Уведомление о платеже от YandexMoney:', $data);
-		$paymentData = [];
-		$paymentData['teamId'] = $data['teamId'];
-		$paymentData['payer'] = $data['customerNumber'];
-		$paymentData['payment'] = $this->setPaymentType($data['paymentType']);
-		$paymentData['amount'] = $data['orderSumAmount'];
-		Log::info('Попытка записать платёж с данными:', $paymentData);
-
-		$payment = new Payment();
-		$payment->savePayment($paymentData);
+		$this->saveNewPayment($data);
 
 		$datetime = date('c');
 		$answer = '<?xml version="1.0" encoding="UTF-8"?>
@@ -79,14 +72,7 @@ class YandexMoneyController extends BaseController
 	{
 		$data = Input::all();
 		Log::info('Уведомление в тестовом режиме о платеже от YandexMoney:', $data);
-		$paymentData = [];
-		$paymentData['teamId'] = $data['teamId'];
-		$paymentData['payer'] = $data['customerNumber'];
-		$paymentData['payment'] = $this->setPaymentType($data['paymentType']);
-		$paymentData['amount'] = $data['orderSumAmount'];
-		Log::info('Попытка записать тестовый платёж с данными:', $paymentData);
-		$payment = new Payment();
-		$payment->savePayment($paymentData);
+		$this->saveNewPayment($data);
 
 		$datetime = date('c');
 		$answer = '<?xml version="1.0" encoding="UTF-8"?>
@@ -97,6 +83,22 @@ class YandexMoneyController extends BaseController
 		return $answer;
 	}
 
+	private function saveNewPayment($data)
+	{
+		$paymentData = [];
+		$paymentData['teamId'] = $data['teamId'];
+		$paymentData['payer'] = $data['customerNumber'];
+		$paymentData['payment'] = $this->setPaymentType($data['paymentType']);
+		$paymentData['amount'] = $data['orderSumAmount'];
+		Log::info('Попытка записать платёж с данными:', $paymentData);
+
+		$payment = new Payment();
+		$payment->savePayment($paymentData);
+
+		if ($data['teamId'] != 0) {
+			Team::saveAmountToTeam($data['teamId']);
+		}
+	}
 
 	private function setPaymentType($YMPaymentType)
 	{

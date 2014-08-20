@@ -314,21 +314,10 @@ class BackendController extends BaseController
 		$payment = new Payment();
 		$payment->savePayment($data);
 		if ($data['teamId'] != 0) {
-			$this->saveAmountToTeam($data['teamId']);
+			Team::saveAmountToTeam($data['teamId']);
 		}
 
 		return 'Сохранено';
 	}
 
-	private function saveAmountToTeam($teamId)
-	{
-		$team = Team::find($teamId);
-		$teamPayments = $team->payments;
-		$amount = 0;
-		foreach ($teamPayments as $onePayment) {
-			$amount += $onePayment->amount;
-		}
-		$team->amount = $amount;
-		$team->save();
-	}
 } 
