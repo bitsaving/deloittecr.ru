@@ -1,6 +1,6 @@
 <?php
 if (!isset($teamName)) {
-	$teamName = 0;
+	$teamName = '0';
 }
 ?>
 <form name=ShopForm method="POST" action="https://demomoney.yandex.ru/eshop.xml">
