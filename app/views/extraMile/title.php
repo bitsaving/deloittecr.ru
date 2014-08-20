@@ -19,8 +19,9 @@
 	<div>
 		<?=
 		Form::button('<img src="/img/title/rub_btn.png"> Поддержать!', array(
-			'id'    => 'btn_title_donate',
-			'class' => 'btn btn-info text-center'
+			'id'           => 'btn_title_donate',
+			'class'        => 'btn btn-info text-center',
+			'data-team-id' => '0',
 		))?>
 	</div>
 </div>

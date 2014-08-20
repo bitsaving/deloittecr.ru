@@ -48,7 +48,9 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 					<div class="btn_support">
 						<?=
 						Form::button('<img src="/img/rub_for_btn.png"> Поддержать!', array(
-							'class' => 'btn btn-info text-center btn_support_team'
+							'class'          => 'btn btn-info text-center btn_support_team',
+							'data-team-id'   => $teams[1]->id,
+							'data-team-name' => $teams[1]->teamName,
 						))?>
 					</div>
 				</div>
@@ -67,7 +69,9 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 					<div class="btn_support">
 						<?=
 						Form::button('<img src="/img/rub_for_btn.png"> Поддержать!', array(
-							'class' => 'btn btn-info text-center btn_support_team'
+							'class'          => 'btn btn-info text-center btn_support_team',
+							'data-team-id'   => $teams[0]->id,
+							'data-team-name' => $teams[0]->teamName,
 						))?>
 					</div>
 				</div>
@@ -95,7 +99,9 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 					<div class="btn_support">
 						<?=
 						Form::button('<img src="/img/rub_for_btn.png"> Поддержать!', array(
-							'class' => 'btn btn-info text-center btn_support_team'
+							'class'          => 'btn btn-info text-center btn_support_team',
+							'data-team-id'   => $teams[2]->id,
+							'data-team-name' => $teams[2]->teamName,
 						))?>
 					</div>
 				</div>

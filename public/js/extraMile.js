@@ -4,8 +4,8 @@ $(document).ready(function () {
 		interval: 0
 	});
 
-	$('button.btn_support_team').attr('disabled', true);
-	$('#btn_title_donate').attr('disabled', true);
+//	$('button.btn_support_team').attr('disabled', true);
+//	$('#btn_title_donate').attr('disabled', true);
 
 	// Карусель для фото
 	$("#photo_carousel").owlCarousel({
@@ -193,6 +193,27 @@ $(document).ready(function () {
 			});
 			teamModal.animate({opacity: 1}, 'slow');
 		});
+	});
+	$(document).on('click', '.btn_support_team', function () {
+		$('#team_card').modal('hide');
+		var teamId = $(this).data('team-id');
+		var teamName = $(this).data('team-name');
+		var modal = $('#donate_form');
+
+		modal.find('.common_donate').hide();
+		modal.find('.team_donate').show();
+		modal.find('.teamName').html(teamName);
+		modal.find('input[name=teamId]').val(teamId);
+		modal.modal('show');
+	});
+
+	$('#btn_title_donate').click(function () {
+		var modal = $('#donate_form');
+		var teamId = $(this).data('team-id');
+		modal.find('input[name=teamId]').val(teamId);
+		modal.find('.common_donate').show();
+		modal.find('.team_donate').hide();
+		modal.modal('show');
 	});
 });
 

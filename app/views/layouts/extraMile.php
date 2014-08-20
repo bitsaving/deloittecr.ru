@@ -29,6 +29,7 @@ if (empty($content)) {
 <body>
 <div id="main">
 	<?= View::make('layouts.inc.navbar.navbar') ?>
+	<?= View::make('extraMile.donation.donate_form') ?>
 	<div class=""><?= $content ?></div>
 </div>
 </body>

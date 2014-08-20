@@ -238,3 +238,119 @@
 .share_links img {
 	margin-right: 5px;
 }
+
+/*Стили для формы оплаты*/
+
+#donate_form .modal-content {
+	width: 594px;
+	min-height: 788px;
+	background: #4dc6f5;
+}
+
+#donate_form .close {
+	background: none !important;
+	opacity: 1;
+	position: absolute;
+	top: -15px;
+	right: -15px;
+}
+
+#donate_form .donate_text {
+	height: 270px;
+}
+
+#donate_form .donate_text h2 {
+	font: 24px "Open Sans Bold";
+	color: #ffffff;
+	margin-top: 33px;
+}
+
+#donate_form .donate_text h2 img {
+	margin-right: 25px;
+}
+
+#donate_form .donate_text p {
+	font: 22px "Open Sans";
+	color: #ffffff;
+}
+
+#donate_form .donate_text .common_donate > img {
+	margin-top: 10px;
+}
+
+#donate_form .donate_text .team_donate {
+	display: none;
+}
+
+#donate_form .donate_text .team_donate .teamName {
+	border: #ffffff solid 3px;
+	border-radius: 3px;
+	width: 458px;
+	height: 89px;
+	margin: 20px auto;
+	font: 26px "Open Sans Bold";
+	color: #ffffff;
+	line-height: 83px;
+}
+
+#donate_form .donate_text .team_donate p {
+	font: 18px "Open Sans Bold";
+}
+
+#donate_form .donate_form {
+	height: 367px;
+	background: #37bcef;
+	padding: 26px 64px;
+	color: #ffffff;
+	font: 16px "Open Sans Bold";
+}
+
+#donate_form .donate_form input[type=text] {
+	margin-top: 10px;
+	margin-bottom: 25px;
+	font: 18px "Open Sans";
+	color: #002776;
+}
+
+#donate_form .donate_form .radio {
+	padding: 3px 0;
+}
+
+#donate_form .donate_form .radio_block {
+	padding-top: 5px;
+}
+
+#donate_form .donate_form .radio_block > div {
+	padding-right: 0;
+}
+
+#donate_form .donate_form input[type=radio] {
+	display: none;
+}
+
+#donate_form .donate_form input[type=radio] + label {
+	background: url("../img/donate_form/radiobutton.png") no-repeat scroll 0 0;
+	cursor: pointer;
+	padding-left: 25px;
+	font: 15px "Open Sans";
+}
+
+#donate_form .donate_form input[type=radio]:checked + label {
+	background: url("../img/donate_form/radiobutton_checked.png") no-repeat scroll 0 0;
+}
+
+#donate_form .donate_form .btn {
+	font: 17px "Open Sans Bold";
+	width: 186px;
+	height: 53px;
+	margin-top: 33px;
+
+	background: #a1e129; /* Old browsers */
+	background: -moz-linear-gradient(top, #a1e129 0%, #86be1b 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a1e129), color-stop(100%, #86be1b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #a1e129 0%, #86be1b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #a1e129 0%, #86be1b 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #a1e129 0%, #86be1b 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #a1e129 0%, #86be1b 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a1e129', endColorstr='#86be1b', GradientType=0); /* IE6-9 */
+}
