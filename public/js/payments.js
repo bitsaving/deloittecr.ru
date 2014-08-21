@@ -4,6 +4,7 @@ $(document).ready(function () {
 		var payment = $(this).data('payment');
 		var newPaymentModal = $('#paymentModal');
 		/** @namespace payment.team_id */
+		newPaymentModal.find('input[name=paymentId]').val(payment.id);
 		newPaymentModal.find('input[name=teamId]').val(payment.team_id).attr('disabled', true);
 		newPaymentModal.find('input[name=payer]').val(payment.payer);
 		newPaymentModal.find('input[name=payment]').val(payment.payment);
@@ -11,12 +12,13 @@ $(document).ready(function () {
 	});
 
 	$('.btnSavePayment').click(function () {
+		var paymentId = $('input[name=paymentId]').val();
 		var teamId = $('input[name=teamId]').val();
 		var payer = $('input[name=payer]').val();
 		var payment = $('input[name=payment]').val();
 		var amount = $('input[name=amount]').val();
 		$('.has-error').removeClass('has-error');
-		$.post('newPayment', {teamId: teamId, payer: payer, payment: payment, amount: amount})
+		$.post('newPayment', {paymentId: paymentId, teamId: teamId, payer: payer, payment: payment, amount: amount})
 			.error(function () {
 				alert('Какая-то ошибка, перезагрузите страницу')
 			})

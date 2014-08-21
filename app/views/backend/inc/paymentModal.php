@@ -20,6 +20,11 @@
 					'role'   => 'form'
 				)) ?>
 				<div class="">
+					<?=
+					Form::input('hidden', 'paymentId', '0', array(
+						'id' => 'inputPaymentId',
+					));
+					?>
 
 					<div class="form-group field row text-right">
 						<?= Form::label('inputTeamId', 'ID Команды:', array('class' => 'control-label col-sm-4')) ?>
@@ -30,7 +35,7 @@
 								'placeholder' => 'Если общий платёж то 0',
 								'class'       => 'form-control',
 								'id'          => 'inputPayer',
-								'required'    => 'inputTeamId',
+								'required' => 'required',
 							));
 							?>
 						</div>

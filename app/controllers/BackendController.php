@@ -304,14 +304,20 @@ class BackendController extends BaseController
 	public function postSavePayment()
 	{
 		$data = Input::all();
-		Log::info('Получены данные для нового платежа', $data);
+
 		$validator = Validate::getPaymentError($data);
 		if ($validator) {
 			Log::info('Ошибки в данных для платежа:', $validator);
 
 			return $validator;
 		}
-		$payment = new Payment();
+		if ($data['paymentId'] == 0) {
+			Log::info('Получены данные для нового платежа', $data);
+			$payment = new Payment();
+		} else {
+			Log::info('Получены данные для изменения платежа', $data);
+			$payment = Payment::find($data['paymentId']);
+		}
 		$payment->savePayment($data);
 		if ($data['teamId'] != 0) {
 			Team::saveAmountToTeam($data['teamId']);

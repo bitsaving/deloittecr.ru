@@ -149,9 +149,10 @@ class Validate
 		$userMessages = $validator->messages();
 		if ($validator->fails()) {
 			$result['errors'] = array(
-				'teamId' => $userMessages->first('teamId'),
-				'payer'  => $userMessages->first('payer'),
-				'amount' => $userMessages->first('amount'),
+				'paymentId' => $userMessages->first('paymentId'),
+				'teamId'    => $userMessages->first('teamId'),
+				'payer'     => $userMessages->first('payer'),
+				'amount'    => $userMessages->first('amount'),
 			);
 
 			return $result;
@@ -163,9 +164,10 @@ class Validate
 	private static function rulesPayment()
 	{
 		$rules = [
-			'teamId' => 'required|integer',
-			'payer'  => 'required',
-			'amount' => 'required|integer',
+			'paymentId' => 'required|integer',
+			'teamId'    => 'required|integer',
+			'payer'     => 'required',
+			'amount'    => 'required|integer',
 		];
 
 		return $rules;
