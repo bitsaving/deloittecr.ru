@@ -66,6 +66,14 @@ $maxAmount = ExtraMileWidget::getMaxAmount();
 					<div class="photo">
 						<img src="<?= $teams[0]->photo ?>" class="img-rounded open_team_card" data-team-id="<?= $teams[0]->id ?>" data-toggle="modal" data-target="#team_card">
 					</div>
+					<div class="progress">
+						<span class="team_amount"><?= number_format($teams[0]->amount, 0, '.', ' ') ?></span>
+
+						<div class="progress-bar progress-bar-success" role="progressbar" style="width: <?= $teams[0]->amount / $maxAmount * 100 ?>%">
+							<span><img src="/img/leaders_teams/rub_progress_bar.png" alt="" /></span>
+
+						</div>
+					</div>
 					<div class="btn_support">
 						<?=
 						Form::button('<img src="/img/rub_for_btn.png"> Поддержать!', array(
