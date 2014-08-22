@@ -26,8 +26,7 @@
 				</div>
 				<div class="donate_form">
 					<form name=ShopForm method="POST" action="https://money.yandex.ru/eshop.xml">
-					<input type="hidden" name="scid" value="56210">
-						<input type="hidden" name="ShopID" value="18673"> <input type="hidden" name="teamId" value="0">
+						<input type="hidden" name="scid" value="9689"> <input type="hidden" name="ShopID" value="18673"> <input type="hidden" name="teamId" value="0">
 
 						<div class="form-group">
 							<div class="field text-left">
