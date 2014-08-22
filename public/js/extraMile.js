@@ -111,7 +111,7 @@ $(document).ready(function () {
 
 	$('#send_reg_data').click(function () {
 		$('.has-error').removeClass('has-error');
-		var formData = new FormData($('form')[0]);
+		var formData = new FormData($('#team_registration form')[0]);
 		$('button').attr('disabled', true);
 		$.ajax({
 			url: '',  //Server script to process data

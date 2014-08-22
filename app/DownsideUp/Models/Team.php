@@ -85,7 +85,7 @@ class Team extends Eloquent
 		$this->crewman6 = $data['crewman6'];
 		$this->aboutTeam = $data['aboutTeam'];
 		$this->photo = $data['photo'];
-		$this->logo_img = $data['logo'];
+		$this->logo_img = $data['logo'] == null ? '' : $data['logo'];
 		$this->active = false;
 		$this->save();
 	}
