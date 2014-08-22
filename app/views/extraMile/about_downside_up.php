@@ -10,7 +10,7 @@
 		<p><?= $description ?></p>
 
 		Реквизиты компании (*.pdf)
-		<a href="/docs/rekvizit Foundation hsbc_NEW.PDF" target="_blank" class="btn"><img src="/img/race_stages_btn.png"></a>
+		<a href="/docs/rekvizit Foundation hsbc_NEW.pdf" target="_blank" class="btn"><img src="/img/race_stages_btn.png"></a>
 
 	</div>
 </div>
