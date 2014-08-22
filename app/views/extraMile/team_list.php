@@ -22,7 +22,7 @@ if (count($teams) < 1) {
 				<ol class="carousel-indicators">
 					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 					<?php for ($i = 1; $i <= (count($teams) - 1) / 12; $i++) : ?>
-						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="<?= $i ?>"></li>
 					<?php endfor ?>
 				</ol>
 
