@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta property="og:image" content="http://deloittecr.ru/img/title/ext_logo.png" />
+<meta property="og:image" content="http://deloittecr.ru/img/title/title_bg_with_logo_icons_old.jpg" />
 
 <title>ExtraMile 2014 - благотворительная гонка, сборы от которой поступают на счет фонда Downside UP</title>
 
