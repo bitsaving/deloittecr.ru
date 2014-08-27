@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta property="og:image" content="http://deloittecr.ru/img/title/title_bg_with_logo_icons_old.jpg" />
 
-<title>ExtraMile 2014 - благотворительная гонка, сборы от которой поступают на счет фонда Downside UP</title>
+<title>ExtraMile 2014</title>
 
 <link type="text/css" href="//code.jquery.com/ui/1.10.4/themes/redmond/jquery-ui.css" rel="stylesheet" />
 <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js "></script>
