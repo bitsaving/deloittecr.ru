@@ -1,6 +1,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta property="og:url" content="http://deloittecr.ru/extramile" />
 <meta property="og:title" content="ExtraMile 2014" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Денежные средства для благотворительного фонда собираются не только участниками мероприятия и организациями, но и просто небезразличными людьми ― вы также можете присоединиться к ним и помочь детям!" />
 <meta property="og:image" content="http://deloittecr.ru/img/title/title_bg_with_logo_icons_old.jpg" />
 
 <title>ExtraMile 2014</title>
