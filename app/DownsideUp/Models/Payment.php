@@ -42,4 +42,16 @@ class Payment extends Eloquent
 		$this->amount = $data['amount'];
 		$this->save();
 	}
+
+	public static function getFundedAmount()
+	{
+		$fundedAmount = 0;
+		$payments = self::get()->all();
+		foreach ($payments as $payment) {
+			$fundedAmount += $payment->amount;
+		}
+
+		return $fundedAmount;
+	}
+
 }

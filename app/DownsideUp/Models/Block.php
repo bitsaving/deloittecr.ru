@@ -41,4 +41,12 @@ class Block extends Eloquent
 		$this->section_id = $sectionId;
 		$this->save();
 	}
+
+	public static function saveFundedAmount($fundedAmount)
+	{
+		$block = self::find(3);
+		$block->content = $fundedAmount;
+		$block->save();
+	}
+
 }

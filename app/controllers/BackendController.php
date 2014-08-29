@@ -322,6 +322,9 @@ class BackendController extends BaseController
 		if ($data['teamId'] != 0) {
 			Team::saveAmountToTeam($data['teamId']);
 		}
+		$fundedAmount = Payment::getFundedAmount();
+		$fundedAmount = str_pad($fundedAmount, 7, '0', STR_PAD_LEFT);
+		Block::saveFundedAmount($fundedAmount);
 
 		return 'Сохранено';
 	}
