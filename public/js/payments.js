@@ -5,7 +5,7 @@ $(document).ready(function () {
 		var newPaymentModal = $('#paymentModal');
 		/** @namespace payment.team_id */
 		newPaymentModal.find('input[name=paymentId]').val(payment.id);
-		newPaymentModal.find('input[name=teamId]').val(payment.team_id).attr('disabled', true);
+		newPaymentModal.find('input[name=teamId]').val(payment.team_id);
 		newPaymentModal.find('input[name=payer]').val(payment.payer);
 		newPaymentModal.find('input[name=payment]').val(payment.payment);
 		newPaymentModal.find('input[name=amount]').val(payment.amount);
