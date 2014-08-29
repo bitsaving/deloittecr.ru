@@ -42,7 +42,7 @@ $(document).ready(function () {
 
 	$('#paymentModal').on('hidden.bs.modal', function () {
 		$(this).find('input').val('');
+		$(this).find('input[name=paymentId]').val('0');
 		$(this).find('.has-error').removeClass('has-error');
-		$(this).find('input[name=teamId]').attr('disabled', false);
 	})
 });
