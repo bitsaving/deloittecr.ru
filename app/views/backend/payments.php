@@ -47,5 +47,5 @@ echo View::make('backend.inc.paymentModal');
 		<?php endforeach ?>
 
 	</table>
+	<?= $payments->links() ?>
 </div>
-<?= $payments->links() ?>
