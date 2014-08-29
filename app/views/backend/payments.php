@@ -48,3 +48,4 @@ echo View::make('backend.inc.paymentModal');
 
 	</table>
 </div>
+<?= $payments->links() ?>
