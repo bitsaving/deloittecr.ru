@@ -7,7 +7,7 @@
 		"laravel/framework": "4.2.*"
 	},
 	"require-dev": {
-		"barryvdh/laravel-ide-helper": "dev-master",
+      "barryvdh/laravel-ide-helper": "~1.11",
 		"phpunit/phpunit-mock-objects": "2.3.*@dev",
 		"phpunit/phpunit": "4.3.*@dev",
 		"zizaco/factory-muff": "dev-master",
